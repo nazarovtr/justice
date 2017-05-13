@@ -1,0 +1,6 @@
+respawn = "BASE";
+disabledAI = 1;
+
+class CfgFunctions {
+    #include "functions\functions.hpp"
+};
