@@ -4,3 +4,6 @@ disabledAI = 1;
 class CfgFunctions {
     #include "functions\functions.hpp"
 };
+
+#include "defines.hpp"
+#include "dialogs.hpp"

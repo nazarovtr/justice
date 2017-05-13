@@ -1,0 +1,1 @@
+ctrlSetText [1400, lbText [1500, lbCurSel 1500]];

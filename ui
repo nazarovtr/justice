@@ -1,0 +1,15 @@
+/* #Niquwo
+$[
+	1.063,
+	["JTC_SaveDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[2200,"JTC_SaveBackground",[1,"",["0.316719 * safezoneW + safezoneX","0.296 * safezoneH + safezoneY","0.350625 * safezoneW","0.476 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1500,"JTC_SaveList",[1,"",["0.324687 * safezoneW + safezoneX","0.347 * safezoneH + safezoneY","0.151406 * safezoneW","0.408 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1000,"JTC_SaveListLabel",[1,"Saved games",["0.324687 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.111562 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1600,"JTC_SaveButton",[1,"Save",["0.484062 * safezoneW + safezoneX","0.415 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1400,"JTC_SaveSelected",[1,"default",["0.484062 * safezoneW + safezoneX","0.347 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1601,"JTC_LoadButton",[1,"Load",["0.484062 * safezoneW + safezoneX","0.483 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1602,"JTC_NewButton",[1,"New Game",["0.484062 * safezoneW + safezoneX","0.551 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"JTC_SelectedSaveLabel",[1,"Selected save",["0.484062 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.111562 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1603,"JTC_SaveCancelButton",[1,"Cancel",["0.484062 * safezoneW + safezoneX","0.619 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/

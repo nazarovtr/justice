@@ -1,3 +1,3 @@
-_player = params[0]
+_player = params[0];
 
 removeAllWeapons _player;
