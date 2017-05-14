@@ -1,7 +1,7 @@
 private _player = _this select 0;
 private _joinInProgress = _this select 1;
 waitUntil {time > 2};
-if (!_joinInProgress) then {
-    systemChat "jip";
+if (!_joinInProgress) then
+{
     [true] call JTC_fnc_showSaveDialog;
 };

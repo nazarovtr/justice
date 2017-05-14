@@ -1,7 +1,9 @@
-class JTC_SaveDialog {
+class JTC_SaveDialog
+{
     idd = 23001;
     movingEnabled = false;
-    class controls {
+    class controls
+    {
         ////////////////////////////////////////////////////////
         // GUI EDITOR OUTPUT START (by Timur, v1.063, #Niquwo)
         ////////////////////////////////////////////////////////
@@ -68,7 +70,7 @@ class JTC_SaveDialog {
         	y = 0.551 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
-        	action = "closeDialog 0";
+        	action = "[] call JTC_fnc_newGameState";
         };
         class JTC_SaveCancelButton: RscButton
         {
@@ -76,6 +78,16 @@ class JTC_SaveDialog {
         	text = "Cancel"; //--- ToDo: Localize;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.619 * safezoneH + safezoneY;
+        	w = 0.175312 * safezoneW;
+        	h = 0.034 * safezoneH;
+        	action = "closeDialog 0";
+        };
+        class JTC_SaveNotACommanderButton: RscButton
+        {
+        	idc = 1604;
+        	text = "I am not a commander"; //--- ToDo: Localize;
+        	x = 0.484062 * safezoneW + safezoneX;
+        	y = 0.687 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
         	action = "closeDialog 0";

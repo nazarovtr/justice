@@ -1,9 +1,21 @@
+#include "defines.hpp"
+#include "dialogs.hpp"
+
 respawn = "BASE";
 disabledAI = 1;
 
-class CfgFunctions {
+class CfgFunctions
+{
     #include "functions\functions.hpp"
 };
 
-#include "defines.hpp"
-#include "dialogs.hpp"
+class Params
+{
+	class AdminCommander
+	{
+		title = "Only server admin or hosting player can be a commander";
+		texts[] = {"yes","no"};
+		values[] = {1,0};
+		default = 0;
+	};
+};
