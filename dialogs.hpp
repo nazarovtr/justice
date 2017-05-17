@@ -107,3 +107,26 @@ class JTC_SaveDialog
 
     };
 };
+
+class RscTitles
+{
+    class JTC_StateTitle
+    {
+        idd = 23002;
+        duration = 2000000;
+        onLoad = "with uiNameSpace do { JTC_StateTitle = _this select 0 }";
+        class controls
+        {
+            class JTC_StateLabel: RscText
+            {
+                idc = 1002;
+                text = "Commander: "; //--- ToDo: Localize;
+                x = 0.324687 * safezoneW + safezoneX;
+                y = 0.0 * safezoneH + safezoneY;
+                w = 0.6 * safezoneW;
+                h = 0.034 * safezoneH;
+                sizeEx = 0.03;
+            };
+        };
+    };
+};

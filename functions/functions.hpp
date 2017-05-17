@@ -6,6 +6,7 @@ class justice
         file = "functions";
         class playerSpawn {};
         class showSaveDialog {};
+        class showStateDialog {};
         class saveState {};
         class loadState {};
         class newGameState {};

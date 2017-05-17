@@ -13,9 +13,9 @@ else
     theOffroad setDir _direction;
     theOffroad setVehiclePosition [_position, [], 10];
     theCommander moveInDriver theOffroad;
-    JTC_commander_name = name player;
-    JTC_commander_id = getPlayerUID player;
-    publicVariable "JTC_commander_name";
-    publicVariable "JTC_commander_id";
+    JTC_commanderName = name player;
+    JTC_commanderId = getPlayerUID player;
+    publicVariable "JTC_commanderName";
+    publicVariable "JTC_commanderId";
     closeDialog 23001;
 };

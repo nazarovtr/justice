@@ -5,3 +5,5 @@ if (!_joinInProgress) then
 {
     [true] call JTC_fnc_showSaveDialog;
 };
+
+[] spawn JTC_fnc_showStateDialog;
