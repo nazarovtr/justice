@@ -2,6 +2,7 @@
 #include "dialogs.hpp"
 
 respawn = "BASE";
+respawnDelay = 5;
 disabledAI = 1;
 enableDebugConsole = 1;
 

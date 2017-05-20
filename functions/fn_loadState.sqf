@@ -48,7 +48,7 @@ if ((count _saveName) == 0) then {
     } forEach switchableUnits;
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
-    theBase addAction ["move base", "[false] call JTC_fnc_moveBase;"];
+    theBase addAction ["move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
     closeDialog 23001;
