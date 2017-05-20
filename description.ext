@@ -3,6 +3,7 @@
 
 respawn = "BASE";
 disabledAI = 1;
+enableDebugConsole = 1;
 
 class CfgFunctions
 {
@@ -17,5 +18,12 @@ class Params
 		texts[] = {"yes","no"};
 		values[] = {1,0};
 		default = 0;
+	};
+	class StartingTime
+	{
+		title = "Mission start hour";
+		texts[] = {"00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+		default = 6;
 	};
 };

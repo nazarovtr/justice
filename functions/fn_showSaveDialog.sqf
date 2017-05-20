@@ -4,19 +4,16 @@ private _onStart = param[0];
 
 private _showDialog = true;
 
-if (isMultiplayer) then
-{
+if (isMultiplayer) then {
     private _isAdmin = serverCommandAvailable "#logout";
     private _isHost = isServer && hasInterface;
     private _adminCommander = (paramsArray select 0) == 1;
-    if (_adminCommander && !_isAdmin && !_isHost) then
-    {
+    if (_adminCommander && !_isAdmin && !_isHost) then {
         _showDialog = false;
     };
 };
 
-if (_showDialog) then
-{
+if (_showDialog) then {
     private _saveNames = profileNamespace getVariable "JTC_saves";
     if (isNil "_saveNames") then {
         _saveNames = [];
@@ -34,26 +31,20 @@ if (_showDialog) then
 
     _saveListBox ctrlSetEventHandler ["LBSelChanged", "[] call JTC_fnc_saveSelectorChanged"];
 
-    if (_onStart) then
-    {
+    if (_onStart) then {
         ctrlEnable [1600, false]; //save button
         ctrlEnable [1601, true]; //new game button
         ctrlEnable [1602, true]; //load button
         ctrlEnable [1603, false]; //cancel button
-        if (isMultiplayer && (playersNumber playerSide) > 1) then
-        { //TODO test in real mp
+        if (isMultiplayer && (playersNumber playerSide) > 1) then { //TODO test in real mp
             ctrlEnable [1604, true]; //not a commander button
-        }
-        else
-        {
+        } else {
             ctrlEnable [1604, false]; //not a commander button
         };
         ctrlEnable [1400, false]; //save name input
         _dialog displaySetEventHandler ["KeyDown", "true"];
         _dialog displaySetEventHandler ["KeyUp", "true"];
-    }
-    else
-    {
+    } else {
         ctrlEnable [1600, true]; //save button
         ctrlEnable [1601, false]; //new game button
         ctrlEnable [1602, false]; //load button

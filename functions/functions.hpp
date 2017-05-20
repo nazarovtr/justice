@@ -1,8 +1,6 @@
-class justice
-{
+class justice {
     tag = "JTC";
-    class functions
-    {
+    class functions {
         file = "functions";
         class playerSpawn {};
         class showSaveDialog {};
