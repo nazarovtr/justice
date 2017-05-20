@@ -1,6 +1,8 @@
 private _player = _this select 0;
 private _joinInProgress = _this select 1;
 waitUntil {time > 2};
+defaultUniform = uniform player;
+systemChat defaultUniform;
 if (!_joinInProgress) then
 {
     defaultBasePos = getPos theBase;

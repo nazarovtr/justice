@@ -20,13 +20,7 @@ fn_loadAndPublishValue = {
     _value;
 };
 
-private _saveName = ctrlText 1400;
-
-systemChat _saveName;
-
-if ((count _saveName) == 0) then {
-    hint "Select a Save";
-} else {
+fn_loadDateAndWeather = {
     private _date = [_saveName, "date", date] call fn_loadValue;
     if (isServer) then {
         setDate _date;
@@ -37,8 +31,10 @@ if ((count _saveName) == 0) then {
     private _overcast = [_saveName, "overcast", overcast] call fn_loadAndPublishValue;
     0 setOvercast _overcast;
     forceWeatherChange;
+};
+
+fn_loadBasePosition = {
     private _position = [_saveName, "basePos"] call fn_loadValue;
-    private _direction = [_saveName, "baseDir"] call fn_loadValue;
     [_position] call JTC_fnc_deployBase;
     {
         _x setPos _position;
@@ -46,10 +42,31 @@ if ((count _saveName) == 0) then {
     {
         _x setPos _position;
     } forEach switchableUnits;
+};
+
+fn_loadGuerillaResources = {
+    [_saveName, "recruitCount", 82] call fn_loadAndPublishValue;
+    [_saveName, "money", 97000] call fn_loadAndPublishValue;
+};
+
+fn_setCommander = {
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
     theBase addAction ["move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
+};
+
+private _saveName = ctrlText 1400;
+
+systemChat _saveName;
+
+if ((count _saveName) == 0) then {
+    hint "Select a Save";
+} else {
+    [] call fn_loadDateAndWeather;
+    [] call fn_loadBasePosition;
+    [] call fn_loadGuerillaResources;
+    [] call fn_setCommander;
     closeDialog 23001;
 };

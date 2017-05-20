@@ -1,8 +1,9 @@
-#include "defines.hpp"
+#include "uiDefines.hpp"
 #include "dialogs.hpp"
 
 respawn = "BASE";
 respawnDelay = 5;
+respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
 

@@ -7,11 +7,7 @@ fn_saveValue = {
     profileNamespace setVariable ["JTC_" + _saveName + "_" + _key, _value];
 };
 
-private _saveName = ctrlText 1400;
-
-if (count _saveName == 0) then {
-    hint "Fill save name";
-} else {
+fn_saveSaveNames = {
     private _saveNames = profileNamespace getVariable "JTC_saves";
     if (isNil "_saveNames") then     {
         _saveNames = [];
@@ -20,10 +16,22 @@ if (count _saveName == 0) then {
         _saveNames pushBack _saveName;
         profileNamespace setVariable ["JTC_saves", _saveNames];
     };
+};
+
+private _saveName = ctrlText 1400;
+
+if (count _saveName == 0) then {
+    hint "Fill save name";
+} else {
+    [] call fn_saveSaveNames;
     [_saveName, "date", date] call fn_saveValue;
     [_saveName, "overcast", overcast] call fn_saveValue;
+
     private _position = getPos theBase;
     [_saveName, "basePos", [_position select 0, (_position select 1) - 2, _position select 2]] call fn_saveValue;
+
+    [_saveName, "recruitCount", JTC_recruitCount] call fn_saveValue;
+    [_saveName, "money", JTC_money] call fn_saveValue;
     saveProfileNamespace;
     closeDialog 23001;
     hint "Saved";

@@ -38,6 +38,7 @@ if (isServer) then {
 
     while {true} do {
         private _overcast = random 1;
+        _overcast = _overcast * _overcast; // Altis arid climate.
         systemChat format ["Setting half hour overcast %1, current is %2", _overcast, overcast];
         1800 setOvercast _overcast;
         sleep 3600;
