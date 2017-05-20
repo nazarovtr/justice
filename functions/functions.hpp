@@ -9,5 +9,7 @@ class justice {
         class loadState {};
         class newGameState {};
         class saveSelectorChanged {};
+        class moveBase {};
+        class deployBase {};
     };
 };

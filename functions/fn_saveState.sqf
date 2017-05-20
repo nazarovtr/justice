@@ -22,8 +22,8 @@ if (count _saveName == 0) then {
     };
     [_saveName, "date", date] call fn_saveValue;
     [_saveName, "overcast", overcast] call fn_saveValue;
-    [_saveName, "basePos", getPos theOffroad] call fn_saveValue;
-    [_saveName, "baseDir", getDir theOffroad] call fn_saveValue;
+    private _position = getPos theBase;
+    [_saveName, "basePos", [_position select 0, (_position select 1) - 2, _position select 2]] call fn_saveValue;
     saveProfileNamespace;
     closeDialog 23001;
     hint "Saved";

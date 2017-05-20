@@ -39,12 +39,16 @@ if ((count _saveName) == 0) then {
     forceWeatherChange;
     private _position = [_saveName, "basePos"] call fn_loadValue;
     private _direction = [_saveName, "baseDir"] call fn_loadValue;
-    theOffroad setPos [_position select 0, _position select 1, (_position select 2) + 1000];
-    theOffroad setDir _direction;
-    theOffroad setVehiclePosition [_position, [], 10];
-    theCommander moveInDriver theOffroad;
+    [_position] call JTC_fnc_deployBase;
+    {
+        _x setPos _position;
+    } forEach playableUnits;
+    {
+        _x setPos _position;
+    } forEach switchableUnits;
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
+    theBase addAction ["move base", "[false] call JTC_fnc_moveBase;"];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
     closeDialog 23001;
