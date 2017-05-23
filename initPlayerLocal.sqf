@@ -6,7 +6,9 @@ systemChat defaultUniform;
 if (!_joinInProgress) then
 {
     defaultBasePos = getPos theBase;
-    theBase addAction ["persistent save", "[false] call JTC_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
+    theBase addAction ["Persistent save", "[false] call JTC_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
+    theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
+    "", "true", 3];
     [true] call JTC_fnc_showSaveDialog;
 } else {
     if (!isNil "JTC_baseDeployed") then {

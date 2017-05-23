@@ -44,6 +44,24 @@ fn_loadBasePosition = {
     } forEach switchableUnits;
 };
 
+fn_loadAmmobox = {
+    private _cargo = [_saveName, "ammobox", []] call fn_loadValue;
+    if (!(_cargo isEqualTo [])) then {
+        clearMagazineCargoGlobal theBase;
+        clearWeaponCargoGlobal theBase;
+        clearItemCargoGlobal theBase;
+        clearBackpackCargoGlobal theBase;
+    };
+    {
+        switch (_x select 2) do {
+            case "w": { theBase addWeaponCargoGlobal [_x select 0, 1];};
+            case "i": { theBase addItemCargoGlobal [_x select 0, 1];};
+            case "b": { theBase addBackpackCargoGlobal [_x select 0, 1];};
+            case "m": { theBase addMagazineCargoGlobal [_x select 0, 1];};
+        };
+    } forEach _cargo;
+};
+
 fn_loadGuerillaResources = {
     [_saveName, "recruitCount", 82] call fn_loadAndPublishValue;
     [_saveName, "money", 97000] call fn_loadAndPublishValue;
@@ -52,7 +70,7 @@ fn_loadGuerillaResources = {
 fn_setCommander = {
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
-    theBase addAction ["move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
+    theBase addAction ["Move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
 };
@@ -66,6 +84,7 @@ if ((count _saveName) == 0) then {
 } else {
     [] call fn_loadDateAndWeather;
     [] call fn_loadBasePosition;
+    [] call fn_loadAmmobox;
     [] call fn_loadGuerillaResources;
     [] call fn_setCommander;
     closeDialog 23001;

@@ -11,5 +11,7 @@ class justice {
         class saveSelectorChanged {};
         class moveBase {};
         class deployBase {};
+        class moveCargo {};
+        class getContainerCargo {};
     };
 };
