@@ -29,3 +29,27 @@ class Params
 		default = 6;
 	};
 };
+
+class CfgDebriefing
+{
+    class victory
+    {
+        title = "Mission Accomplished!";
+        subtitle = "You made it to Camp Maxwell.";
+        description = "";
+    };
+
+    class noRecruits
+    {
+        title = "Mission Failed!";
+        subtitle = "All guerilla forces have been eliminated.";
+        description = "";
+    };
+
+    class noCommander
+    {
+        title = "Mission not initialized!";
+        subtitle = "The commander have failed to initialize the mission.";
+        description = "At least one player have to load a saved game or start a new game. This player will become a commander.";
+    };
+};

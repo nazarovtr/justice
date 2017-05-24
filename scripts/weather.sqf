@@ -1,5 +1,11 @@
 systemChat "weather script initialized";
 
+fn_getRandomOvercast = {
+    private _overcast = random 1;
+    _overcast = _overcast * _overcast; // Altis arid climate.
+    _overcast;
+};
+
 // JIP
 if (!isNil "JTC_overcast") then {
     0 setOvercast JTC_overcast;
@@ -22,7 +28,7 @@ if (!isNil "JTC_overcast") then {
 };
 
 if (isServer) then {
-    0 setOvercast random 1;
+    0 setOvercast ([] call fn_getRandomOvercast);
     forceWeatherChange;
     systemChat format ["Random overcast %1", overcast];
 
@@ -37,8 +43,7 @@ if (isServer) then {
     };
 
     while {true} do {
-        private _overcast = random 1;
-        _overcast = _overcast * _overcast; // Altis arid climate.
+        private _overcast = [] call fn_getRandomOvercast;
         systemChat format ["Setting half hour overcast %1, current is %2", _overcast, overcast];
         1800 setOvercast _overcast;
         sleep 3600;

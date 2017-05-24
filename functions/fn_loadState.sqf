@@ -82,10 +82,10 @@ systemChat _saveName;
 if ((count _saveName) == 0) then {
     hint "Select a Save";
 } else {
+    [] call fn_setCommander;
     [] call fn_loadDateAndWeather;
     [] call fn_loadBasePosition;
     [] call fn_loadAmmobox;
     [] call fn_loadGuerillaResources;
-    [] call fn_setCommander;
     closeDialog 23001;
 };

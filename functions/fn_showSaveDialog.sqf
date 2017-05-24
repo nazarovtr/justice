@@ -14,6 +14,12 @@ if (isMultiplayer) then {
 };
 
 if (_showDialog) then {
+    "JTC_commanderName" addPublicVariableEventHandler {
+        closeDialog 23001;
+    };
+    if (!isNil "JTC_commanderName") then {
+        closeDialog 23001;
+    };
     private _saveNames = profileNamespace getVariable "JTC_saves";
     if (isNil "_saveNames") then {
         _saveNames = [];
