@@ -5,6 +5,8 @@ if (isServer) then {
     JTC_recruitCount = 82;
     publicVariable "JTC_money";
     publicVariable "JTC_recruitCount";
+    JTC_defaultBasePos = getPos theBase;
+    publicVariable "JTC_defaultBasePos";
     [] execVM "scripts\initTimeout.sqf";
 };
 [] execVM "scripts\weather.sqf";

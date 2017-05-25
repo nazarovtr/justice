@@ -6,8 +6,6 @@ theBase addAction ["Persistent save", "[false] call JTC_fnc_showSaveDialog;", []
 theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
     "", "true", 3];
 if (!_joinInProgress) then {
-    defaultBasePos = getPos theBase;
-
     [true] call JTC_fnc_showSaveDialog;
 } else {
     if (!isNil "JTC_baseDeployed") then {
