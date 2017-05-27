@@ -1,12 +1,16 @@
 if (isServer) then {
+    call compile preprocessFileLineNumbers "scripts\enemies.sqf";
     waitUntil {!isNil "paramsArray";};
     setDate [2035, 5, 12, (paramsArray select 1), 0];
     JTC_money = 97000;
     JTC_recruitCount = 82;
+    JTC_spawnDistance = 200;
     publicVariable "JTC_money";
     publicVariable "JTC_recruitCount";
+    publicVariable "JTC_spawnDistance";
     JTC_defaultBasePos = getPos theBase;
     publicVariable "JTC_defaultBasePos";
     [] execVM "scripts\initTimeout.sqf";
+    [] execVM "scripts\spawn.sqf";
 };
 [] execVM "scripts\weather.sqf";

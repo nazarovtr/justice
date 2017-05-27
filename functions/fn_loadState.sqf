@@ -44,6 +44,11 @@ fn_loadBasePosition = {
     } forEach switchableUnits;
 };
 
+fn_loadEnemies = {
+    [_saveName, "enemyPopulation", 30] call fn_loadAndPublishValue;
+    [_saveName, "enemyBases", [] call JTC_fnc_initializeBases] call fn_loadAndPublishValue;
+};
+
 fn_loadAmmobox = {
     private _cargo = [_saveName, "ammobox", []] call fn_loadValue;
     if (!(_cargo isEqualTo [])) then {
@@ -87,5 +92,6 @@ if ((count _saveName) == 0) then {
     [] call fn_loadBasePosition;
     [] call fn_loadAmmobox;
     [] call fn_loadGuerillaResources;
+    [] call fn_loadEnemies;
     closeDialog 23001;
 };

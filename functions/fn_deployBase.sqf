@@ -1,5 +1,3 @@
-systemChat "moving base";
-
 private _position = _this select 0;
 "respawn_west" setMarkerPos _position;
 _position = [_position select 0, (_position select 1) + 2, (_position select 2) + 1];

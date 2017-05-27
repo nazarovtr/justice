@@ -1,5 +1,3 @@
-systemChat "moving base";
-
 theBase setPos JTC_defaultBasePos;
 theLamp setPos [(JTC_defaultBasePos select 0) - 1, JTC_defaultBasePos select 1, JTC_defaultBasePos select 2 ];
 theCrate setPos [(JTC_defaultBasePos select 0) + 2, JTC_defaultBasePos select 1, JTC_defaultBasePos select 2 ];
