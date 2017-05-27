@@ -42,11 +42,12 @@ if (_showDialog) then {
         ctrlEnable [1601, true]; //new game button
         ctrlEnable [1602, true]; //load button
         ctrlEnable [1603, false]; //cancel button
-        if (isMultiplayer && (playersNumber playerSide) > 1) then { //TODO test in real mp
+        if (isMultiplayer && (playersNumber playerSide) > 1) then {
             ctrlEnable [1604, true]; //not a commander button
         } else {
             ctrlEnable [1604, false]; //not a commander button
         };
+        ctrlEnable [1605, true]; //remove button
         ctrlEnable [1400, false]; //save name input
         _dialog displaySetEventHandler ["KeyDown", "true"];
         _dialog displaySetEventHandler ["KeyUp", "true"];
@@ -56,6 +57,7 @@ if (_showDialog) then {
         ctrlEnable [1602, false]; //load button
         ctrlEnable [1603, true]; //cancel button
         ctrlEnable [1604, false]; //not a commander button
+        ctrlEnable [1605, true]; //remove button
         ctrlEnable [1400, true]; //save name input
     };
 };

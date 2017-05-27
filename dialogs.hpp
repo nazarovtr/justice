@@ -14,7 +14,7 @@ class JTC_SaveDialog
         	x = 0.316719 * safezoneW + safezoneX;
         	y = 0.296 * safezoneH + safezoneY;
         	w = 0.350625 * safezoneW;
-        	h = 0.476 * safezoneH;
+        	h = 0.496 * safezoneH;
         };
         class JTC_SaveList: RscListbox
         {
@@ -22,7 +22,7 @@ class JTC_SaveDialog
         	x = 0.324687 * safezoneW + safezoneX;
         	y = 0.347 * safezoneH + safezoneY;
         	w = 0.151406 * safezoneW;
-        	h = 0.408 * safezoneH;
+        	h = 0.431 * safezoneH;
         };
         class JTC_SaveListLabel: RscText
         {
@@ -36,7 +36,7 @@ class JTC_SaveDialog
         class JTC_SaveSelected: RscEdit
         {
         	idc = 1400;
-        	text = "default"; //--- ToDo: Localize;
+        	text = ""; //--- ToDo: Localize;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.347 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -91,6 +91,16 @@ class JTC_SaveDialog
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
         	action = "closeDialog 0";
+        };
+        class JTC_RemoveSaveButton: RscButton
+        {
+        	idc = 1605;
+        	text = "Remove saved game"; //--- ToDo: Localize;
+        	x = 0.484062 * safezoneW + safezoneX;
+        	y = 0.745 * safezoneH + safezoneY;
+        	w = 0.175312 * safezoneW;
+        	h = 0.034 * safezoneH;
+        	action = "[] call JTC_fnc_removeSavedState";
         };
         class JTC_SelectedSaveLabel: RscText
         {

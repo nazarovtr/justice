@@ -27,7 +27,6 @@ fn_loadDateAndWeather = {
     } else {
         [_date] remoteExec ["setDate", 2]
     };
-    systemChat format ["date: %1", _date];
     private _overcast = [_saveName, "overcast", overcast] call fn_loadAndPublishValue;
     0 setOvercast _overcast;
     forceWeatherChange;

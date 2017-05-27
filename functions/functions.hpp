@@ -7,6 +7,7 @@ class justice {
         class saveState {};
         class loadState {};
         class newGameState {};
+        class removeSavedState {};
         class saveSelectorChanged {};
         class moveBase {};
         class deployBase {};
