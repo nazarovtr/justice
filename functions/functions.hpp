@@ -13,8 +13,11 @@ class justice {
         class deployBase {};
         class moveCargo {};
         class getContainerCargo {};
+        class setContainerCargo {};
         class populateBase {};
         class isInSpawnArea {};
         class initializeBases {};
+        class getVehiclesAtBase {};
+        class createVehiclesAtBase {};
     };
 };

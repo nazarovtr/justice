@@ -33,6 +33,7 @@ if (count _saveName == 0) then {
     [_saveName, "recruitCount", JTC_recruitCount] call fn_saveValue;
     [_saveName, "money", JTC_money] call fn_saveValue;
     [_saveName, "ammobox", [theBase] call JTC_fnc_getContainerCargo] call fn_saveValue;
+    [_saveName, "vehicles", [theBase] call JTC_fnc_getVehiclesAtBase] call fn_saveValue;
     [_saveName, "enemyBases", JTC_enemyBases] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
     saveProfileNamespace;

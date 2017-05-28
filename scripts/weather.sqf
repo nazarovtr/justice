@@ -14,11 +14,6 @@ if (!isNil "JTC_overcast") then {
 
 "JTC_overcast" addPublicVariableEventHandler {
     private _overcast = _this select 1;
-    if (isServer) then {
-        (format ["Server got network overcast %1, current is %2", _overcast, overcast]) remoteExec ["systemChat"];
-    } else {
-        (format ["Client got network overcast %1, current is %2", _overcast, overcast]) remoteExec ["systemChat"];
-    };
     if (abs (overcast - _overcast) > 0.05) then {
         0 setOvercast _overcast;
         forceWeatherChange;
@@ -30,7 +25,6 @@ if (!isNil "JTC_overcast") then {
 if (isServer) then {
     0 setOvercast ([] call fn_getRandomOvercast);
     forceWeatherChange;
-    systemChat format ["Random overcast %1", overcast];
 
     if (isMultiplayer) then {
         [] spawn {
@@ -44,7 +38,6 @@ if (isServer) then {
 
     while {true} do {
         private _overcast = [] call fn_getRandomOvercast;
-        systemChat format ["Setting half hour overcast %1, current is %2", _overcast, overcast];
         1800 setOvercast _overcast;
         sleep 3600;
     };

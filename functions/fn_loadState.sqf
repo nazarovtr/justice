@@ -50,20 +50,12 @@ fn_loadEnemies = {
 
 fn_loadAmmobox = {
     private _cargo = [_saveName, "ammobox", []] call fn_loadValue;
-    if (!(_cargo isEqualTo [])) then {
-        clearMagazineCargoGlobal theBase;
-        clearWeaponCargoGlobal theBase;
-        clearItemCargoGlobal theBase;
-        clearBackpackCargoGlobal theBase;
-    };
-    {
-        switch (_x select 2) do {
-            case "w": { theBase addWeaponCargoGlobal [_x select 0, 1];};
-            case "i": { theBase addItemCargoGlobal [_x select 0, 1];};
-            case "b": { theBase addBackpackCargoGlobal [_x select 0, 1];};
-            case "m": { theBase addMagazineCargoGlobal [_x select 0, 1];};
-        };
-    } forEach _cargo;
+    [theBase, _cargo] call JTC_fnc_setContainerCargo;
+};
+
+fn_loadVehicles = {
+    private _vehicles = [_saveName, "vehicles", []] call fn_loadValue;
+    [_vehicles] call JTC_fnc_createVehiclesAtBase;
 };
 
 fn_loadGuerillaResources = {
@@ -90,6 +82,7 @@ if ((count _saveName) == 0) then {
     [] call fn_loadDateAndWeather;
     [] call fn_loadBasePosition;
     [] call fn_loadAmmobox;
+    [] call fn_loadVehicles;
     [] call fn_loadGuerillaResources;
     [] call fn_loadEnemies;
     closeDialog 23001;
