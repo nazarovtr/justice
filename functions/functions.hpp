@@ -19,5 +19,8 @@ class justice {
         class initializeBases {};
         class getVehiclesAtBase {};
         class createVehiclesAtBase {};
+        class moveClosestVehicleCargoToAmmobox {};
+        class moveCargoToClosestVehicle {};
+        class getCargoCapacity {};
     };
 };

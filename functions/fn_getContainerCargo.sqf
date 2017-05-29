@@ -132,9 +132,19 @@ private _innerContainers = everyContainer _container;
     _weaponNames = _weaponNames + weaponCargo (_x select 1);
     _magazineNames = _magazineNames + magazineCargo (_x select 1);
     _itemNames = _itemNames + itemCargo (_x select 1);
+    {
+        {
+            if (count _x > 0) then {
+                if (typeName _x == "ARRAY") then {
+                    _magazineNames pushBack (_x select 0);
+                } else {
+                    _itemNames pushBack _x;
+                }
+            };
+        } forEach (_x select [1, (count _x) -1]);
+    } forEach weaponsItemsCargo (_x select 1);
 } forEach _innerContainers;
 
-private _weaponAttachedItems = weaponsItemsCargo _container;
 {
     {
         if (count _x > 0) then {
@@ -145,7 +155,7 @@ private _weaponAttachedItems = weaponsItemsCargo _container;
             }
         };
     } forEach (_x select [1, (count _x) -1]);
-} forEach _weaponAttachedItems;
+} forEach weaponsItemsCargo _container;
 private _cargo = [];
 private _cargoItemNumber = 1;
 {
