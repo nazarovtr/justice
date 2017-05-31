@@ -22,5 +22,6 @@ class justice {
         class moveClosestVehicleCargoToAmmobox {};
         class moveCargoToClosestVehicle {};
         class getCargoCapacity {};
+        class kill {};
     };
 };

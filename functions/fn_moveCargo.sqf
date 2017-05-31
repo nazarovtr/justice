@@ -50,7 +50,7 @@ if (_cargoLimitMode != 2 || loadAbs _source < _targetCargoCapacity - loadAbs _ta
             case "w": { _target addWeaponCargoGlobal [_cargoUnit select 0, 1];};
             case "i": { _target addItemCargoGlobal [_cargoUnit select 0, 1];};
             case "b": { _target addBackpackCargoGlobal [_cargoUnit select 0, 1];};
-            case "m": { _target addMagazineCargoGlobal [_cargoUnit select 0, 1];};
+            case "m": { _target addMagazineAmmoCargo [_cargoUnit select 0, 1, _cargoUnit select 3];};
         };
         _cargoBuffer = _cargoBuffer - [_cargoUnit];
         if (!_instant) then {
@@ -72,7 +72,7 @@ if (_cargoLimitMode != 2 || loadAbs _source < _targetCargoCapacity - loadAbs _ta
                 case "w": { _source addWeaponCargoGlobal [_x select 0, 1];};
                 case "i": { _source addItemCargoGlobal [_x select 0, 1];};
                 case "b": { _source addBackpackCargoGlobal [_x select 0, 1];};
-                case "m": { _source addMagazineCargoGlobal [_x select 0, 1];};
+                case "m": { _source addMagazineAmmoCargo [_x select 0, 1, _x select 3];};
             };
         } forEach _cargoBuffer;
     };

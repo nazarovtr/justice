@@ -120,8 +120,18 @@ fn_getWeaponNoAttachments = {
 
 private _container = _this select 0;
 
+//private _weaponNames = weaponCargo _container;
+//private _magazineNames = magazineCargo _container;
+//private _itemNames = itemCargo _container;
+//private _backpackNames = [];
+//
+//if (_container isKindOf "Man") then {
+//
+//"WeaponHolderSimulated";
+//};
+
 private _weaponNames = weaponCargo _container;
-private _magazineNames = magazineCargo _container;
+private _magazinesWithAmmo = magazinesAmmoCargo _container;
 private _itemNames = itemCargo _container;
 private _backpackNames = [];
 {
@@ -130,13 +140,13 @@ private _backpackNames = [];
 private _innerContainers = everyContainer _container;
 {
     _weaponNames = _weaponNames + weaponCargo (_x select 1);
-    _magazineNames = _magazineNames + magazineCargo (_x select 1);
+    _magazinesWithAmmo = _magazinesWithAmmo + magazinesAmmoCargo (_x select 1);
     _itemNames = _itemNames + itemCargo (_x select 1);
     {
         {
             if (count _x > 0) then {
                 if (typeName _x == "ARRAY") then {
-                    _magazineNames pushBack (_x select 0);
+                    _magazinesWithAmmo pushBack _x;
                 } else {
                     _itemNames pushBack _x;
                 }
@@ -149,7 +159,7 @@ private _innerContainers = everyContainer _container;
     {
         if (count _x > 0) then {
             if (typeName _x == "ARRAY") then {
-                _magazineNames pushBack (_x select 0);
+                _magazinesWithAmmo pushBack _x;
             } else {
                 _itemNames pushBack _x;
             }
@@ -171,7 +181,7 @@ private _cargoItemNumber = 1;
     _cargoItemNumber = _cargoItemNumber + 1;
 } forEach _backpackNames;
 {
-    _cargo pushBack [_x, _cargoItemNumber, "m"];
+    _cargo pushBack [_x select 0, _cargoItemNumber, "m", _x select 1];
     _cargoItemNumber = _cargoItemNumber + 1;
-} forEach _magazineNames;
+} forEach _magazinesWithAmmo;
 _cargo;

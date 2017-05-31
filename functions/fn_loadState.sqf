@@ -10,6 +10,9 @@ fn_loadValue = {
         private _defaultValue = _this select 2;
         _value = _defaultValue;
     };
+    if (typeName _value == "ARRAY") then {
+        _value = +_value;
+    };
     _value;
 };
 
