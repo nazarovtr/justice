@@ -58,6 +58,8 @@ while {_populationLeft > 0} do {
         _x setVariable ["_baseNumber", _baseNumber, true];
         _x addEventHandler ["killed", {
             private _unit = _this select 0;
+            _unit addAction ["Load loot into closest vehicle",
+             "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;", [], 0, false, true, "", "true", 3];
             private _baseNumber = _unit getVariable "_baseNumber";
             private _base = JTC_enemyBases select _baseNumber;
             _base set [1, (_base select 1) - 1];

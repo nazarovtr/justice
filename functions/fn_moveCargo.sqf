@@ -23,11 +23,30 @@ if (count _this > 2) then {
 
 private _targetCargoCapacity = [_target] call JTC_fnc_getCargoCapacity;
 private _cargoBuffer = [_source] call JTC_fnc_getContainerCargo;
-if (_cargoLimitMode != 2 || loadAbs _source < _targetCargoCapacity - loadAbs _target) then {
-    clearMagazineCargoGlobal _source;
-    clearWeaponCargoGlobal _source;
-    clearItemCargoGlobal _source;
-    clearBackpackCargoGlobal _source;
+if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
+    (_targetCargoCapacity - ([_target] call JTC_fnc_getCargoMass))) then {
+    if (_source isKindOf "Man") then {
+        removeAllWeapons _source;
+        removeHeadgear _source;
+        removeVest _source;
+        removeBackpack _source;
+        {
+            _source unassignItem _x;
+            _source removeItem _x;
+        } forEach ((assignedItems _source) - JTC_ignoredAssignedItems);
+        private _nearestWeaponsHolders = nearestObjects [_source, ["WeaponHolderSimulated"], 3];
+        if (count _nearestWeaponsHolders > 0) then {
+            deleteVehicle (_nearestWeaponsHolders select 0);
+        };
+        if (count _nearestWeaponsHolders > 1) then {
+            deleteVehicle (_nearestWeaponsHolders select 1);
+        };
+    } else {
+        clearMagazineCargoGlobal _source;
+        clearWeaponCargoGlobal _source;
+        clearItemCargoGlobal _source;
+        clearBackpackCargoGlobal _source;
+    };
 
     private _cargoUnitCount = count _cargoBuffer;
     scopeName "main";
@@ -38,14 +57,15 @@ if (_cargoLimitMode != 2 || loadAbs _source < _targetCargoCapacity - loadAbs _ta
             };
             breakTo "main";
         };
-        if (_cargoLimitMode == 1 && loadAbs _target > _targetCargoCapacity) then {
+        private _cargoUnit = _cargoBuffer select 0;
+        if (_cargoLimitMode == 1 && ([_target] call JTC_fnc_getCargoMass) +
+            ([_cargoUnit select 0] call JTC_fnc_getItemMass) > _targetCargoCapacity) then {
             if (!_silent) then {
                 hint format ["Tranferred %1 out of %2. Maximum load reached.",
                  _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount];
             };
             breakTo "main";
         };
-        private _cargoUnit = _cargoBuffer select 0;
         switch (_cargoUnit select 2) do {
             case "w": { _target addWeaponCargoGlobal [_cargoUnit select 0, 1];};
             case "i": { _target addItemCargoGlobal [_cargoUnit select 0, 1];};
@@ -67,12 +87,17 @@ if (_cargoLimitMode != 2 || loadAbs _source < _targetCargoCapacity - loadAbs _ta
             hint "All cargo transferred";
         };
     } else {
+        private _putBackContainer = if (_source isKindOf "Man") then {
+            "GroundWeaponHolder" createVehicle getPos _source;
+        } else {
+            _source;
+        };
         {
             switch (_x select 2) do {
-                case "w": { _source addWeaponCargoGlobal [_x select 0, 1];};
-                case "i": { _source addItemCargoGlobal [_x select 0, 1];};
-                case "b": { _source addBackpackCargoGlobal [_x select 0, 1];};
-                case "m": { _source addMagazineAmmoCargo [_x select 0, 1, _x select 3];};
+                case "w": { _putBackContainer addWeaponCargoGlobal [_x select 0, 1];};
+                case "i": { _putBackContainer addItemCargoGlobal [_x select 0, 1];};
+                case "b": { _putBackContainer addBackpackCargoGlobal [_x select 0, 1];};
+                case "m": { _putBackContainer addMagazineAmmoCargo [_x select 0, 1, _x select 3];};
             };
         } forEach _cargoBuffer;
     };

@@ -1,4 +1,4 @@
-private _vehicles =  nearestObjects [theBase, ["Car", "Tank", "Helicopter"], 200];
+private _vehicles =  nearestObjects [theBase, ["Car", "Tank", "Helicopter"], JTC_baseRadius];
 private _vehicleInfo = [];
 {
     _vehicleInfo pushBack [typeOf _x, getPos _x, getDir _x, [_x] call JTC_fnc_getContainerCargo,

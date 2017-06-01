@@ -1,3 +1,4 @@
+call compile preprocessFileLineNumbers "scripts\constants.sqf";
 if (isServer) then {
     call compile preprocessFileLineNumbers "scripts\enemies.sqf";
     waitUntil {!isNil "paramsArray";};

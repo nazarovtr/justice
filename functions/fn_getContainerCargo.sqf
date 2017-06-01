@@ -99,11 +99,7 @@ private _basicWeapons = [
     ["hgun_PDW2000_", "hgun_PDW2000_F"],
     ["SMG_05_", "SMG_05_F"],
     ["SMG_02_", "SMG_02_F"],
-    ["SMG_01_", "SMG_01_F"],
-    ["hgun_PDW2000_", "hgun_PDW2000_F"],
-    ["hgun_PDW2000_", "hgun_PDW2000_F"],
-    ["hgun_PDW2000_", "hgun_PDW2000_F"],
-    ["srifle_DMR_01_", "srifle_DMR_01_F"]
+    ["SMG_01_", "SMG_01_F"]
 ];
 
 fn_getWeaponNoAttachments = {
@@ -120,28 +116,26 @@ fn_getWeaponNoAttachments = {
 
 private _container = _this select 0;
 
-//private _weaponNames = weaponCargo _container;
-//private _magazineNames = magazineCargo _container;
-//private _itemNames = itemCargo _container;
-//private _backpackNames = [];
-//
-//if (_container isKindOf "Man") then {
-//
-//"WeaponHolderSimulated";
-//};
-
-private _weaponNames = weaponCargo _container;
-private _magazinesWithAmmo = magazinesAmmoCargo _container;
-private _itemNames = itemCargo _container;
+private _weaponNames = [];
+private _magazinesWithAmmo = [];
+private _itemNames = [];
 private _backpackNames = [];
-{
-    _backpackNames pushBack (_x call BIS_fnc_basicBackpack);
-} forEach backpackCargo _container;
-private _innerContainers = everyContainer _container;
-{
-    _weaponNames = _weaponNames + weaponCargo (_x select 1);
-    _magazinesWithAmmo = _magazinesWithAmmo + magazinesAmmoCargo (_x select 1);
-    _itemNames = _itemNames + itemCargo (_x select 1);
+
+if (_container isKindOf "Man") then {
+    _itemNames = (assignedItems _container) - JTC_ignoredAssignedItems;
+    _itemNames = _itemNames + items _container;
+    _itemNames pushBack (headgear _container);
+    _itemNames pushBack (vest _container);
+    _magazinesWithAmmo = magazinesAmmo _container;
+    _backpackNames pushBack (backpack _container);
+    private _weaponsItems = weaponsItems _container;
+    private _nearestWeaponsHolders = nearestObjects [_container, ["WeaponHolderSimulated"], 3];
+    if (count _nearestWeaponsHolders > 0) then {
+        _weaponsItems = _weaponsItems + weaponsItemsCargo (_nearestWeaponsHolders select 0);
+    };
+    if (count _nearestWeaponsHolders > 1) then {
+        _weaponsItems = _weaponsItems + weaponsItemsCargo (_nearestWeaponsHolders select 1);
+    };
     {
         {
             if (count _x > 0) then {
@@ -152,20 +146,46 @@ private _innerContainers = everyContainer _container;
                 }
             };
         } forEach (_x select [1, (count _x) -1]);
-    } forEach weaponsItemsCargo (_x select 1);
-} forEach _innerContainers;
-
-{
+        _weaponNames pushBack (_x select 0);
+    } forEach _weaponsItems;
+} else {
+    _weaponNames = weaponCargo _container;
+    _magazinesWithAmmo = magazinesAmmoCargo _container;
+    _itemNames = itemCargo _container;
+    _backpackNames = [];
     {
-        if (count _x > 0) then {
-            if (typeName _x == "ARRAY") then {
-                _magazinesWithAmmo pushBack _x;
-            } else {
-                _itemNames pushBack _x;
-            }
-        };
-    } forEach (_x select [1, (count _x) -1]);
-} forEach weaponsItemsCargo _container;
+        _backpackNames pushBack (_x call BIS_fnc_basicBackpack);
+    } forEach backpackCargo _container;
+    private _innerContainers = everyContainer _container;
+    {
+        _weaponNames = _weaponNames + weaponCargo (_x select 1);
+        _magazinesWithAmmo = _magazinesWithAmmo + magazinesAmmoCargo (_x select 1);
+        _itemNames = _itemNames + itemCargo (_x select 1);
+        {
+            {
+                if (count _x > 0) then {
+                    if (typeName _x == "ARRAY") then {
+                        _magazinesWithAmmo pushBack _x;
+                    } else {
+                        _itemNames pushBack _x;
+                    }
+                };
+            } forEach (_x select [1, (count _x) -1]);
+        } forEach weaponsItemsCargo (_x select 1);
+    } forEach _innerContainers;
+
+    {
+        {
+            if (count _x > 0) then {
+                if (typeName _x == "ARRAY") then {
+                    _magazinesWithAmmo pushBack _x;
+                } else {
+                    _itemNames pushBack _x;
+                }
+            };
+        } forEach (_x select [1, (count _x) -1]);
+    } forEach weaponsItemsCargo _container;
+};
 private _cargo = [];
 private _cargoItemNumber = 1;
 {
@@ -177,7 +197,7 @@ private _cargoItemNumber = 1;
     _cargoItemNumber = _cargoItemNumber + 1;
 } forEach _itemNames;
 {
-    _cargo pushBack [_x, _cargoItemNumber, "b"];
+    _cargo pushBack [_x call BIS_fnc_basicBackpack, _cargoItemNumber, "b"];
     _cargoItemNumber = _cargoItemNumber + 1;
 } forEach _backpackNames;
 {

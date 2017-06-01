@@ -18,10 +18,13 @@ class justice {
         class isInSpawnArea {};
         class initializeBases {};
         class getVehiclesAtBase {};
+        class getPlayersAtBaseBaseInventory {};
         class createVehiclesAtBase {};
         class moveClosestVehicleCargoToAmmobox {};
         class moveCargoToClosestVehicle {};
         class getCargoCapacity {};
+        class getItemMass {};
+        class getCargoMass {};
         class kill {};
     };
 };
