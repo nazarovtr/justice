@@ -13,6 +13,7 @@ class justice {
         class deployBase {};
         class moveCargo {};
         class getContainerCargo {};
+        class combineCargoArrays {};
         class setContainerCargo {};
         class populateBase {};
         class isInSpawnArea {};

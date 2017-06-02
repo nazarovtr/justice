@@ -34,7 +34,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
             _source unassignItem _x;
             _source removeItem _x;
         } forEach ((assignedItems _source) - JTC_ignoredAssignedItems);
-        private _nearestWeaponsHolders = nearestObjects [_source, ["WeaponHolderSimulated"], 3];
+        private _nearestWeaponsHolders = nearestObjects [_source, ["WeaponHolderSimulated", "GroundWeaponHolder"], 3];
         if (count _nearestWeaponsHolders > 0) then {
             deleteVehicle (_nearestWeaponsHolders select 0);
         };
@@ -87,10 +87,10 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
             hint "All cargo transferred";
         };
     } else {
-        private _putBackContainer = if (_source isKindOf "Man") then {
-            "GroundWeaponHolder" createVehicle getPos _source;
-        } else {
-            _source;
+        private _putBackContainer = _source;
+        if (_source isKindOf "Man") then {
+            _putBackContainer = "GroundWeaponHolder" createVehicle getPos _source;
+            _putBackContainer setPos (getPos _source)
         };
         {
             switch (_x select 2) do {
