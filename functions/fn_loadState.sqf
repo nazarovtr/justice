@@ -74,6 +74,12 @@ fn_setCommander = {
     publicVariable "JTC_commanderId";
 };
 
+fn_removeStartingVehicles = {
+    {
+        deleteVehicle _x;
+    } forEach JTC_startingVehicles;
+};
+
 private _saveName = ctrlText 1400;
 
 systemChat _saveName;
@@ -82,6 +88,7 @@ if ((count _saveName) == 0) then {
     hint "Select a Save";
 } else {
     [] call fn_setCommander;
+    [] call fn_removeStartingVehicles;
     [] call fn_loadDateAndWeather;
     [] call fn_loadBasePosition;
     [] call fn_loadAmmobox;
