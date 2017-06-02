@@ -16,7 +16,7 @@ if (!_joinInProgress) then {
 } else {
     if (!isNil "JTC_baseDeployed") then {
         if (JTC_baseDeployed) then {
-            player setPos (getMarkerPos "respawn_west");
+            player setPos (getMarkerPos JTC_respawnMarker);
         };
     };
     if (!isNil "JTC_commanderId") then {
