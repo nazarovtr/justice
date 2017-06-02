@@ -12,5 +12,5 @@ theBase addAction ["Move base", "[false] call JTC_fnc_moveBase;", [], 0, false, 
 deployBaseActionId = player addAction ["Deploy base here", "[getPos player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
 private _marker = createMarker ["hq", getMarkerPos JTC_respawnMarker];
 _marker setMarkerType JTC_hqMarkerType;
-_marker setMarkerText (markerText "Home");
+_marker setMarkerText "Home";
 closeDialog 23001;
