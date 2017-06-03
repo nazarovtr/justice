@@ -9,19 +9,27 @@ private _weaponHolderCargo = [];
 if (_container isKindOf "Man") then {
     _itemNames = (assignedItems _container) - JTC_ignoredAssignedItems;
     _itemNames = _itemNames + items _container;
-    _itemNames pushBack (headgear _container);
-    _itemNames pushBack (vest _container);
-    _magazinesWithAmmo = magazinesAmmo _container;
-    _backpackNames pushBack (backpack _container);
-    private _nearestWeaponsHolders = nearestObjects [_container, ["WeaponHolderSimulated", "GroundWeaponHolder"], 3];
-    if (count _nearestWeaponsHolders == 1) then {
-        _weaponHolderCargo = [_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo;
-    } else {
-        if (count _nearestWeaponsHolders > 1) then {
-            _weaponHolderCargo = [[_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo,
-             [_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo] call JTC_fnc_combineCargoArrays;
-        };
+    if (headgear _container != "") then {
+        _itemNames pushBack (headgear _container);
     };
+    if (vest _container != "") then {
+        _itemNames pushBack (vest _container);
+    };
+    if (backpack _container != "") then {
+        _backpackNames pushBack (backpack _container);
+    };
+    _magazinesWithAmmo = magazinesAmmo _container;
+    if (!alive _container) then {
+        private _nearestWeaponsHolders = nearestObjects [_container, ["WeaponHolderSimulated", "GroundWeaponHolder"], 3];
+        if (count _nearestWeaponsHolders == 1) then {
+            _weaponHolderCargo = [_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo;
+        } else {
+            if (count _nearestWeaponsHolders > 1) then {
+                _weaponHolderCargo = [[_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo,
+                 [_nearestWeaponsHolders select 0] call JTC_fnc_getContainerCargo] call JTC_fnc_combineCargoArrays;
+            };
+        };
+    }
 } else {
     _weaponNames = weaponCargo _container;
     _magazinesWithAmmo = magazinesAmmoCargo _container;

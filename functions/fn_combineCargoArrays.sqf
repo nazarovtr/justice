@@ -6,6 +6,7 @@ private _result = [];
     {
         _x set [1, _cargoItemNumber];
         _result pushBack _x;
+        _cargoItemNumber = _cargoItemNumber + 1;
     } forEach _x;
 } forEach _this;
 _result;
