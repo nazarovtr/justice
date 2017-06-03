@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=137;
+		nextID=140;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3915.251,77.134392,17245.713};
-		dir[]={0.13726109,-0.37235028,0.91801834};
-		up[]={0.055091605,0.92798114,0.36844471};
-		aside[]={0.98913449,-8.862844e-008,-0.14789222};
+		pos[]={13790.99,211.04062,16297.144};
+		dir[]={-0.97877419,-0.16106758,0.12680957};
+		up[]={-0.1597349,0.98694265,0.020695236};
+		aside[]={0.12848641,-1.1478551e-007,0.99172413};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,14 @@ addons[]=
 	"A3_Soft_F_Gamma_Hatchback_01",
 	"A3_Soft_F_Beta_Truck_02",
 	"A3_Soft_F_Gamma_Van_01",
-	"A3_Soft_F_Kart_Kart_01"
+	"A3_Soft_F_Kart_Kart_01",
+	"A3_Soft_F_Exp_Offroad_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -107,6 +108,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item9
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=279071;
@@ -138,7 +146,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=22;
 		class Item0
 		{
 			dataType="Group";
@@ -151,7 +159,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3911.5464,19.000553,17473.977};
+						position[]={3911.5459,19.000608,17473.977};
 						angles[]={0,3.5421631,0};
 					};
 					side="West";
@@ -160,6 +168,7 @@ class Mission
 					{
 						name="theCommander";
 						isPlayer=1;
+						isPlayable=1;
 						class Inventory
 						{
 							class uniform
@@ -175,7 +184,7 @@ class Mission
 					};
 					id=1;
 					type="B_G_Soldier_TL_F";
-					atlOffset=1.9073486e-006;
+					atlOffset=5.7220459e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -224,7 +233,7 @@ class Mission
 			{
 			};
 			id=0;
-			atlOffset=1.9073486e-006;
+			atlOffset=5.7220459e-005;
 		};
 		class Item1
 		{
@@ -566,7 +575,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[""U_C_Man_casual_2_F"",""U_I_CombatUniform"",""U_C_man_sport_2_F"",""U_C_Poor_1""],[]],[[],[]]],true]";
 						};
 					};
 				};
@@ -1336,6 +1345,45 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[""H_RacingHelmet_1_yellow_F""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3895.7229,18.894396,17469.719};
+				angles[]={0.0026703537,0,0.17680186};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=139;
+			type="C_Offroad_02_unarmed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[""U_I_C_Soldier_Bandit_4_F"",""U_I_CombatUniform"",""U_B_CTRG_1"",""U_C_Driver_1"",""U_O_FullGhillie_lsh"",""U_B_CombatUniform_mcam_vest""],[1,1,1,1,1,1]],[[],[]]],false]";
 						};
 					};
 				};

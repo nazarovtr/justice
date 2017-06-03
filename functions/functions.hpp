@@ -26,6 +26,7 @@ class justice {
         class getCargoCapacity {};
         class getItemMass {};
         class getCargoMass {};
+        class stealUniform {};
         class kill {};
     };
 };
