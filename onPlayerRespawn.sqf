@@ -18,3 +18,5 @@ if (JTC_recruitCount < 1) then {
         ["noRecruits"] remoteExec ["BIS_fnc_endMissionServer", 2];
     };
 };
+JTC_undercoverMode = "civilian";
+player setCaptive true;

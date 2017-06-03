@@ -1,6 +1,7 @@
 private _player = _this select 0;
 private _joinInProgress = _this select 1;
 [] execVM "scripts\clearMarkers.sqf";
+[] execVM "scripts\undercover.sqf";
 waitUntil {time > 2};
 defaultUniform = uniform player;
 theBase addAction ["Persistent save", "[false] call JTC_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
