@@ -50,7 +50,7 @@ class JTC_SaveDialog
         	y = 0.415 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
-        	action = "[] call JTC_fnc_saveState";
+        	action = "[] call JTCUI_fnc_saveState";
         };
         class JTC_LoadButton: RscButton
         {
@@ -60,7 +60,7 @@ class JTC_SaveDialog
         	y = 0.483 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
-        	action = "[] call JTC_fnc_loadState";
+        	action = "[] call JTCUI_fnc_loadState";
         };
         class JTC_NewButton: RscButton
         {
@@ -70,7 +70,7 @@ class JTC_SaveDialog
         	y = 0.551 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
-        	action = "[] call JTC_fnc_newGameState";
+        	action = "[] call JTCUI_fnc_newGameState";
         };
         class JTC_SaveCancelButton: RscButton
         {
@@ -100,7 +100,7 @@ class JTC_SaveDialog
         	y = 0.745 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
         	h = 0.034 * safezoneH;
-        	action = "[] call JTC_fnc_removeSavedState";
+        	action = "[] call JTCUI_fnc_removeSavedState";
         };
         class JTC_SelectedSaveLabel: RscText
         {

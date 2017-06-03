@@ -9,6 +9,7 @@ enableDebugConsole = 1;
 
 class CfgFunctions
 {
+    #include "ui_functions\ui_functions.hpp"
     #include "functions\functions.hpp"
 };
 

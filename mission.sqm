@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13790.99,211.04062,16297.144};
-		dir[]={-0.97877419,-0.16106758,0.12680957};
-		up[]={-0.1597349,0.98694265,0.020695236};
-		aside[]={0.12848641,-1.1478551e-007,0.99172413};
+		pos[]={3885.8906,25.927193,17441.443};
+		dir[]={0.82346851,-0.21377435,0.52557766};
+		up[]={0.18021181,0.97687757,0.1150209};
+		aside[]={0.53801596,2.4923065e-007,-0.84295511};
 	};
 };
 binarizationWanted=0;
@@ -37,14 +37,13 @@ addons[]=
 	"A3_Soft_F_Gamma_Hatchback_01",
 	"A3_Soft_F_Beta_Truck_02",
 	"A3_Soft_F_Gamma_Van_01",
-	"A3_Soft_F_Kart_Kart_01",
-	"A3_Soft_F_Exp_Offroad_02"
+	"A3_Soft_F_Kart_Kart_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -108,13 +107,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
-		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 randomSeed=279071;
@@ -146,7 +138,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=21;
 		class Item0
 		{
 			dataType="Group";
@@ -1345,45 +1337,6 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[""H_RacingHelmet_1_yellow_F""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item21
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3895.7229,18.894396,17469.719};
-				angles[]={0.0026703537,0,0.17680186};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=139;
-			type="C_Offroad_02_unarmed_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[""U_I_C_Soldier_Bandit_4_F"",""U_I_CombatUniform"",""U_B_CTRG_1"",""U_C_Driver_1"",""U_O_FullGhillie_lsh"",""U_B_CombatUniform_mcam_vest""],[1,1,1,1,1,1]],[[],[]]],false]";
 						};
 					};
 				};

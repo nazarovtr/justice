@@ -4,7 +4,7 @@ private _joinInProgress = _this select 1;
 [] execVM "scripts\undercover.sqf";
 waitUntil {time > 2};
 defaultUniform = uniform player;
-theBase addAction ["Persistent save", "[false] call JTC_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
+theBase addAction ["Persistent save", "[false] call JTCUI_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
 player addAction ["Kill", "[] call JTC_fnc_kill;"];
 theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
     "", "true", 3];
@@ -13,7 +13,7 @@ theBase addAction ["Move closest vehicle cargo to ammobox", "[] call JTC_fnc_mov
 theBase addAction ["Move ammobox cargo to closest vehicle",
     "[theBase, 20, 0, true] call JTC_fnc_moveCargoToClosestVehicle;", [], 0, false, true, "", "true", 3];
 if (!_joinInProgress) then {
-    [true] call JTC_fnc_showSaveDialog;
+    [true] call JTCUI_fnc_showSaveDialog;
 } else {
     if (!isNil "JTC_baseDeployed") then {
         if (JTC_baseDeployed) then {
@@ -34,4 +34,4 @@ if (!_joinInProgress) then {
     };
 };
 
-[] spawn JTC_fnc_showStateDialog;
+[] spawn JTCUI_fnc_showStateDialog;

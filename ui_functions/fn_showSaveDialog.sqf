@@ -35,7 +35,7 @@ if (_showDialog) then {
         _saveListBox lbAdd _x;
     } forEach _saveNames;
 
-    _saveListBox ctrlSetEventHandler ["LBSelChanged", "[] call JTC_fnc_saveSelectorChanged"];
+    _saveListBox ctrlSetEventHandler ["LBSelChanged", "[] call JTCUI_fnc_saveSelectorChanged"];
 
     if (_onStart) then {
         ctrlEnable [1600, false]; //save button
