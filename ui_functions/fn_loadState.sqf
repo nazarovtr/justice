@@ -47,8 +47,10 @@ fn_loadBasePosition = {
 };
 
 fn_loadEnemies = {
-    [_saveName, "enemyPopulation", 30] call fn_loadAndPublishValue;
-    [_saveName, "enemyBases", [] call JTC_fnc_initializeBases] call fn_loadAndPublishValue;
+    [_saveName, "enemyPopulation", 150] call fn_loadAndPublishValue;
+    [_saveName, "civilianPopulation", 1000] call fn_loadAndPublishValue;
+    [_saveName, "freeEnemyPopulation", 50] call fn_loadAndPublishValue;
+    [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
 };
 
 fn_loadAmmobox = {

@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=140;
+		nextID=157;
 	};
 	class MarkerIDProvider
 	{
-		nextID=12;
+		nextID=14;
 	};
 	class Camera
 	{
-		pos[]={3886.9253,22.926683,17445.711};
-		dir[]={0.91775769,-0.2015218,0.34247091};
-		up[]={0.18884425,0.97947049,0.070470989};
-		aside[]={0.34964636,9.4712595e-007,-0.9369849};
+		pos[]={3889.5256,22.548393,17443.186};
+		dir[]={0.86904967,-0.13054812,0.47725788};
+		up[]={0.1144411,0.99144024,0.062848158};
+		aside[]={0.4813776,1.7898856e-009,-0.87655187};
 	};
 };
 binarizationWanted=0;
@@ -113,6 +113,57 @@ randomSeed=279071;
 class ScenarioData
 {
 	author="nazarovtr";
+	disabledAI=1;
+	class Header
+	{
+		gameType="Coop";
+		minPlayers=1;
+		maxPlayers=8;
+	};
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
@@ -138,7 +189,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=34;
 		class Item0
 		{
 			dataType="Group";
@@ -159,7 +210,6 @@ class Mission
 					class Attributes
 					{
 						name="theCommander";
-						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{
@@ -645,28 +695,32 @@ class Mission
 		class Item9
 		{
 			dataType="Marker";
-			position[]={4165.082,0,16983.186};
-			name="base1";
-			text="Church base";
+			position[]={4560.6899,0,15417.623};
+			name="base_1";
+			text="Magos base";
 			markerType="ELLIPSE";
 			type="ellipse";
-			a=70;
-			b=70;
+			colorName="ColorGUER";
+			a=80;
+			b=80;
+			angle=141.729;
 			id=40;
-			atlOffset=-7.6808052;
+			atlOffset=-262.76227;
 		};
 		class Item10
 		{
 			dataType="Marker";
-			position[]={4318.7158,0,16570.625};
-			name="base2";
-			text="Crossroads base";
+			position[]={6829.4419,0,16043.035};
+			name="base_2";
+			text="Kore base";
 			markerType="RECTANGLE";
 			type="rectangle";
-			a=30;
-			b=30;
+			colorName="ColorGUER";
+			a=15;
+			b=25;
+			angle=143.14496;
 			id=108;
-			atlOffset=-6.2753057;
+			atlOffset=-60.970802;
 		};
 		class Item11
 		{
@@ -1342,6 +1396,196 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={4925.8638,4.9853516,16145.597};
+			name="city_1";
+			text="Negades";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			id=140;
+			atlOffset=-72.796783;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={3013.6951,0,18506.578};
+			name="city_2";
+			text="Fotia";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=143;
+			atlOffset=-33.16;
+		};
+		class Item23
+		{
+			dataType="Marker";
+			position[]={7171.8521,0,16467.945};
+			name="city_3";
+			text="Kore";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			id=145;
+			atlOffset=-121.65755;
+		};
+		class Item24
+		{
+			dataType="Marker";
+			position[]={7381.9014,22.589844,15402.053};
+			name="city_4";
+			text="Fotia";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=146;
+			atlOffset=-32.811604;
+		};
+		class Item25
+		{
+			dataType="Marker";
+			position[]={3686.833,0,13861.805};
+			name="city_5";
+			text="Aggelochori";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=400;
+			b=150;
+			angle=66.623001;
+			id=147;
+			atlOffset=-14.82243;
+		};
+		class Item26
+		{
+			dataType="Marker";
+			position[]={3601.95,0,13058.026};
+			name="city_6";
+			text="Kavala";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=400;
+			b=400;
+			angle=66.623001;
+			id=148;
+			atlOffset=-10.585486;
+		};
+		class Item27
+		{
+			dataType="Marker";
+			position[]={4075.823,0,11702.199};
+			name="city_7";
+			text="Neri";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=200;
+			angle=49.115978;
+			id=149;
+			atlOffset=-45.410954;
+		};
+		class Item28
+		{
+			dataType="Marker";
+			position[]={5071.918,0,11279.489};
+			name="city_8";
+			text="Panachori";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=200;
+			angle=322.16095;
+			id=150;
+			atlOffset=-52.129185;
+		};
+		class Item29
+		{
+			dataType="Marker";
+			position[]={3827.532,0,11136.11};
+			name="city_9";
+			text="Neri";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=100;
+			b=80;
+			angle=116.33289;
+			id=151;
+			atlOffset=-4.6290178;
+		};
+		class Item30
+		{
+			dataType="Marker";
+			position[]={3592.4851,0,10272.02};
+			name="city_10";
+			text="Athanos";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=152;
+			atlOffset=-16.202353;
+		};
+		class Item31
+		{
+			dataType="Marker";
+			position[]={3905.605,0,12295.419};
+			name="base_4";
+			text="Kavala base";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGUER";
+			a=15;
+			b=25;
+			angle=88.843971;
+			id=153;
+			atlOffset=-50.174236;
+		};
+		class Item32
+		{
+			dataType="Marker";
+			position[]={5329.7568,0,14216.61};
+			name="base_3";
+			text="Kavala base";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGUER";
+			a=40;
+			b=150;
+			angle=262.30399;
+			id=154;
+			atlOffset=-34.749924;
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={4199.626,0,16898.973};
+			name="city_11";
+			text="Agios Konstantinos";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=50;
+			angle=64.676994;
+			id=156;
+			atlOffset=-2.5565734;
 		};
 	};
 };

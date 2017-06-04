@@ -5,6 +5,8 @@ private _joinInProgress = _this select 1;
 waitUntil {time > 2};
 defaultUniform = uniform player;
 theBase addAction ["Persistent save", "[false] call JTCUI_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
+// TODO remove cheats
+player onMapSingleClick "if (_alt) then {_this setPosATL _pos}";
 player addAction ["Kill", "[] call JTC_fnc_kill;"];
 theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
     "", "true", 3];

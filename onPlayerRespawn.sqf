@@ -25,3 +25,6 @@ if (JTC_recruitCount < 1) then {
         ["noRecruits"] remoteExec ["BIS_fnc_endMissionServer", 2];
     };
 };
+
+// TODO remove cheats
+player onMapSingleClick "if (_alt) then {player setPosATL _pos}";

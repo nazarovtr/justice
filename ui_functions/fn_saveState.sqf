@@ -38,6 +38,8 @@ if (count _saveName == 0) then {
     [_saveName, "vehicles", [theBase] call JTC_fnc_getVehiclesAtBase] call fn_saveValue;
     [_saveName, "enemyBases", JTC_enemyBases] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
+    [_saveName, "civilianPopulation", JTC_civilianPopulation] call fn_saveValue;
+    [_saveName, "freeEnemyPopulation", JTC_freeEnemyPopulation] call fn_saveValue;
     {
         private _playerData = [getPlayerUID _x] call JTC_fnc_getPlayerData;
         _playerData set [1, uniform _x];

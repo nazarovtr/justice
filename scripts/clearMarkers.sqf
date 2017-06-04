@@ -5,4 +5,7 @@
         _uiMarker setMarkerType "n_installation";
         _uiMarker setMarkerText (markerText _x);
     };
+    if ((_x find "city") == 0) then {
+        _x setMarkerAlpha 0;
+    };
 } forEach allMapMarkers;

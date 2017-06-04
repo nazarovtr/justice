@@ -5,7 +5,7 @@ if (isServer) then {
     setDate [2035, 5, 12, (paramsArray select 1), 0];
     JTC_money = 97000;
     JTC_recruitCount = 82;
-    JTC_spawnDistance = 200;
+    JTC_spawnDistance = 1000;
     publicVariable "JTC_money";
     publicVariable "JTC_recruitCount";
     publicVariable "JTC_spawnDistance";
