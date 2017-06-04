@@ -12,3 +12,15 @@ $[
 	[1001,"JTC_SelectedSaveLabel",[1,"Selected save",["0.484062 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.111562 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1603,"JTC_SaveCancelButton",[1,"Cancel",["0.484062 * safezoneW + safezoneX","0.619 * safezoneH + safezoneY","0.175312 * safezoneW","0.034 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
 ]
+
+/* #Qinyno
+$[
+	1.063,
+	["uniform",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[2200,"",[2,"",["13.5 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","13 * GUI_GRID_W","10.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1500,"UniformDialogListBox",[2,"",["14 * GUI_GRID_W + GUI_GRID_X","8.5 * GUI_GRID_H + GUI_GRID_Y","12 * GUI_GRID_W","6 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1000,"UniformDialogLabel",[2,"Uniforms in backpack and vehicle",["14 * GUI_GRID_W + GUI_GRID_X","7 * GUI_GRID_H + GUI_GRID_Y","12 * GUI_GRID_W","1 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1600,"UniformDialogChangeButton",[2,"Change",["14 * GUI_GRID_W + GUI_GRID_X","15 * GUI_GRID_H + GUI_GRID_Y","12 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
+

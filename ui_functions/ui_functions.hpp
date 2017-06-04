@@ -4,10 +4,12 @@ class justiceUi {
         file = "ui_functions";
         class showSaveDialog {};
         class showStateDialog {};
+        class showUniformDialog{};
         class saveState {};
         class loadState {};
         class newGameState {};
         class removeSavedState {};
         class saveSelectorChanged {};
+        class changeUniform{};
     };
 };

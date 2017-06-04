@@ -8,8 +8,8 @@ while {true} do {
     private _hmd = hmd player;
     private _headgear = headgear player;
     private _weaponEquipped = (primaryWeapon player) != "" || (handgunWeapon player) != "" || (secondaryWeapon player) != "";
-    private _playerLooksCivilian = _vest == "" && _hmd == "" && !(_headgear in JTC_helmets) && _uniform in JTC_civilianUniforms
-                               && !_weaponEquipped;
+    private _playerLooksCivilian = _vest == "" && _hmd == "" && !(_headgear in JTC_helmets) &&
+        (_uniform in JTC_civilianUniforms || _uniform == "") && !_weaponEquipped;
     if (_playerLooksCivilian || JTC_civilianFaction == (faction vehicle player)) then {
         _newUndercoverMode = "civilian";
     } else {

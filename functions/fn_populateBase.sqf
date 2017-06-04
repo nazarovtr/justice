@@ -58,11 +58,11 @@ while {_populationLeft > 0} do {
         _x setVariable ["_baseNumber", _baseNumber, true];
         _x addEventHandler ["killed", {
             private _unit = _this select 0;
-            _unit addAction ["Load loot into closest vehicle",
-             "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;", [], 0, false, true, "", "true", 3];
+            [_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
+             [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
             if ((random 1) < 0.3) then {
-                _unit addAction ["Steal uniform",
-                 "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "", "true", 3];
+                [_unit, ["Steal uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
+                 "true", 3]] remoteExec ["addAction", 0, _unit];
             };
             private _baseNumber = _unit getVariable "_baseNumber";
             private _base = JTC_enemyBases select _baseNumber;

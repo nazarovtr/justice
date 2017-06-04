@@ -3,7 +3,9 @@ JTC_enemyFaction = "IND_F";
 JTC_civilianFaction = "CIV_F";
 JTC_baseRadius = 100;
 JTC_ignoredAssignedItems = ["ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"];
-JTC_startingVehicles = [startingQuad1, startingOffroad1, startingSport1, startingTruck1, startingTruck2, startingKart1];
+if (!isNil("startingQuad1")) then {
+    JTC_startingVehicles = [startingQuad1, startingOffroad1, startingSport1, startingTruck1, startingTruck2, startingKart1];
+};
 JTC_respawnMarker = "respawn_west";
 JTC_hqMarkerType = "b_hq";
 JTC_civilianUniforms = ["U_C_Poloshirt_blue", "U_C_Poloshirt_burgundy", "U_C_Poloshirt_stripped",

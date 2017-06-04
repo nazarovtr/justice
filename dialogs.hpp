@@ -118,6 +118,67 @@ class JTC_SaveDialog
     };
 };
 
+class JTC_UniformDialog
+{
+    idd = 23003;
+    movingEnabled = false;
+    class controls
+    {
+        ////////////////////////////////////////////////////////
+        // GUI EDITOR OUTPUT START (by Timur, v1.063, #Qinyno)
+        ////////////////////////////////////////////////////////
+
+        class JTC_UniformBackGround: IGUIBack
+        {
+            idc = 2201;
+            x = 10.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 6.5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 19 * GUI_GRID_W;
+            h = 12.5 * GUI_GRID_H;
+        };
+        class JTC_UniformDialogListBox: RscListbox
+        {
+            idc = 1501;
+            x = 11 * GUI_GRID_W + GUI_GRID_X;
+            y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 18 * GUI_GRID_W;
+            h = 6 * GUI_GRID_H;
+        };
+        class JTC_UniformDialogLabel: RscText
+        {
+            idc = 1002;
+            text = "Uniforms in backpack and vehicle"; //--- ToDo: Localize;
+            x = 11 * GUI_GRID_W + GUI_GRID_X;
+            y = 7 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 1 * GUI_GRID_H;
+        };
+        class JTC_UniformDialogChangeButton: RscButton
+        {
+            idc = 1606;
+            text = "Change"; //--- ToDo: Localize;
+            x = 11 * GUI_GRID_W + GUI_GRID_X;
+            y = 15 * GUI_GRID_H + GUI_GRID_Y;
+            w = 18 * GUI_GRID_W;
+            h = 1.5 * GUI_GRID_H;
+            action = "[] call JTCUI_fnc_changeUniform";
+        };
+        class JTC_UniformDialogCancelButton: RscButton
+        {
+            idc = 1607;
+            text = "Cancel"; //--- ToDo: Localize;
+            x = 11 * GUI_GRID_W + GUI_GRID_X;
+            y = 17 * GUI_GRID_H + GUI_GRID_Y;
+            w = 18 * GUI_GRID_W;
+            h = 1.5 * GUI_GRID_H;
+            action = "closeDialog 0";
+        };
+        ////////////////////////////////////////////////////////
+        // GUI EDITOR OUTPUT END
+        ////////////////////////////////////////////////////////
+    };
+};
+
 class RscTitles
 {
     class JTC_StateTitle

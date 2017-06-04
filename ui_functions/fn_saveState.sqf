@@ -38,6 +38,7 @@ if (count _saveName == 0) then {
     [_saveName, "vehicles", [theBase] call JTC_fnc_getVehiclesAtBase] call fn_saveValue;
     [_saveName, "enemyBases", JTC_enemyBases] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
+    [_saveName, "playerData", JTC_playerData] call fn_saveValue;
     saveProfileNamespace;
     closeDialog 23001;
     hint "Saved";

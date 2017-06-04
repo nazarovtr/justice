@@ -20,6 +20,9 @@ class justice {
         class getItemMass {};
         class getCargoMass {};
         class stealUniform {};
+        class removeItems {};
+        class getPlayerData {};
+        class checkUniform {};
         class kill {};
     };
 };

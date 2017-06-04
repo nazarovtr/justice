@@ -64,6 +64,7 @@ fn_loadVehicles = {
 fn_loadGuerillaResources = {
     [_saveName, "recruitCount", 82] call fn_loadAndPublishValue;
     [_saveName, "money", 97000] call fn_loadAndPublishValue;
+    [_saveName, "playerData", []] call fn_loadAndPublishValue;
 };
 
 fn_setCommander = {
