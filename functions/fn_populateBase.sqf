@@ -38,11 +38,11 @@ while {_populationLeft > 0} do {
         _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
         _x addWaypoint [getPos leader _x, 0];
         [_x, 4] setWaypointType "CYCLE";
-        [_x, 1] setWaypointBehaviour "CARELESS";
+        [_x, 1] setWaypointBehaviour "SAFE";
     } else {
         _x addWaypoint [getPos leader _x, 0];
         [_x, 1] setWaypointType "HOLD";
-        [_x, 1] setWaypointBehaviour "CARELESS";
+        [_x, 1] setWaypointBehaviour "SAFE";
         {
             _x spawn {
                 sleep 10;

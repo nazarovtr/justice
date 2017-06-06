@@ -9,8 +9,10 @@ class justice {
         class combineCargoArrays {};
         class setContainerCargo {};
         class populateBase {};
+        class populateCity {};
         class isInSpawnArea {};
         class initializeBases {};
+        class initializeCities {};
         class getVehiclesAtBase {};
         class getPlayersAtBaseBaseInventory {};
         class createVehiclesAtBase {};

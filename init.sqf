@@ -1,6 +1,6 @@
 call compile preprocessFileLineNumbers "scripts\constants.sqf";
 if (isServer) then {
-    call compile preprocessFileLineNumbers "scripts\enemies.sqf";
+    call compile preprocessFileLineNumbers "scripts\population.sqf";
     waitUntil {!isNil "paramsArray";};
     setDate [2035, 5, 12, (paramsArray select 1), 0];
     JTC_money = 97000;

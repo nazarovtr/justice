@@ -46,10 +46,12 @@ fn_loadBasePosition = {
     } forEach switchableUnits;
 };
 
-fn_loadEnemies = {
+fn_loadPopulation = {
     [_saveName, "enemyPopulation", 150] call fn_loadAndPublishValue;
     [_saveName, "civilianPopulation", 1000] call fn_loadAndPublishValue;
+    [_saveName, "civilianSpawnPercent", 10] call fn_loadAndPublishValue;
     [_saveName, "freeEnemyPopulation", 50] call fn_loadAndPublishValue;
+    [_saveName, "cities", []] call fn_loadAndPublishValue;
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
 };
 
@@ -97,6 +99,6 @@ if ((count _saveName) == 0) then {
     [] call fn_loadAmmobox;
     [] call fn_loadVehicles;
     [] call fn_loadGuerillaResources;
-    [] call fn_loadEnemies;
+    [] call fn_loadPopulation;
     closeDialog 23001;
 };

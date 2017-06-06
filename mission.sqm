@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=157;
+		nextID=165;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3889.5256,22.548393,17443.186};
-		dir[]={0.86904967,-0.13054812,0.47725788};
-		up[]={0.1144411,0.99144024,0.062848158};
-		aside[]={0.4813776,1.7898856e-009,-0.87655187};
+		pos[]={3886.7097,22.293846,17445.525};
+		dir[]={0.93588871,-0.12218259,0.33048379};
+		up[]={0.11527878,0.99250227,0.04070767};
+		aside[]={0.33297846,-6.4756023e-007,-0.9429574};
 	};
 };
 binarizationWanted=0;
@@ -210,6 +210,7 @@ class Mission
 					class Attributes
 					{
 						name="theCommander";
+						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{

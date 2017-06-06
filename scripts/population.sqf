@@ -19,3 +19,6 @@ JTC_enemySmallestSquadSize = 8;
         JTC_enemySmallestSquadSize = _x select 1;
     };
 } forEach JTC_enemySquads;
+
+JTC_civilianUnits = ["C_man_1", "C_man_polo_1_F", "C_man_polo_2_F", "C_man_polo_3_F", "C_man_polo_4_F", "C_man_polo_5_F",
+     "C_man_polo_6_F", "C_man_p_fugitive_F", "C_man_w_worker_F", "C_man_hunter_1_F"];

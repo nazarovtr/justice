@@ -37,8 +37,10 @@ if (count _saveName == 0) then {
      [] call JTC_fnc_getPlayersAtBaseBaseInventory] call JTC_fnc_combineCargoArrays] call fn_saveValue;
     [_saveName, "vehicles", [theBase] call JTC_fnc_getVehiclesAtBase] call fn_saveValue;
     [_saveName, "enemyBases", JTC_enemyBases] call fn_saveValue;
+    [_saveName, "cities", JTC_cities] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
     [_saveName, "civilianPopulation", JTC_civilianPopulation] call fn_saveValue;
+    [_saveName, "civilianSpawnPercent", JTC_civilianSpawnPercent] call fn_saveValue;
     [_saveName, "freeEnemyPopulation", JTC_freeEnemyPopulation] call fn_saveValue;
     {
         private _playerData = [getPlayerUID _x] call JTC_fnc_getPlayerData;
