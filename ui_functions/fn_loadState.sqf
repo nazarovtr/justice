@@ -48,7 +48,7 @@ fn_loadBasePosition = {
 
 fn_loadPopulation = {
     [_saveName, "enemyPopulation", 150] call fn_loadAndPublishValue;
-    [_saveName, "civilianPopulation", 1000] call fn_loadAndPublishValue;
+    [_saveName, "civilianPopulation", 1500] call fn_loadAndPublishValue;
     [_saveName, "civilianSpawnPercent", 10] call fn_loadAndPublishValue;
     [_saveName, "freeEnemyPopulation", 50] call fn_loadAndPublishValue;
     [_saveName, "cities", []] call fn_loadAndPublishValue;

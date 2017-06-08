@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=165;
+		nextID=182;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3886.7097,22.293846,17445.525};
-		dir[]={0.93588871,-0.12218259,0.33048379};
-		up[]={0.11527878,0.99250227,0.04070767};
-		aside[]={0.33297846,-6.4756023e-007,-0.9429574};
+		pos[]={3646.7046,132.8419,13024.248};
+		dir[]={0.36489573,-0.67182326,-0.64462227};
+		up[]={0.33095753,0.7406913,-0.58466834};
+		aside[]={-0.87025934,8.8009983e-007,-0.49261841};
 	};
 };
 binarizationWanted=0;
@@ -189,7 +189,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=34;
+		items=47;
 		class Item0
 		{
 			dataType="Group";
@@ -1587,6 +1587,199 @@ class Mission
 			angle=64.676994;
 			id=156;
 			atlOffset=-2.5565734;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={9316.7354,-1.2509766,15893.756};
+			name="city_12";
+			text="Agios Dionysyis";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=350;
+			angle=68.262001;
+			id=165;
+			atlOffset=-120.2719;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={8623.5234,0,18268.572};
+			name="city_13";
+			text="Syrta";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			angle=50.510998;
+			id=166;
+			atlOffset=-181.28862;
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={10323.089,0,19073.896};
+			name="city_14";
+			text="Galati";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=120;
+			b=120;
+			angle=50.510994;
+			id=167;
+			atlOffset=-127.45699;
+		};
+		class Item37
+		{
+			dataType="Marker";
+			position[]={9431.4336,0,20262.197};
+			name="city_15";
+			text="Abdera";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=100;
+			b=100;
+			angle=50.510998;
+			id=168;
+			atlOffset=-124.67358;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={4579.124,0,21391.273};
+			name="city_16";
+			text="Oreokastro";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=100;
+			b=100;
+			angle=50.510994;
+			id=170;
+			atlOffset=-299.6376;
+		};
+		class Item39
+		{
+			dataType="Marker";
+			position[]={4918.2969,0,21861.623};
+			name="city_17";
+			text="Castle";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=171;
+			atlOffset=-332.39639;
+		};
+		class Item40
+		{
+			dataType="Marker";
+			position[]={9040.7764,0,11983.674};
+			name="city_18";
+			text="Zaros";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=200;
+			b=200;
+			angle=322.16098;
+			id=172;
+			atlOffset=-22.843481;
+		};
+		class Item41
+		{
+			dataType="Marker";
+			position[]={9386.5615,0.91308594,11817.951};
+			name="city_19";
+			text="Zaros";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=180;
+			angle=322.16098;
+			id=173;
+			atlOffset=-14.869593;
+		};
+		class Item42
+		{
+			dataType="Marker";
+			position[]={10634.822,0,12262.519};
+			name="city_20";
+			text="Therisa";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			angle=39.843998;
+			id=175;
+			atlOffset=-15.965034;
+		};
+		class Item43
+		{
+			dataType="Marker";
+			position[]={10992.793,0,13417.826};
+			name="city_21";
+			text="Poliakko";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			angle=39.843994;
+			id=176;
+			atlOffset=-26.562761;
+		};
+		class Item44
+		{
+			dataType="Marker";
+			position[]={11730.964,0,13715.793};
+			name="city_22";
+			text="Katalaki";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=150;
+			b=100;
+			angle=128.70798;
+			id=177;
+			atlOffset=-12.951488;
+		};
+		class Item45
+		{
+			dataType="Marker";
+			position[]={11116.052,0,14588.013};
+			name="city_23";
+			text="Alikampos";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=120;
+			b=120;
+			angle=50.510998;
+			id=180;
+			atlOffset=-44.173325;
+		};
+		class Item46
+		{
+			dataType="Marker";
+			position[]={9711.9121,0,22292.014};
+			name="city_24";
+			text="Krya Nera";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=181;
+			atlOffset=-2.587805;
 		};
 	};
 };

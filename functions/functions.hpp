@@ -25,6 +25,8 @@ class justice {
         class removeItems {};
         class getPlayerData {};
         class checkUniform {};
+        class selectWeightedRandom {};
+        class getNearestLinearRoadWithDirection {};
         class kill {};
     };
 };
