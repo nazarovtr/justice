@@ -28,5 +28,8 @@ class justice {
         class selectWeightedRandom {};
         class getNearestLinearRoadWithDirection {};
         class kill {};
+        class addCivilianEventHandlers {};
+        class addCivilianVehicleEventHandlers {};
+        class getClosestCity {};
     };
 };

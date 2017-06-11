@@ -11,13 +11,16 @@
 // Set traffic parameters.
 _parameters = [
 	["SIDE", civilian],
-	["VEHICLES", ["C_Offroad_01_F", "C_Offroad_01_repair_F", "C_Quadbike_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F"]],
 	["VEHICLES_COUNT", 10],
-	["MIN_SPAWN_DISTANCE", 800],
-	["MAX_SPAWN_DISTANCE", 1200],
 	["MIN_SKILL", 0.4],
 	["MAX_SKILL", 0.6],
-	["DEBUG", true]
+	["DEBUG", true],
+	["ON_SPAWN_CALLBACK", {
+	    [_this select 0] call JTC_fnc_addCivilianVehicleEventHandlers;
+	    {
+	        [_x] call JTC_fnc_addCivilianEventHandlers;
+	    } forEach (_this select 1);
+	}]
 ];
 
 // Start an instance of the traffic

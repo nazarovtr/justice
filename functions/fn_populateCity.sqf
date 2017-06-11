@@ -59,39 +59,12 @@ while {_vehicleCount > 0 && _attemptLimit > 0} do {
 // event handling
 {
     {
-        _x setVariable ["_cityNumber", _cityNumber, true];
-        _x addEventHandler ["killed", {
-            private _unit = _this select 0;
-            if ((random 1) < 0.3) then {
-                [_unit, ["Steal clothes", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
-                 "true", 3]] remoteExec ["addAction", 0, _unit];
-            };
-            private _cityNumber = _unit getVariable "_cityNumber";
-            private _city = JTC_cities select _cityNumber;
-            private _populationDecrease = round (100 / JTC_civilianSpawnPercent);
-            _populationDecrease = _populationDecrease min (_city select 1);
-            _city set [1, (_city select 1) - _populationDecrease];
-            JTC_civilianPopulation = JTC_civilianPopulation - _populationDecrease;
-            publicVariable "JTC_civilianPopulation";
-            publicVariable "JTC_cities";
-            (format ["Unit killed in city number %1. Population: %2, Bases: %3", _cityNumber, JTC_civilianPopulation, JTC_cities]) remoteExec ["systemChat"];
-        }];
-        _x addEventHandler ["FiredNear", {
-            private _unit = _this select 0;
-            _unit forceWalk false;
-        }];
+        [_x] call JTC_fnc_addCivilianEventHandlers;
     } forEach units _x;
 } forEach _groups;
 
 {
-    _x addEventHandler ["GetIn", {
-        private _vehicle = _this select 0;
-        private _unit = _this select 2;
-        if (isPlayer _unit) then {
-            "Vehicle stolen" remoteExec ["systemChat"];
-            _vehicle setVariable ["_stolen", true, true]; // do not despawn
-        };
-    }];
+    [_x] call JTC_fnc_addCivilianVehicleEventHandlers;
 } forEach _vehicles;
 
 (format ["Spawned %1 units and %2 vehicles on %3 population %4", _groups, _vehicles, _markerName,
