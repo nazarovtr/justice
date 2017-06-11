@@ -6,9 +6,13 @@ if (isServer) then {
     JTC_money = 97000;
     JTC_recruitCount = 82;
     JTC_spawnDistance = 1000;
+    JTC_pointsOfInterest = [];
+    JTC_pointOfInterestNumber = 0;
     publicVariable "JTC_money";
     publicVariable "JTC_recruitCount";
     publicVariable "JTC_spawnDistance";
+    publicVariable "JTC_pointsOfInterest";
+    publicVariable "JTC_pointOfInterestNumber";
     JTC_defaultBasePos = getPos theBase;
     publicVariable "JTC_defaultBasePos";
     [] execVM "scripts\initTimeout.sqf";

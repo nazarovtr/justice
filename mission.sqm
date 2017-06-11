@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3646.7046,132.8419,13024.248};
-		dir[]={0.36489573,-0.67182326,-0.64462227};
-		up[]={0.33095753,0.7406913,-0.58466834};
-		aside[]={-0.87025934,8.8009983e-007,-0.49261841};
+		pos[]={3886.3979,24.079185,17442.664};
+		dir[]={0.91097057,-0.15793428,0.38109943};
+		up[]={0.14573747,0.98744065,0.060967792};
+		aside[]={0.38593906,-7.0373062e-008,-0.92254603};
 	};
 };
 binarizationWanted=0;
@@ -1614,7 +1614,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=100;
-			angle=50.510998;
+			angle=50.510986;
 			id=166;
 			atlOffset=-181.28862;
 		};
@@ -1629,7 +1629,7 @@ class Mission
 			colorName="ColorCIV";
 			a=120;
 			b=120;
-			angle=50.510994;
+			angle=50.510986;
 			id=167;
 			atlOffset=-127.45699;
 		};
@@ -1644,7 +1644,7 @@ class Mission
 			colorName="ColorCIV";
 			a=100;
 			b=100;
-			angle=50.510998;
+			angle=50.510986;
 			id=168;
 			atlOffset=-124.67358;
 		};
@@ -1659,7 +1659,7 @@ class Mission
 			colorName="ColorCIV";
 			a=100;
 			b=100;
-			angle=50.510994;
+			angle=50.510986;
 			id=170;
 			atlOffset=-299.6376;
 		};
@@ -1688,7 +1688,7 @@ class Mission
 			colorName="ColorCIV";
 			a=200;
 			b=200;
-			angle=322.16098;
+			angle=322.16095;
 			id=172;
 			atlOffset=-22.843481;
 		};
@@ -1703,7 +1703,7 @@ class Mission
 			colorName="ColorCIV";
 			a=50;
 			b=180;
-			angle=322.16098;
+			angle=322.16095;
 			id=173;
 			atlOffset=-14.869593;
 		};
@@ -1718,7 +1718,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=100;
-			angle=39.843998;
+			angle=39.843987;
 			id=175;
 			atlOffset=-15.965034;
 		};
@@ -1733,7 +1733,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=100;
-			angle=39.843994;
+			angle=39.843987;
 			id=176;
 			atlOffset=-26.562761;
 		};
@@ -1748,7 +1748,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=100;
-			angle=128.70798;
+			angle=128.70796;
 			id=177;
 			atlOffset=-12.951488;
 		};
@@ -1763,7 +1763,7 @@ class Mission
 			colorName="ColorCIV";
 			a=120;
 			b=120;
-			angle=50.510998;
+			angle=50.510986;
 			id=180;
 			atlOffset=-44.173325;
 		};

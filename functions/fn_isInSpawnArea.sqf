@@ -10,6 +10,9 @@ if (isMultiplayer) then {
     _spawnAreaAnchorPositions pushBack getPos player;
 };
 
+{
+    _spawnAreaAnchorPositions pushBack getMarkerPos _x;
+} forEach JTC_pointsOfInterest;
 //TODO points of interest
 
 private _result = false;

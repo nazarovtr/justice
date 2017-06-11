@@ -11,5 +11,6 @@ class justiceUi {
         class removeSavedState {};
         class saveSelectorChanged {};
         class changeUniform{};
+        class togglePointOfInterest{};
     };
 };
