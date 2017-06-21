@@ -2,9 +2,9 @@ systemChat "new game";
 
 JTC_commanderName = name player;
 JTC_commanderId = getPlayerUID player;
-JTC_civilianPopulation = 1500;
+JTC_civilianPopulation = 4000;
 JTC_civilianSpawnPercent = 10;
-JTC_enemyPopulation = 150;
+JTC_enemyPopulation = 600;
 JTC_freeEnemyPopulation = 0;
 JTC_enemyBases = [];
 [] call JTC_fnc_initializeCities;

@@ -134,7 +134,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	
 	private ["_side", "_vehicleCount", "_minSkill", "_maxSkill", "_debug", "_allPlayerPositions",
 	  "_allPlayerPositionsTemp", "_activeVehiclesAndGroup", "_vehiclesGroup", "_spawnSegment", "_vehicle", "_group",
-	  "_result", "_vehicleType", "_vehiclesCrew", "_skill", "_minDistance", "_tries", "_trafficLocation",
+	  "_vehicleType", "_vehiclesCrew", "_skill", "_minDistance", "_tries", "_trafficLocation",
 	  "_currentEntityNo", "_vehicleVarName", "_tempVehiclesAndGroup", "_deletedVehiclesCount", "_firstIteration",
 	  "_roadSegments", "_destinationSegment", "_destinationPos", "_direction", "_roadSegmentDirection",
 	  "_testDirection", "_facingAway", "_posX", "_posY", "_pos", "_currentInstanceIndex", "_fnc_OnSpawnVehicle",
@@ -277,6 +277,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	    // If there are few vehicles, add a vehicle
 	    _correctedVehicleCount = _vehicleCount;
 	    _tries = 0;
+	    _maxSpawnDistance = JTC_spawnDistance + 100;
 	    while {count _activeVehiclesAndGroup < _correctedVehicleCount && _tries < 1} do {
 			sleep 0.1;
 			
@@ -352,11 +353,13 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            _pos = [_posX, _posY, 0];
 	            
 	            // Create vehicle
+	            _vehiclesGroup = createGroup civilian;
+	            _vehiclesCrew = [_vehiclesGroup createUnit [selectRandom JTC_civilianUnits, _pos, [], 0, "NONE"]];
 	            _vehicleType = JTC_civilianVehicles call JTC_fnc_selectWeightedRandom;
-	            _result = [_pos, _direction, _vehicleType, _side] call BIS_fnc_spawnVehicle;
-	            _vehicle = _result select 0;
-	            _vehiclesCrew = _result select 1;
-	            _vehiclesGroup = _result select 2;
+	            _vehicle = _vehicleType createVehicle _pos;
+                _vehicle setDir _direction;
+	            (_vehiclesCrew select 0) moveInDriver _vehicle;
+	            _vehicle limitSpeed 70;
 	            
 	            // Name vehicle
 	            sleep random 0.1;
@@ -387,7 +390,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            sleep 0.01;
 	            
 	            // Run spawn script and attach handle to vehicle
-	            _vehicle setVariable ["dre_scriptHandle", _result spawn _fnc_OnSpawnVehicle];
+	            _vehicle setVariable ["dre_scriptHandle", [_vehicle, _vehiclesCrew, _vehiclesGroup] spawn _fnc_OnSpawnVehicle];
 	        };
 	        
             _tries = _tries + 1;
