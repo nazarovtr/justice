@@ -1,11 +1,29 @@
 #include "uiDefines.hpp"
 #include "dialogs.hpp"
 
+onLoadName = "Justice Altis";
+onLoadMission = "Fight for Justice agains the corrupt government";
+briefingName = "Justice Altis";
+loadScreen = "images\Justice.paa";
+displayName = "Justice Altis";
+overviewText = "Fight for Justice agains the corrupt government";
+overviewPicture = "images\Justice.paa";
+author = "Timur Nazarov";
 respawn = "BASE";
 respawnDelay = 5;
 respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
+saving = 0;
+corpseManagerMode = 1;
+corpseLimit = 50;
+corpseRemovalMinTime = 1800;
+corpseRemovalMaxTime = 3600;
+wreckManagerMode = 1;
+wreckLimit = 10;
+wreckRemovalMinTime = 120;
+wreckRemovalMaxTime = 1200;
+minPlayerDistance = 200;
 
 class CfgFunctions
 {
