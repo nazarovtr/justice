@@ -20,6 +20,8 @@ private _actualBasePopulation = 0;
     private _basePopulation = floor (_topBasePopulation * _area / _totalBaseArea);
     if (_basePopulation >= 4) then {
         _x set [1, _basePopulation];
+        _x pushBack _basePopulation; // normal base population
+        _x pushBack "ok"; // base status
         _actualBasePopulation = _actualBasePopulation + _basePopulation;
     } else {
         _x set [1, 0];

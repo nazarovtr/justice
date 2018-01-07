@@ -1,6 +1,8 @@
-private _markerName = _this select 0;
-private _baseNumber = _this select 1;
-private _population = _this select 2;
+private _baseNumber = _this select 0;
+private _base = JTC_enemyBases select _baseNumber;
+private _markerName = _base select 0;
+private _population = _base select 1;
+private _status = _base select 3;
 
 JTC_spawnedBases set [_baseNumber, true];
 
@@ -8,25 +10,27 @@ JTC_spawnedBases set [_baseNumber, true];
 private _populationLeft = _population;
 private _groups = [];
 private _availableSquads = [];
-for "_i" from 0 to (count JTC_enemySquads) - 1 do {
-    _availableSquads pushBack _i;
-};
-while {_populationLeft > 0} do {
-    if (_populationLeft >= JTC_enemySmallestSquadSize) then {
-        private _squadNumber = selectRandom _availableSquads;
-        private _squad = JTC_enemySquads select _squadNumber;
-        if ((_squad select 1) <= _populationLeft) then {
-            private _group = [_markerName call BIS_fnc_randomPosTrigger, JTC_enemySide, _squad select 0] call BIS_Fnc_spawnGroup;
-            _groups pushBack _group;
-            _populationLeft = _populationLeft - (_squad select 1);
+if (_status == "ok") then {
+    for "_i" from 0 to (count JTC_enemySquads) - 1 do {
+        _availableSquads pushBack _i;
+    };
+    while {_populationLeft > 0} do {
+        if (_populationLeft >= JTC_enemySmallestSquadSize) then {
+            private _squadNumber = selectRandom _availableSquads;
+            private _squad = JTC_enemySquads select _squadNumber;
+            if ((_squad select 1) <= _populationLeft) then {
+                private _group = [_markerName call BIS_fnc_randomPosTrigger, JTC_enemySide, _squad select 0] call BIS_Fnc_spawnGroup;
+                _groups pushBack _group;
+                _populationLeft = _populationLeft - (_squad select 1);
+            } else {
+                _availableSquads = _availableSquads - [_squadNumber];
+            };
         } else {
-            _availableSquads = _availableSquads - [_squadNumber];
+            private _group = createGroup JTC_enemySide;
+            _group createUnit [(selectRandom JTC_enemyInfantryUnits) select 0, _markerName call BIS_fnc_randomPosTrigger, [], 0, "NONE"];
+            _groups pushBack _group;
+            _populationLeft = _populationLeft - 1;
         };
-    } else {
-        private _group = createGroup JTC_enemySide;
-        _group createUnit [(selectRandom JTC_enemyInfantryUnits) select 0, _markerName call BIS_fnc_randomPosTrigger, [], 0, "NONE"];
-        _groups pushBack _group;
-        _populationLeft = _populationLeft - 1;
     };
 };
 
@@ -58,6 +62,7 @@ while {_populationLeft > 0} do {
         _x setVariable ["_baseNumber", _baseNumber, true];
         _x addEventHandler ["killed", {
             private _unit = _this select 0;
+            [-1, -2] call JTC_fnc_changeReputation;
             [_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
              [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
             if ((random 1) < 0.3) then {
@@ -67,6 +72,10 @@ while {_populationLeft > 0} do {
             private _baseNumber = _unit getVariable "_baseNumber";
             private _base = JTC_enemyBases select _baseNumber;
             _base set [1, (_base select 1) - 1];
+            if (_base select 3 == "ok" and (1.0 * (_base select 1) / (_base select 2)) < 0.3) then {
+                _base set [3, "abandoned"];
+                [_base select 2, -2 * (_base select 2)] call JTC_fnc_changeReputation;
+            };
             JTC_enemyPopulation = JTC_enemyPopulation - 1;
             publicVariable "JTC_enemyPopulation";
             publicVariable "JTC_enemyBases";

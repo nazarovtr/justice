@@ -3,6 +3,7 @@ private _civilian = _this select 0;
 _civilian addEventHandler ["killed", {
     if (!isNil "JTC_cities") then {
         private _unit = _this select 0;
+        [-10, 5] call JTC_fnc_changeReputation;
         if ((random 1) < 0.3) then {
             [_unit, ["Steal clothes", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
              "true", 3]] remoteExec ["addAction", 0, _unit];

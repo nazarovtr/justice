@@ -18,7 +18,7 @@ while {true} do {
         private _base = JTC_enemyBases select _baseNumber;
         if (!(JTC_spawnedBases select _baseNumber) &&
          [getMarkerPos (_base select 0)] call JTC_fnc_isInSpawnArea) then {
-            [_base select 0, _baseNumber, _base select 1] call JTC_fnc_populateBase;
+            [_baseNumber] call JTC_fnc_populateBase;
         };
     };
     for "_cityNumber" from 0 to (count JTC_cities) - 1 do {

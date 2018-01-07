@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3889.5149,24.079185,17443.324};
-		dir[]={0.93083596,-0.10481903,0.35018077};
-		up[]={0.098147258,0.99448454,0.036922377};
-		aside[]={0.35211679,-3.0806405e-007,-0.93599206};
+		pos[]={3720.4929,67.991409,17379.57};
+		dir[]={0.92587441,-0.29915699,0.23118995};
+		up[]={0.29032165,0.95416456,0.072491333};
+		aside[]={0.24227658,9.5157884e-007,-0.97029418};
 	};
 };
 binarizationWanted=0;
@@ -337,7 +337,7 @@ class Mission
 				class Attribute1
 				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {([_this] + _value) call (uinamespace getvariable 'bis_fnc_initVehicle');};";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['VehicleCustomization',_value]} else {([_this] + _value) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
 					class Value
 					{
 						class data
@@ -1249,6 +1249,7 @@ class Mission
 			};
 			id=133;
 			type="C_Van_01_box_F";
+			atlOffset=0.0017795563;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2188,7 +2189,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=120;
-			angle=225.84192;
+			angle=225.84172;
 			id=213;
 			atlOffset=-15.031415;
 		};
@@ -2420,7 +2421,7 @@ class Mission
 			colorName="ColorGUER";
 			a=80;
 			b=50;
-			angle=223.88196;
+			angle=223.88182;
 			id=230;
 			atlOffset=-74.637634;
 		};
@@ -2465,7 +2466,7 @@ class Mission
 			colorName="ColorGUER";
 			a=30;
 			b=40;
-			angle=37.51799;
+			angle=37.517986;
 			id=233;
 			atlOffset=-16.338148;
 		};
@@ -2525,7 +2526,7 @@ class Mission
 			colorName="ColorGUER";
 			a=120;
 			b=120;
-			angle=116.93797;
+			angle=116.93796;
 			id=237;
 			atlOffset=-14.235664;
 		};
@@ -2540,7 +2541,7 @@ class Mission
 			colorName="ColorGUER";
 			a=40;
 			b=20;
-			angle=145.73888;
+			angle=145.73885;
 			id=238;
 			atlOffset=-51.298985;
 		};

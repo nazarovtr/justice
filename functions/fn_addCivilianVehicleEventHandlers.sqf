@@ -6,5 +6,6 @@ _vehicle addEventHandler ["GetIn", {
     if (isPlayer _unit) then {
         "Vehicle stolen" remoteExec ["systemChat"];
         _vehicle setVariable ["_stolen", true, true]; // do not despawn
+        [-5, 2] call JTC_fnc_changeReputation;
     };
 }];

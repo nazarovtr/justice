@@ -2,6 +2,8 @@ systemChat "new game";
 
 JTC_commanderName = name player;
 JTC_commanderId = getPlayerUID player;
+JTC_playerReputation = 0;
+JTC_enemyReputation = 300;
 JTC_civilianPopulation = 4000;
 JTC_civilianSpawnPercent = 10;
 JTC_enemyPopulation = 600;
@@ -15,6 +17,8 @@ JTC_playerData = [];
 } forEach allPlayers;
 publicVariable "JTC_commanderName";
 publicVariable "JTC_commanderId";
+publicVariable "JTC_playerReputation";
+publicVariable "JTC_enemyReputation";
 publicVariable "JTC_civilianPopulation";
 publicVariable "JTC_civilianSpawnPercent";
 publicVariable "JTC_enemyPopulation";

@@ -38,6 +38,8 @@ if (count _saveName == 0) then {
     [_saveName, "vehicles", [theBase] call JTC_fnc_getVehiclesAtBase] call fn_saveValue;
     [_saveName, "enemyBases", JTC_enemyBases] call fn_saveValue;
     [_saveName, "cities", JTC_cities] call fn_saveValue;
+    [_saveName, "playerReputation", JTC_playerReputation] call fn_saveValue;
+    [_saveName, "enemyReputation", JTC_enemyReputation] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
     [_saveName, "civilianPopulation", JTC_civilianPopulation] call fn_saveValue;
     [_saveName, "civilianSpawnPercent", JTC_civilianSpawnPercent] call fn_saveValue;

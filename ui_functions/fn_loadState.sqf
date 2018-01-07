@@ -55,6 +55,11 @@ fn_loadPopulation = {
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
 };
 
+fn_loadReputation = {
+    [_saveName, "playerReputation", 0] call fn_loadAndPublishValue;
+    [_saveName, "enemyReputation", 300] call fn_loadAndPublishValue;
+};
+
 fn_loadAmmobox = {
     private _cargo = [_saveName, "ammobox", []] call fn_loadValue;
     [theBase, _cargo] call JTC_fnc_setContainerCargo;
@@ -100,5 +105,6 @@ if ((count _saveName) == 0) then {
     [] call fn_loadVehicles;
     [] call fn_loadGuerillaResources;
     [] call fn_loadPopulation;
+    [] call fn_loadReputation;
     closeDialog 23001;
 };
