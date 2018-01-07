@@ -1,6 +1,8 @@
 JTC_enemySide = independent;
 JTC_enemyFaction = "IND_F";
 JTC_civilianFaction = "CIV_F";
+JTC_defaultPlayerReputation = 0;
+JTC_defaultEnemyReputation = 400;
 JTC_baseRadius = 100;
 JTC_ignoredAssignedItems = ["ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"];
 if (!isNil("startingQuad1")) then {

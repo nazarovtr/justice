@@ -17,6 +17,7 @@ if (isServer) then {
     publicVariable "JTC_defaultBasePos";
     [] execVM "scripts\initTimeout.sqf";
     [] execVM "scripts\spawn.sqf";
+    [] execVM "scripts\winConditions.sqf";
 };
 [] execVM "scripts\weather.sqf";
 

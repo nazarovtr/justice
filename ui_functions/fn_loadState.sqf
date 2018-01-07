@@ -56,8 +56,8 @@ fn_loadPopulation = {
 };
 
 fn_loadReputation = {
-    [_saveName, "playerReputation", 0] call fn_loadAndPublishValue;
-    [_saveName, "enemyReputation", 300] call fn_loadAndPublishValue;
+    [_saveName, "playerReputation", JTC_defaultPlayerReputation] call fn_loadAndPublishValue;
+    [_saveName, "enemyReputation", JTC_defaultEnemyReputation] call fn_loadAndPublishValue;
 };
 
 fn_loadAmmobox = {

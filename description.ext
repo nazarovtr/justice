@@ -33,11 +33,32 @@ class Params
 
 class CfgDebriefing
 {
-    class victory
+    class basesDestroyed
     {
         title = "Mission Accomplished!";
-        subtitle = "You made it to Camp Maxwell.";
-        description = "";
+        subtitle = "Army destroyed. Gurillas - criminals";
+        description = "You have reached your goal of overthrowing the government, but at a very high price. Almost every family of our homeland have lost their loved ones who were conscripted. And the economy is in ruins. Hopefully the new government will be able to handle all the challenges. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.";
+    };
+
+    class governmentLostPopularity
+    {
+        title = "Mission Accomplished!";
+        subtitle = "Government fled.";
+        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. There are different evaluations ov guerilla movement.";
+    };
+
+    class governmentLostPopularityGuerillaHeroes
+    {
+        title = "Mission Accomplished!";
+        subtitle = "Government fled. Guerillas - heroes.";
+        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement is treated as heroes. Some of them are going to be elected into new parliament.";
+    };
+
+    class governmentLostPopularityGuerillaCriminals
+    {
+        title = "Mission Accomplished!";
+        subtitle = "Government fled. Guerillas - criminals.";
+        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.";
     };
 
     class noRecruits

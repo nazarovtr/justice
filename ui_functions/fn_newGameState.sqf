@@ -2,8 +2,8 @@ systemChat "new game";
 
 JTC_commanderName = name player;
 JTC_commanderId = getPlayerUID player;
-JTC_playerReputation = 0;
-JTC_enemyReputation = 300;
+JTC_playerReputation = JTC_defaultPlayerReputation;
+JTC_enemyReputation = JTC_defaultEnemyReputation;
 JTC_civilianPopulation = 4000;
 JTC_civilianSpawnPercent = 10;
 JTC_enemyPopulation = 600;
