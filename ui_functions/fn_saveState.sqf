@@ -1,4 +1,4 @@
-systemChat "saving state";
+["saving state"] call JTC_fnc_log;
 
 fn_saveValue = {
     private _saveName = _this select 0;

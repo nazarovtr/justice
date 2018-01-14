@@ -79,12 +79,12 @@ if (_status == "ok") then {
             JTC_enemyPopulation = JTC_enemyPopulation - 1;
             publicVariable "JTC_enemyPopulation";
             publicVariable "JTC_enemyBases";
-            (format ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases]) remoteExec ["systemChat"];
+            ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;
         }];
     } forEach units _x;
 } forEach _groups;
 
-(format ["Spawned %1 on %2 population %3", _groups, _markerName, _population]) remoteExec ["systemChat"];
+["Spawned %1 on %2 population %3", _groups, _markerName, _population] call JTC_fnc_log;
 
 // despawn handling
 [_markerName, _groups, _baseNumber] spawn {
@@ -103,6 +103,6 @@ if (_status == "ok") then {
         } forEach units _group;
         deleteGroup _group;
     } forEach _groups;
-    (format ["Despawned %1", _markerName]) remoteExec ["systemChat"];
+    ["Despawned %1", _markerName] call JTC_fnc_log;
     JTC_spawnedBases set [_baseNumber, false];
 };

@@ -12,7 +12,7 @@ private _totalBaseArea = 0;
         _totalBaseArea = _totalBaseArea + sqrt _area;
     };
 } forEach allMapMarkers;
-systemChat format ["areas: %1", _enemyBases];
+["areas: %1", _enemyBases] call JTC_fnc_log;
 private _topBasePopulation = 0.7 * JTC_enemyPopulation;
 private _actualBasePopulation = 0;
 {
@@ -27,6 +27,6 @@ private _actualBasePopulation = 0;
         _x set [1, 0];
     };
 } forEach _enemyBases;
-systemChat format ["populations: %1", _enemyBases];
+["populations: %1", _enemyBases] call JTC_fnc_log;;
 JTC_enemyBases = _enemyBases;
 JTC_freeEnemyPopulation = JTC_enemyPopulation - _actualBasePopulation;

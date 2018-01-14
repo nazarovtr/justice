@@ -1,4 +1,4 @@
-systemChat "loading state";
+["loading state"] call JTC_fnc_log;
 
 fn_loadValue = {
     private _saveName1 = _this select 0;
@@ -92,7 +92,7 @@ fn_removeStartingVehicles = {
 
 private _saveName = ctrlText 1400;
 
-systemChat _saveName;
+[_saveName] call JTC_fnc_log;
 
 if ((count _saveName) == 0) then {
     hint "Select a Save";

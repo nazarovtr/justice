@@ -3,7 +3,9 @@ private _civilian = _this select 0;
 _civilian addEventHandler ["killed", {
     if (!isNil "JTC_cities") then {
         private _unit = _this select 0;
-        [-10, 5] call JTC_fnc_changeReputation;
+        if (isPlayer (_this select 1)) then {
+            [-10, 5] call JTC_fnc_changeReputation;
+        };
         if ((random 1) < 0.3) then {
             [_unit, ["Steal clothes", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
              "true", 3]] remoteExec ["addAction", 0, _unit];
@@ -16,8 +18,8 @@ _civilian addEventHandler ["killed", {
         JTC_civilianPopulation = JTC_civilianPopulation - _populationDecrease;
         publicVariable "JTC_civilianPopulation";
         publicVariable "JTC_cities";
-        (format ["Unit killed in city %1. Population: %2, Bases: %3", _city select 0, JTC_civilianPopulation,
-         JTC_cities]) remoteExec ["systemChat"];
+        ["Unit killed in city %1. Population: %2, Bases: %3", _city select 0, JTC_civilianPopulation,
+         JTC_cities] call JTC_fnc_log;
     };
 }];
 

@@ -1,4 +1,4 @@
-systemChat "remove save";
+["remove save"] call JTC_fnc_log;
 
 fn_removeValue = {
     private _saveName = _this select 0;

@@ -1,4 +1,4 @@
-systemChat "new game";
+["new game"] call JTC_fnc_log;
 
 JTC_commanderName = name player;
 JTC_commanderId = getPlayerUID player;

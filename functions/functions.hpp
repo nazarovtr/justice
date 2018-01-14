@@ -33,5 +33,6 @@ class justice {
         class getClosestCity {};
         class changeReputation {};
         class enemyKnowsAboutPlayer {};
+        class log {};
     };
 };

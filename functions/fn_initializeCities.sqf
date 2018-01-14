@@ -12,11 +12,11 @@ private _totalCityArea = 0;
         _totalCityArea = _totalCityArea + _area;
     };
 } forEach allMapMarkers;
-systemChat format ["city areas: %1", _cities];
+["city areas: %1", _cities] call JTC_fnc_log;
 {
     private _area = _x select 1;
     private _cityPopulation = round (JTC_civilianPopulation * _area / _totalCityArea);
     _x set [1, _cityPopulation];
 } forEach _cities;
-systemChat format ["city populations: %1", _cities];
+["city populations: %1", _cities] call JTC_fnc_log;
 JTC_cities = _cities;

@@ -2145,7 +2145,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=120;
-			angle=225.84102;
+			angle=225.8409;
 			id=213;
 			atlOffset=-15.031415;
 		};

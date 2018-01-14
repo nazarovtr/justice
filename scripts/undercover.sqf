@@ -31,7 +31,7 @@ while {true} do {
     };
     if (JTC_undercoverMode == "not" and _newUndercoverMode != "not") then {
         private _enemyKnowsAboutPlayer = call JTC_fnc_enemyKnowsAboutPlayer;
-        systemChat format ["enemy knows about player: %1", _enemyKnowsAboutPlayer];
+        ["enemy knows about player: %1", _enemyKnowsAboutPlayer] call JTC_fnc_log;
         if (_enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {
             _newUndercoverMode = "not";
         };

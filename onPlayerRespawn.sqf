@@ -16,6 +16,7 @@ private _playerData = [getPlayerUID player] call JTC_fnc_getPlayerData;
 _playerData set [1, defaultUniform];
 publicVariable "JTC_playerData";
 
+[-2, 8] call JTC_fnc_changeReputation;
 JTC_recruitCount = JTC_recruitCount - 1;
 publicVariable "JTC_recruitCount";
 if (JTC_recruitCount < 1) then {
@@ -25,6 +26,3 @@ if (JTC_recruitCount < 1) then {
         ["noRecruits"] remoteExec ["BIS_fnc_endMissionServer", 2];
     };
 };
-
-// TODO remove cheats
-player onMapSingleClick "if (_alt) then {player setPosATL _pos}";

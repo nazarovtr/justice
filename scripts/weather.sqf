@@ -1,4 +1,4 @@
-systemChat "weather script initialized";
+["weather script initialized"] call JTC_fnc_log;
 
 fn_getRandomOvercast = {
     private _overcast = random 1;

@@ -3,11 +3,12 @@ private _joinInProgress = _this select 1;
 [] execVM "scripts\clearMarkers.sqf";
 [] execVM "scripts\undercover.sqf";
 waitUntil {time > 2};
+if (JTC_cheats) then {
+    player addAction ["Kill", "[] call JTC_fnc_kill;"];
+};
 defaultUniform = uniform player;
 theBase addAction ["Persistent save", "[false] call JTCUI_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
-// TODO remove cheats
-player onMapSingleClick "if (_alt) then {_this setPosATL _pos;} else {[_pos] call JTCUI_fnc_togglePointOfInterest;};";
-player addAction ["Kill", "[] call JTC_fnc_kill;"];
+player onMapSingleClick "[_pos] call JTCUI_fnc_togglePointOfInterest";
 theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
     "", "true", 3];
 theBase addAction ["Move closest vehicle cargo to ammobox", "[] call JTC_fnc_moveClosestVehicleCargoToAmmobox;",

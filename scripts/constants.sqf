@@ -1,6 +1,8 @@
 JTC_enemySide = independent;
 JTC_enemyFaction = "IND_F";
 JTC_civilianFaction = "CIV_F";
+JTC_cheats = true;
+JTC_log = true;
 JTC_defaultPlayerReputation = 0;
 JTC_defaultEnemyReputation = 400;
 JTC_baseRadius = 100;

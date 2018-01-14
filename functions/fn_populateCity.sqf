@@ -67,8 +67,8 @@ while {_vehicleCount > 0 && _attemptLimit > 0} do {
     [_x] call JTC_fnc_addCivilianVehicleEventHandlers;
 } forEach _vehicles;
 
-(format ["Spawned %1 units and %2 vehicles on %3 population %4", _groups, _vehicles, _markerName,
- round(_population * JTC_civilianSpawnPercent / 100)]) remoteExec ["systemChat"];
+["Spawned %1 units and %2 vehicles on %3 population %4", _groups, _vehicles, _markerName,
+ round(_population * JTC_civilianSpawnPercent / 100)] call JTC_fnc_log;
 
 // despawn handling
 [_markerName, _groups, _vehicles, _cityNumber] spawn {
@@ -94,6 +94,6 @@ while {_vehicleCount > 0 && _attemptLimit > 0} do {
             deleteVehicle _x;
         };
     } forEach _vehicles;
-    (format ["Despawned %1", _markerName]) remoteExec ["systemChat"];
+    ["Despawned %1", _markerName] call JTC_fnc_log;
     JTC_spawnedCities set [_cityNumber, false];
 };
