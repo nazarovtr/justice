@@ -21,12 +21,21 @@ while {true} do {
     private _playerVehicle = vehicle player;
     private _playerLooksCivilian = _vest == "" && _hmd == "" && !(_headgear in JTC_helmets) &&
         (_uniform in JTC_civilianUniforms || _uniform == "") && !_weaponEquipped;
-    if ((_playerLooksCivilian || JTC_civilianFaction == (faction _playerVehicle)) and
-        (-1 == JTC_vehiclesKnownToEnemy find _playerVehicle)) then {
-        _newUndercoverMode = "civilian";
+    private _playerInCleanCivilianVehicle = (JTC_civilianFaction == (faction _playerVehicle)) and (-1 == JTC_vehiclesKnownToEnemy find _playerVehicle);
+    if (vehicle player == player) then {
+        if (_playerLooksCivilian) then {
+            _newUndercoverMode = "civilian";
+        } else {
+            if (_uniform in JTC_enemyUniforms) then {
+                _newUndercoverMode = "enemy";
+            };
+        };
     } else {
-        if (_uniform in JTC_enemyUniforms) then {
-            _newUndercoverMode = "enemy";
+        if (_playerInCleanCivilianVehicle) then {
+            private _vehicleRole = assignedVehicleRole player;
+            if (_playerLooksCivilian or (_vehicleRole select 0 != "cargo") or (1 == count _vehicleRole)) then {
+                _newUndercoverMode = "civilian";
+            };
         };
     };
     if (JTC_undercoverMode == "not" and _newUndercoverMode != "not") then {
