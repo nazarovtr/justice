@@ -32,5 +32,6 @@ class justice {
         class addCivilianVehicleEventHandlers {};
         class getClosestCity {};
         class changeReputation {};
+        class enemyKnowsAboutPlayer {};
     };
 };

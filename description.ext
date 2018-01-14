@@ -24,6 +24,7 @@ wreckLimit = 10;
 wreckRemovalMinTime = 120;
 wreckRemovalMaxTime = 1200;
 minPlayerDistance = 200;
+joinUnassigned = 0;
 
 class CfgFunctions
 {

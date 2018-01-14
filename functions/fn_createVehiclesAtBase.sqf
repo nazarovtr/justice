@@ -1,3 +1,4 @@
+JTC_vehiclesKnownToEnemy = [];
 private _vehicles = _this select 0;
 {
     private _vehicle = (_x select 0) createVehicle (_x select 1);
@@ -24,5 +25,9 @@ private _vehicles = _this select 0;
         _vehicle addAction ["Check ammo cargo", "hint format [""%1"", getAmmoCargo(_this select 0)]",
          [], 0, false, true, "", "true", 3];
     };
+    if (_x select 9) then {
+        JTC_vehiclesKnownToEnemy pushBack _vehicle;
+    };
     // TODO vehicle ammo
 } forEach _vehicles;
+publicVariable "JTC_vehiclesKnownToEnemy";
