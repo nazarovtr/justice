@@ -1,18 +1,10 @@
 JTC_undercoverMode = "civilian"; // not, civilian, enemy
 JTC_vehiclesKnownToEnemy = [];
 player setCaptive true;
-player addEventHandler ["GetInMan", {
-    private _vehicle = _this select 2;
-    private _enemyKnowsAboutPlayer = call JTC_fnc_enemyKnowsAboutPlayer;
-    if (JTC_civilianFaction == faction _vehicle and JTC_undercoverMode == "not" and
-     _enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {
-        JTC_vehiclesKnownToEnemy pushBackUnique _vehicle;
-        publicVariable "JTC_vehiclesKnownToEnemy";
-    };
-}];
 while {true} do {
     sleep 5;
     private _newUndercoverMode = "not";
+    private _playerPosition = position player;
     private _vest = vest player;
     private _uniform = uniform player;
     private _hmd = hmd player;
@@ -39,10 +31,26 @@ while {true} do {
         };
     };
     if (JTC_undercoverMode == "not" and _newUndercoverMode != "not") then {
-        private _enemyKnowsAboutPlayer = call JTC_fnc_enemyKnowsAboutPlayer;
-        ["enemy knows about player: %1", _enemyKnowsAboutPlayer] call JTC_fnc_log;
+        private _enemyKnowsAboutPlayer = player call JTC_fnc_enemyKnowsAboutObject;
         if (_enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {
             _newUndercoverMode = "not";
+        };
+    };
+
+    if (_newUndercoverMode == "civilian" and !isNil("JTC_enemyBases")) then {
+        {
+            if (_playerPosition inArea (_x select 0)) then {
+                _newUndercoverMode = "not";
+            };
+        } forEach JTC_enemyBases;
+    };
+
+    if (_playerInCleanCivilianVehicle and _newUndercoverMode == "not") then {
+        private _enemyKnowsAboutPlayer = _playerVehicle call JTC_fnc_enemyKnowsAboutObject;
+        if (_enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {
+            JTC_vehiclesKnownToEnemy pushBackUnique _playerVehicle;
+            publicVariable "JTC_vehiclesKnownToEnemy";
+            ["vehicle %1 is now known to enemy", _playerVehicle] call JTC_fnc_log;
         };
     };
 

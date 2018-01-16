@@ -77,6 +77,16 @@ if (_status == "ok") then {
                 [_base select 2, -2 * (_base select 2)] call JTC_fnc_changeReputation;
             };
             JTC_enemyPopulation = JTC_enemyPopulation - 1;
+            private _killer = _this select 1;
+            private _killerVehicle = vehicle _killer;
+            if (vehicle _killer != _killer and JTC_civilianFaction == (faction _killerVehicle)) then {
+                private _enemyKnowsAboutVehicle = _killerVehicle call JTC_fnc_enemyKnowsAboutObject;
+                if (_enemyKnowsAboutVehicle select 0 > 0.5 and _enemyKnowsAboutVehicle select 1  < 300) then {
+                    JTC_vehiclesKnownToEnemy pushBackUnique _killerVehicle;
+                    publicVariable "JTC_vehiclesKnownToEnemy";
+                    ["vehicle %1 is now known to enemy", _killerVehicle] call JTC_fnc_log;
+                };
+            };
             publicVariable "JTC_enemyPopulation";
             publicVariable "JTC_enemyBases";
             ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;

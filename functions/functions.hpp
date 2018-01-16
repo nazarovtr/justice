@@ -32,7 +32,7 @@ class justice {
         class addCivilianVehicleEventHandlers {};
         class getClosestCity {};
         class changeReputation {};
-        class enemyKnowsAboutPlayer {};
+        class enemyKnowsAboutObject {};
         class log {};
     };
 };
