@@ -30,7 +30,15 @@ private _vehicles = _this select 0;
     };
     if (count _x > 10) then {
         [_vehicle, (_x select 10) select 0, (_x select 10) select 1] call BIS_fnc_initVehicle;
-    }
-    // TODO vehicle ammo
+    };
+    if (count _x > 11) then {
+        private _ammo = _x select 11;
+        {
+            _vehicle removeMagazinesTurret [_x select 0, _x select 1];
+        } forEach _ammo;
+        {
+            _vehicle addMagazineTurret [_x select 0, _x select 1, _x select 2];
+        } forEach _ammo;
+    };
 } forEach _vehicles;
 publicVariable "JTC_vehiclesKnownToEnemy";
