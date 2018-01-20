@@ -6,10 +6,9 @@ fn_getGlobalValue = {
 };
 
 cutRsc ["JTC_StateTitle", "PLAIN", 0, true];
-waitUntil {!isNull (uiNameSpace getVariable "JTC_StateTitle")};
-private _dialog = uiNameSpace getVariable "JTC_StateTitle";
+waitUntil {!isNull (uiNamespace getVariable "JTC_StateTitle")};
+private _dialog = uiNamespace getVariable "JTC_StateTitle";
 private _stateText = _dialog displayCtrl 1002;
-private _commanderName = "Not selected";
 while {true} do {
     _text = format ["Commander: %1, recruits: %2, money: %3, rep: %4, enemy rep: %5, undercover: %6",
     ["commanderName"] call fn_getGlobalValue,
@@ -17,7 +16,7 @@ while {true} do {
     ["money"] call fn_getGlobalValue,
     ["playerReputation"] call fn_getGlobalValue,
     ["enemyReputation"] call fn_getGlobalValue,
-    JTC_undercoverMode];
+    ["undercoverMode"] call fn_getGlobalValue];
     _stateText ctrlSetText _text;
     _stateText ctrlCommit 0;
     sleep 1;
