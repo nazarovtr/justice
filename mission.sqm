@@ -574,7 +574,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""U_C_Man_casual_2_F"",""U_I_CombatUniform"",""U_C_man_sport_2_F"",""U_C_Poor_1""],[]],[[],[]]],true]";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
