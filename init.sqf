@@ -14,6 +14,9 @@ if (isServer) then {
     publicVariable "JTC_pointsOfInterest";
     publicVariable "JTC_pointOfInterestNumber";
     JTC_defaultBasePos = getPos theBase;
+    theBase allowDamage false;
+    theCrate allowDamage false;
+    theLamp allowDamage false;
     publicVariable "JTC_defaultBasePos";
     [] execVM "scripts\initTimeout.sqf";
     [] execVM "scripts\spawn.sqf";
