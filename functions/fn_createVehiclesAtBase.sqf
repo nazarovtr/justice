@@ -28,6 +28,9 @@ private _vehicles = _this select 0;
     if (_x select 9) then {
         JTC_vehiclesKnownToEnemy pushBack _vehicle;
     };
+    if (count _x > 10) then {
+        [_vehicle, (_x select 10) select 0, (_x select 10) select 1] call BIS_fnc_initVehicle;
+    }
     // TODO vehicle ammo
 } forEach _vehicles;
 publicVariable "JTC_vehiclesKnownToEnemy";
