@@ -21,6 +21,16 @@ if (count _this > 2) then {
     };
 };
 
+private _targetDriver = driver _target;
+private _targetHasPlayerDriver = isPlayer _targetDriver;
+
+fn_hint = {
+    hint _this;
+    if (_targetHasPlayerDriver) then {
+        _this remoteExec ["hint", _targetDriver]
+    };
+};
+
 private _targetCargoCapacity = [_target] call JTC_fnc_getCargoCapacity;
 private _cargoBuffer = [_source] call JTC_fnc_getContainerCargo;
 if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
@@ -53,7 +63,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     while {!(_cargoBuffer isEqualTo [])} do {
         if ((_source distance _target) > _maxDistance) then {
             if (!_silent) then {
-                hint "Too far for cargo transfer";
+                "Too far for cargo transfer" call fn_hint;
             };
             breakTo "main";
         };
@@ -61,8 +71,8 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
         if (_cargoLimitMode == 1 && ([_target] call JTC_fnc_getCargoMass) +
             ([_cargoUnit select 0] call JTC_fnc_getItemMass) > _targetCargoCapacity) then {
             if (!_silent) then {
-                hint format ["Tranferred %1 out of %2. Maximum load reached.",
-                 _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount];
+                (format ["Tranferred %1 out of %2. Maximum load reached.",
+                 _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint;
             };
             breakTo "main";
         };
@@ -76,7 +86,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
         if (!_instant) then {
             if ((_cargoUnit select 1) % 10 == 0) then {
                 if (!_silent) then {
-                    hint format ["Tranferred %1 out of %2", _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]
+                    (format ["Tranferred %1 out of %2", _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint
                 };
             };
             sleep _timePerItem;
@@ -84,7 +94,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     };
     if (_cargoBuffer isEqualTo []) then {
         if (!_silent) then {
-            hint "All cargo transferred";
+            "All cargo transferred" call fn_hint;
         };
     } else {
         private _putBackContainer = _source;
@@ -103,6 +113,6 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     };
 } else {
     if (!_silent) then {
-        hint "Cargo does not fit.";
+        "Cargo does not fit" call fn_hint;
     };
 };
