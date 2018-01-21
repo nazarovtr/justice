@@ -76,6 +76,18 @@ while {true} do {
         } forEach JTC_notUndercoverPlayers;
     };
 
+    if (_newUndercoverMode != "not" and alive player and _playerInCleanCivilianVehicle and !isNil("JTC_enemyBases")) then {
+        scopeName "main";
+        if (count (_playerVehicle nearRoads 20) == 0) then {
+            {
+                if ("ok" == (_x select 3) and (_playerPosition distance2D markerPos (_x select 0)) < 700) then {
+                    _newUndercoverMode = "not";
+                    breakTo "main";
+                };
+            } forEach JTC_enemyBases;
+        };
+    };
+
     if (_playerInCleanCivilianVehicle and _newUndercoverMode == "not") then {
         private _enemyKnowsAboutPlayer = _playerVehicle call JTC_fnc_enemyKnowsAboutObject;
         if (_enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {

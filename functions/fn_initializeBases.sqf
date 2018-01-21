@@ -27,6 +27,6 @@ private _actualBasePopulation = 0;
         _x set [1, 0];
     };
 } forEach _enemyBases;
-["populations: %1", _enemyBases] call JTC_fnc_log;;
+["populations: %1", _enemyBases] call JTC_fnc_log;
 JTC_enemyBases = _enemyBases;
 JTC_freeEnemyPopulation = JTC_enemyPopulation - _actualBasePopulation;
