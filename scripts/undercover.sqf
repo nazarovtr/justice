@@ -45,6 +45,14 @@ while {true} do {
         } forEach JTC_enemyBases;
     };
 
+    if (_newUndercoverMode != "not") then {
+        {
+            if ((_playerPosition distance position _x) < 20) then {
+                _newUndercoverMode = "not";
+            }
+        } forEach getAllOwnedMines player;
+    };
+
     if (_playerInCleanCivilianVehicle and _newUndercoverMode == "not") then {
         private _enemyKnowsAboutPlayer = _playerVehicle call JTC_fnc_enemyKnowsAboutObject;
         if (_enemyKnowsAboutPlayer select 0 > 0.5 and _enemyKnowsAboutPlayer select 1  < 300) then {
