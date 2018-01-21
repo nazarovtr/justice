@@ -45,12 +45,24 @@ while {true} do {
         } forEach JTC_enemyBases;
     };
 
-    if (_newUndercoverMode != "not") then {
+    if (_newUndercoverMode != "not" and alive player) then {
+        scopeName "main";
         {
             if ((_playerPosition distance position _x) < 20) then {
                 _newUndercoverMode = "not";
+                breakTo "main";
             }
         } forEach getAllOwnedMines player;
+    };
+
+    if (_newUndercoverMode != "not" and alive player) then {
+        scopeName "main";
+        {
+            if (faction _x == JTC_enemyFaction && !alive _x) then {
+                _newUndercoverMode = "not";
+                breakTo "main";
+            };
+        } forEach (_playerPosition nearObjects ["man", 15]);
     };
 
     if (_playerInCleanCivilianVehicle and _newUndercoverMode == "not") then {
