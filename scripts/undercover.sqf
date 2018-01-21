@@ -1,5 +1,6 @@
 JTC_undercoverMode = "civilian"; // not, civilian, enemy
 JTC_vehiclesKnownToEnemy = [];
+JTC_notUndercoverPlayers = [];
 player setCaptive true;
 while {true} do {
     sleep 5;
@@ -58,11 +59,21 @@ while {true} do {
     if (_newUndercoverMode != "not" and alive player) then {
         scopeName "main";
         {
-            if (faction _x == JTC_enemyFaction && !alive _x) then {
+            if (faction _x == JTC_enemyFaction and !alive _x) then {
                 _newUndercoverMode = "not";
                 breakTo "main";
             };
         } forEach (_playerPosition nearObjects ["man", 15]);
+    };
+
+    if (_newUndercoverMode != "not" and alive player) then {
+        scopeName "main";
+        {
+            if (player != _x and (_playerPosition distance position _x) < 30) then {
+                _newUndercoverMode = "not";
+                breakTo "main";
+            };
+        } forEach JTC_notUndercoverPlayers;
     };
 
     if (_playerInCleanCivilianVehicle and _newUndercoverMode == "not") then {
@@ -74,7 +85,16 @@ while {true} do {
         };
     };
 
+    if (JTC_undercoverMode != _newUndercoverMode) then {
+        if (_newUndercoverMode == "not") then {
+            JTC_notUndercoverPlayers pushBackUnique player;
+        } else {
+            JTC_notUndercoverPlayers = JTC_notUndercoverPlayers - [player];
+        };
+        publicVariable "JTC_notUndercoverPlayers";
+    };
     JTC_undercoverMode = _newUndercoverMode;
+
     if (JTC_undercoverMode == "not") then {
         player setCaptive false;
     } else {
