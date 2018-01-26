@@ -34,5 +34,6 @@ class justice {
         class changeReputation {};
         class enemyKnowsAboutObject {};
         class log {};
+        class arrayShuffle {};
     };
 };

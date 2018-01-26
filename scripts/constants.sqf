@@ -29,3 +29,19 @@ private _helmetConfig = "((getText ( _x >> ""displayName"" )) find ""Helmet"" > 
 {
     JTC_helmets pushBack (configName _x);
 } forEach _helmetConfig;
+JTC_enemyVehicles = [
+    ["I_Quadbike_01_F", 20, 8000, false, false],
+    ["I_MRAP_03_F", 10, 300000, false, false],
+    ["I_MRAP_03_hmg_F", 10, 380000, false, true],
+    ["I_MRAP_03_gmg_F", 10, 380000, false, true],
+    ["I_Truck_02_covered_F", 20, 50000, true, false],
+    ["I_Truck_02_transport_F", 20, 50000, true, false],
+    ["I_Truck_02_ammo_F", 10, 80000, false, false],
+    ["I_Truck_02_box_F", 10, 70000, false, false],
+    ["I_Truck_02_medical_F", 10, 60000, true, false],
+    ["I_Truck_02_fuel_F", 10, 60000, false, false],
+    ["I_Truck_02_fuel_F", 10, 60000, false, false],
+    ["I_APC_tracked_03_cannon_F", 10, 5000000, false, true],
+    ["I_MBT_03_cannon_F", 10, 6000000, false, true],
+    ["I_APC_Wheeled_03_cannon_F", 10, 3000000, true, true]
+];

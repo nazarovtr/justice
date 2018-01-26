@@ -8,4 +8,7 @@
     if ((_x find "city") == 0) then {
         _x setMarkerAlpha 0;
     };
+    if ((_x find "parking") == 0) then {
+        _x setMarkerAlpha 0;
+    };
 } forEach allMapMarkers;
