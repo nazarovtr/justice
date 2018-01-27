@@ -35,5 +35,6 @@ class justice {
         class enemyKnowsAboutObject {};
         class log {};
         class arrayShuffle {};
+        class removeVehicleFromEnemyBase {};
     };
 };

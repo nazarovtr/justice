@@ -10,7 +10,6 @@ JTC_spawnedBases set [_baseNumber, true];
 // creating units
 private _populationLeft = _population;
 private _groups = [];
-private _crewGroups = [];
 private _vehicles = [];
 private _availableSquads = [];
 if (_status == "ok") then {
@@ -20,10 +19,11 @@ if (_status == "ok") then {
             private _parkingMarker = (_shuffledParkingMarkers deleteAt 0);
             private _vehiclePosition = markerPos _parkingMarker;
             private _vehicleDirection = markerDir _parkingMarker;
-            if (_x select 4) then {
+            if ((_x select 4) and _populationLeft > 4) then {
                 private _vehicleData = [_vehiclePosition, _vehicleDirection, _x select 0, JTC_enemySide] call BIS_fnc_spawnVehicle;
                 _vehicles pushBack (_vehicleData select 0);
-                _crewGroups pushBack (_vehicleData select 2);
+                _groups pushBack (_vehicleData select 2);
+                _populationLeft = _populationLeft - count units (_vehicleData select 2);
             } else {
                 private _vehicle = (_x select 0) createVehicle _vehiclePosition;
                 _vehicle setDir _vehicleDirection;
@@ -114,19 +114,61 @@ if (_status == "ok") then {
         }];
     } forEach units _x;
 } forEach _groups;
+// vehicle event handling
+
+{
+    _x setVariable ["_baseNumber", _baseNumber, true];
+    _x addEventHandler ["Killed", {
+        private _vehicle = _this select 0;
+        private _stolen = _vehicle getVariable "_stolen";
+        if (isNil "_stolen") then {
+            ["Enemy vehicle destroyed"] call JTC_fnc_log;
+            private _baseNumber = _vehicle getVariable "_baseNumber";
+            private _base = JTC_enemyBases select _baseNumber;
+            [_vehicle, _base] call JTC_fnc_removeVehicleFromEnemyBase;
+        };
+    }];
+} forEach _vehicles;
+
+// theft handling
+
+[_vehicles, _base] spawn {
+    private _vehicles = _this select 0;
+    while {(count _vehicles) > 0} do {
+        sleep 10;
+        private _base = _this select 1;
+        {
+            private _stolen = _x getVariable "_stolen";
+            if (isNil "_stolen" and ((position _x) distance2D markerPos (_base select 0)) > 300 and (alive _x)) then {
+                private _crew = crew _x;
+                private _enemyCrew = false;
+                {
+                    if ((alive _x) and (faction _x) == JTC_enemyFaction) then {
+                        _enemyCrew = true;
+                    };
+                } forEach _crew;
+                if (!_enemyCrew) then {
+                    _x setVariable ["_stolen", true, true]; // do not despawn
+                    ["Enemy vehicle stolen"] call JTC_fnc_log;
+                    [_x, _base] call JTC_fnc_removeVehicleFromEnemyBase;
+                };
+            }
+        } forEach _vehicles;
+    };
+};
+
 
 ["Spawned %1 on %2 population %3", _groups, _markerName, _population] call JTC_fnc_log;
 
 // despawn handling
-[_markerName, _groups, _vehicles, _crewGroups, _baseNumber] spawn {
+[_markerName, _groups, _vehicles, _baseNumber] spawn {
     private _markerName = _this select 0;
     private _groups = _this select 1;
     private _vehicles = _this select 2;
-    private _crewGroups = _this select 3;
-    private _baseNumber = _this select 4;
+    private _baseNumber = _this select 3;
     private _markerPos = getMarkerPos _markerName;
     waitUntil {
-        sleep 3;
+        sleep 10;
         !([_markerPos] call JTC_fnc_isInSpawnArea)
     };
     {
@@ -135,13 +177,14 @@ if (_status == "ok") then {
             deleteVehicle _x;
         } forEach units _group;
         deleteGroup _group;
-    } forEach _groups + _crewGroups;
+    } forEach _groups;
     {
         private _stolen = _x getVariable "_stolen";
         if (isNil "_stolen") then {
             deleteVehicle _x;
         };
     } forEach _vehicles;
+    _vehicles resize 0;
     ["Despawned %1", _markerName] call JTC_fnc_log;
     JTC_spawnedBases set [_baseNumber, false];
 };

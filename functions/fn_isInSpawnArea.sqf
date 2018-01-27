@@ -1,6 +1,10 @@
 private _position = _this select 0;
 
-private _spawnAreaAnchorPositions = [getPos theBase];
+private _spawnAreaAnchorPositions = [];
+
+if (JTC_baseDeployed) then {
+    _spawnAreaAnchorPositions pushBack (getPos theBase);
+};
 
 if (isMultiplayer) then {
     {
