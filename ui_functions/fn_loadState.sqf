@@ -106,5 +106,10 @@ if ((count _saveName) == 0) then {
     [] call fn_loadGuerillaResources;
     [] call fn_loadPopulation;
     [] call fn_loadReputation;
+    {
+        if ((_x find "start") == 0) then {
+            _x setMarkerAlpha 0;
+        };
+    } forEach allMapMarkers;
     closeDialog 23001;
 };

@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=551;
+		nextID=557;
 	};
 	class MarkerIDProvider
 	{
-		nextID=15;
+		nextID=16;
 	};
 	class Camera
 	{
-		pos[]={3729.8921,104.45763,17346.316};
-		dir[]={0.85087353,-0.44278151,0.28285879};
-		up[]={0.42017716,0.89662731,0.13968149};
-		aside[]={0.31546924,3.0120282e-007,-0.94896203};
+		pos[]={3769.1272,72.994804,17347.121};
+		dir[]={0.83262396,-0.39157939,0.39179456};
+		up[]={0.35432953,0.92013478,0.16673127};
+		aside[]={0.42579448,4.4726767e-007,-0.90487432};
 	};
 };
 binarizationWanted=0;
@@ -145,7 +145,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=400;
+		items=406;
 		class Item0
 		{
 			dataType="Group";
@@ -532,7 +532,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""H_Cap_blk""],[1]],[[""B_Kitbag_mcamo""],[1]]],false]";
+							value="[[[[],[]],[[],[]],[[""H_Cap_blk"",""Medikit""],[1,1]],[[""B_Kitbag_mcamo""],[1]]],false]";
 						};
 					};
 				};
@@ -855,7 +855,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3869.5732,17.251614,17443.506};
+				position[]={3869.573,17.251297,17443.506};
 				angles[]={6.1967392,0.63013369,0.18582521};
 			};
 			side="Empty";
@@ -866,7 +866,7 @@ class Mission
 			};
 			id=123;
 			type="C_Hatchback_01_sport_F";
-			atlOffset=-0.0097703934;
+			atlOffset=-0.010001183;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -884,7 +884,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""FirstAidKit"",""H_Bandanna_cbr"",""ItemGPS""],[2,1,1]],[[""B_TacticalPack_oli""],[1]]],false]";
+							value="[[[[],[]],[[],[]],[[""FirstAidKit"",""H_Bandanna_cbr"",""ItemGPS"",""Medikit""],[2,1,1,1]],[[""B_TacticalPack_oli""],[1]]],false]";
 						};
 					};
 				};
@@ -4209,7 +4209,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=227.05423;
+			angle=227.05417;
 			id=372;
 			atlOffset=-3.7849579;
 		};
@@ -4390,7 +4390,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.34023;
+			angle=224.34019;
 			id=385;
 			atlOffset=-3.8074188;
 		};
@@ -4404,7 +4404,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.34021;
+			angle=224.34019;
 			id=386;
 			atlOffset=-3.7749462;
 		};
@@ -5171,7 +5171,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=227.96382;
+			angle=227.96376;
 			id=443;
 			atlOffset=-3.7722969;
 		};
@@ -5212,7 +5212,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=113.66816;
+			angle=113.66813;
 			id=446;
 			atlOffset=-3.7594976;
 		};
@@ -5226,7 +5226,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=114.36869;
+			angle=114.36866;
 			id=447;
 			atlOffset=-3.7432299;
 		};
@@ -5296,7 +5296,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=7.1232219;
+			angle=7.12322;
 			id=452;
 			atlOffset=-3.7723637;
 		};
@@ -5838,7 +5838,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=105.11388;
+			angle=105.11385;
 			id=492;
 			atlOffset=-3.9175596;
 		};
@@ -5894,7 +5894,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.46347;
+			angle=224.46341;
 			id=496;
 			atlOffset=-3.9257269;
 		};
@@ -6605,6 +6605,63 @@ class Mission
 			b=7;
 			angle=54.246208;
 			id=550;
+		};
+		class Item400
+		{
+			dataType="Marker";
+			position[]={3969.5078,21.580143,17340.527};
+			name="startLocation_1";
+			text="Medic's quadbike";
+			type="mil_triangle";
+			id=551;
+		};
+		class Item401
+		{
+			dataType="Marker";
+			position[]={3901.6951,8.2880001,17323.668};
+			name="startLocation_2";
+			text="Racing kart";
+			type="mil_triangle";
+			id=552;
+			atlOffset=0.11922359;
+		};
+		class Item402
+		{
+			dataType="Marker";
+			position[]={3868.8911,15.464816,17441.344};
+			name="startLocation_3";
+			text="Medic's sportcar";
+			type="mil_triangle";
+			id=553;
+		};
+		class Item403
+		{
+			dataType="Marker";
+			position[]={3905.678,17.807045,17446.803};
+			name="startLocation_4";
+			text="Mechanic's pickup";
+			type="mil_triangle";
+			id=554;
+		};
+		class Item404
+		{
+			dataType="Marker";
+			position[]={3927.7939,18.708,17556.768};
+			name="startLocation_5";
+			text="Hunter's  truck";
+			type="mil_triangle";
+			id=555;
+			atlOffset=0.045875549;
+		};
+		class Item405
+		{
+			dataType="Marker";
+			position[]={3895.7219,16.955999,17543.32};
+			name="startLocation_6";
+			text="Pyrotechnic's  truck";
+			type="mil_triangle";
+			id=556;
+			atlOffset=0.053037643;
 		};
 	};
 };
