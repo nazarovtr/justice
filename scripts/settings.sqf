@@ -21,7 +21,7 @@ JTC_civilianUniforms = ["U_C_Poloshirt_blue", "U_C_Poloshirt_burgundy", "U_C_Pol
 "U_C_Poloshirt_tricolour", "U_C_Poloshirt_salmon", "U_C_Poloshirt_redwhite", "U_C_Commoner1_1",
 "U_C_Commoner1_2","U_C_Commoner1_3", "U_Rangemaster", "U_Competitor", "U_NikosBody", "U_C_Poor_1", "U_C_Poor_2",
 "U_C_WorkerCoveralls", "U_C_Poor_shorts_1", "U_C_Commoner_shorts", "U_C_ShirtSurfer_shorts",
- "U_C_TeeSurfer_shorts_1", "U_C_TeeSurfer_shorts_2"];
+ "U_C_TeeSurfer_shorts_1", "U_C_TeeSurfer_shorts_2", "U_OrestesBody"];
 JTC_enemyUniforms = ["U_I_CombatUniform", "U_I_CombatUniform_shortsleeve", "U_I_CombatUniform_tshirt",
 "U_I_FullGhillie_ard", "U_I_FullGhillie_lsh", "U_I_FullGhillie_sard", "U_I_GhillieSuit",
 "U_I_OfficerUniform"];
