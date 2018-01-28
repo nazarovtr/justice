@@ -110,9 +110,12 @@ while {true} do {
         };
     };
 
-    if (_newUndercoverMode == "not" and
-        ((count _notUndercoverReasons) > 1 or (_notUndercoverReasons select 0) != "Player is near not undercover player")) then {
-        JTC_notUndercoverPlayers pushBackUnique player;
+    if (_newUndercoverMode == "not") then {
+        if ((count _notUndercoverReasons) == 1 and (_notUndercoverReasons select 0) == "Player is near not undercover player") then {
+            JTC_notUndercoverPlayers = JTC_notUndercoverPlayers - [player];
+        } else {
+            JTC_notUndercoverPlayers pushBackUnique player;
+        }
     } else {
         JTC_notUndercoverPlayers = JTC_notUndercoverPlayers - [player];
     };
