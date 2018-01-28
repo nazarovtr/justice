@@ -19,9 +19,10 @@ while {true} do {
         if (_playerLooksCivilian) then {
             _newUndercoverMode = "civilian";
         } else {
-            if (_uniform in JTC_enemyUniforms) then {
-                _newUndercoverMode = "enemy";
-            };
+//            TODO Implement undercover enemy #71
+//            if (_uniform in JTC_enemyUniforms) then {
+//                _newUndercoverMode = "enemy";
+//            };
         };
     } else {
         if (_playerInCleanCivilianVehicle) then {
