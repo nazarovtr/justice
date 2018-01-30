@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3739.5791,116.34107,17351.666};
-		dir[]={0.73152071,-0.61861283,0.2867184};
-		up[]={0.57600832,0.78565013,0.22576611};
-		aside[]={0.3649222,-1.5480327e-007,-0.93104672};
+		pos[]={3693.1006,71.592636,17323.803};
+		dir[]={0.89030761,-0.26560891,0.36987963};
+		up[]={0.24528475,0.96407962,0.10190402};
+		aside[]={0.38366002,5.1470124e-008,-0.92347705};
 	};
 };
 binarizationWanted=0;
@@ -2959,7 +2959,7 @@ class Mission
 		class Item133
 		{
 			dataType="Marker";
-			position[]={5340.438,32.97929,14208.094};
+			position[]={5308.082,29.142099,14208.589};
 			name="parking_ground_35";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -3827,7 +3827,7 @@ class Mission
 		class Item197
 		{
 			dataType="Marker";
-			position[]={9869.2051,230.66042,19430.488};
+			position[]={9855.9697,233.0623,19422.516};
 			name="parking_ground_96";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -3840,7 +3840,7 @@ class Mission
 		class Item198
 		{
 			dataType="Marker";
-			position[]={9875.3154,230.81868,19430.854};
+			position[]={9871.8525,232.10193,19422.879};
 			name="parking_ground_97";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -5226,7 +5226,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=114.36848;
+			angle=114.3684;
 			id=447;
 			atlOffset=-3.7432299;
 		};
@@ -5296,7 +5296,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=7.12321;
+			angle=7.1232052;
 			id=452;
 			atlOffset=-3.7723637;
 		};
@@ -5894,7 +5894,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.46309;
+			angle=224.46294;
 			id=496;
 			atlOffset=-3.9257269;
 		};

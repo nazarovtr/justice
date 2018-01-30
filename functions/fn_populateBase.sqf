@@ -20,13 +20,15 @@ if (_status == "ok") then {
             private _vehiclePosition = markerPos _parkingMarker;
             private _vehicleDirection = markerDir _parkingMarker;
             if ((_x select 4) and _populationLeft > 4) then {
-                private _vehicleData = [_vehiclePosition, _vehicleDirection, _x select 0, JTC_enemySide] call BIS_fnc_spawnVehicle;
+                private _vehicleData = [[0,0,1000], _vehicleDirection, _x select 0, JTC_enemySide] call BIS_fnc_spawnVehicle;
+                (_vehicleData select 0) setPos _vehiclePosition;
                 _vehicles pushBack (_vehicleData select 0);
                 _groups pushBack (_vehicleData select 2);
                 _populationLeft = _populationLeft - count units (_vehicleData select 2);
             } else {
-                private _vehicle = (_x select 0) createVehicle _vehiclePosition;
+                private _vehicle = (_x select 0) createVehicle [0,0,1000];
                 _vehicle setDir _vehicleDirection;
+                _vehicle setPos _vehiclePosition;
                 _vehicles pushBack _vehicle;
             };
         };

@@ -120,6 +120,9 @@ while {true} do {
         JTC_notUndercoverPlayers = JTC_notUndercoverPlayers - [player];
     };
     publicVariable "JTC_notUndercoverPlayers";
+    if (_newUndercoverMode == "not" and JTC_undercoverMode != "not") then {
+        hint (_notUndercoverReasons select 0);
+    };
     JTC_undercoverMode = _newUndercoverMode;
 
     if (JTC_undercoverMode == "not") then {
