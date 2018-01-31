@@ -16,13 +16,7 @@ private _totalBaseArea = 0;
 } forEach allMapMarkers;
 ["areas: %1", _enemyBases] call JTC_fnc_log;
 private _topBasePopulation = 0.7 * JTC_enemyPopulation;
-private _vehiclePool = [];
-{
-    for "_i" from 1 to (_x select 1) do {
-    	_vehiclePool pushBack _x;
-    };
-} forEach JTC_enemyVehicles;
-_vehiclePool = _vehiclePool call JTC_fnc_arrayShuffle;
+private _vehiclePool = call JTC_fnc_generateVehiclePool;
 private _actualBasePopulation = 0;
 private _vehicleCount = count _vehiclePool;
 {

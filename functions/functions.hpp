@@ -36,5 +36,7 @@ class justice {
         class log {};
         class arrayShuffle {};
         class removeVehicleFromEnemyBase {};
+        class generateVehiclePool {};
+        class insertIntoArray {};
     };
 };

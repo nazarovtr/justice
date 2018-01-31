@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=557;
+		nextID=572;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3693.1006,71.592636,17323.803};
-		dir[]={0.89030761,-0.26560891,0.36987963};
-		up[]={0.24528475,0.96407962,0.10190402};
-		aside[]={0.38366002,5.1470124e-008,-0.92347705};
+		pos[]={3752.259,68.461426,17369.955};
+		dir[]={0.88024408,-0.34960848,0.32086429};
+		up[]={0.32846764,0.93689537,0.11973235};
+		aside[]={0.34247643,-3.9828592e-008,-0.93953049};
 	};
 };
 binarizationWanted=0;
@@ -145,7 +145,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=406;
+		items=421;
 		class Item0
 		{
 			dataType="Group";
@@ -5296,7 +5296,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=7.1232052;
+			angle=7.1232033;
 			id=452;
 			atlOffset=-3.7723637;
 		};
@@ -5894,7 +5894,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.46294;
+			angle=224.46291;
 			id=496;
 			atlOffset=-3.9257269;
 		};
@@ -6662,6 +6662,213 @@ class Mission
 			type="mil_triangle";
 			id=556;
 			atlOffset=0.053037643;
+		};
+		class Item406
+		{
+			dataType="Marker";
+			position[]={15961.655,10.310059,16962.475};
+			name="parking_ground_299";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=54.379677;
+			id=557;
+			atlOffset=-3.7955275;
+		};
+		class Item407
+		{
+			dataType="Marker";
+			position[]={15965.032,10.302548,16957.605};
+			name="parking_ground_300";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=54.379677;
+			id=558;
+			atlOffset=-3.7940283;
+		};
+		class Item408
+		{
+			dataType="Marker";
+			position[]={15968.534,14.074535,16952.734};
+			name="parking_ground_301";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=54.379677;
+			id=559;
+		};
+		class Item409
+		{
+			dataType="Marker";
+			position[]={16050.962,13.487034,16960.098};
+			name="parking_ground_302";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=128.095;
+			id=560;
+		};
+		class Item410
+		{
+			dataType="Marker";
+			position[]={16153.597,9.5529785,17087.736};
+			name="parking_ground_303";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=154.89738;
+			id=561;
+			atlOffset=-3.8015137;
+		};
+		class Item411
+		{
+			dataType="Marker";
+			position[]={16159.6,9.4541016,17089.473};
+			name="parking_ground_304";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=154.89737;
+			id=562;
+			atlOffset=-3.8029585;
+		};
+		class Item412
+		{
+			dataType="Marker";
+			position[]={16137.324,13.490633,17084};
+			name="parking_ground_305";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=154.89737;
+			id=563;
+		};
+		class Item413
+		{
+			dataType="Marker";
+			position[]={16131.856,9.6845703,17081.465};
+			name="parking_ground_306";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=154.89737;
+			id=564;
+			atlOffset=-3.7888575;
+		};
+		class Item414
+		{
+			dataType="Marker";
+			position[]={16117.907,9.796875,17070.807};
+			name="parking_ground_307";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=14.890071;
+			id=565;
+			atlOffset=-3.8277168;
+		};
+		class Item415
+		{
+			dataType="Marker";
+			position[]={16115.068,9.7636719,17054.719};
+			name="parking_ground_308";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=359.16519;
+			id=566;
+			atlOffset=-3.7947531;
+		};
+		class Item416
+		{
+			dataType="Marker";
+			position[]={15983.785,9.717063,17021.164};
+			name="parking_ground_309";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=180;
+			id=567;
+			atlOffset=-3.8021803;
+		};
+		class Item417
+		{
+			dataType="Marker";
+			position[]={15984.902,9.828989,17040.242};
+			name="parking_ground_310";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=7.2236528;
+			id=568;
+			atlOffset=-3.7928009;
+		};
+		class Item418
+		{
+			dataType="Marker";
+			position[]={16021.249,9.935791,16918.971};
+			name="parking_ground_311";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=108.33662;
+			id=569;
+			atlOffset=-3.8093023;
+		};
+		class Item419
+		{
+			dataType="Marker";
+			position[]={15978.879,10.073242,16939.021};
+			name="parking_ground_312";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=340.43472;
+			id=570;
+			atlOffset=-3.8229246;
+		};
+		class Item420
+		{
+			dataType="Marker";
+			position[]={15989.408,10.117925,16928.258};
+			name="parking_ground_313";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorRed";
+			a=3;
+			b=7;
+			angle=347.39047;
+			id=571;
+			atlOffset=-3.8201761;
 		};
 	};
 };
