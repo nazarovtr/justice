@@ -12,6 +12,7 @@ if (isServer) then {
     theLamp allowDamage false;
     [] execVM "scripts\initTimeout.sqf";
     [] execVM "scripts\spawn.sqf";
+    [] execVM "scripts\patrols.sqf";
     [] execVM "scripts\winConditions.sqf";
 };
 [] execVM "scripts\weather.sqf";

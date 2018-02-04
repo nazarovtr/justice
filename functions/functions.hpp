@@ -38,5 +38,8 @@ class justice {
         class removeVehicleFromEnemyBase {};
         class generateVehiclePool {};
         class insertIntoArray {};
+        class getSpawnAreaAnchorPositions {};
+        class defaultEnemyDeathHandler {};
+        class getSpawnArea {};
     };
 };

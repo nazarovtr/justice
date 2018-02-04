@@ -42,7 +42,7 @@ if (_status == "ok") then {
             private _squadNumber = selectRandom _availableSquads;
             private _squad = JTC_enemySquads select _squadNumber;
             if ((_squad select 1) <= _populationLeft) then {
-                private _group = [_markerName call BIS_fnc_randomPosTrigger, JTC_enemySide, _squad select 0] call BIS_Fnc_spawnGroup;
+                private _group = [_markerName call BIS_fnc_randomPosTrigger, JTC_enemySide, _squad select 0] call BIS_fnc_spawnGroup;
                 _groups pushBack _group;
                 _populationLeft = _populationLeft - (_squad select 1);
             } else {
@@ -85,13 +85,7 @@ if (_status == "ok") then {
         _x setVariable ["_baseNumber", _baseNumber, true];
         _x addEventHandler ["killed", {
             private _unit = _this select 0;
-            [-1, -2] call JTC_fnc_changeReputation;
-            [_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
-             [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
-            if ((random 1) < 0.3) then {
-                [_unit, ["Steal uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
-                 "true", 3]] remoteExec ["addAction", 0, _unit];
-            };
+            _this call JTC_fnc_defaultEnemyDeathHandler;
             private _baseNumber = _unit getVariable "_baseNumber";
             private _base = JTC_enemyBases select _baseNumber;
             _base set [1, (_base select 1) - 1];
@@ -99,18 +93,6 @@ if (_status == "ok") then {
                 _base set [3, "abandoned"];
                 [_base select 2, -2 * (_base select 2)] call JTC_fnc_changeReputation;
             };
-            JTC_enemyPopulation = JTC_enemyPopulation - 1;
-            private _killer = _this select 1;
-            private _killerVehicle = vehicle _killer;
-            if (vehicle _killer != _killer and JTC_civilianFaction == (faction _killerVehicle)) then {
-                private _enemyKnowsAboutVehicle = _killerVehicle call JTC_fnc_enemyKnowsAboutObject;
-                if (_enemyKnowsAboutVehicle select 0 > 0.5 and _enemyKnowsAboutVehicle select 1  < 300) then {
-                    JTC_vehiclesKnownToEnemy pushBackUnique _killerVehicle;
-                    publicVariable "JTC_vehiclesKnownToEnemy";
-                    ["vehicle %1 is now known to enemy", _killerVehicle] call JTC_fnc_log;
-                };
-            };
-            publicVariable "JTC_enemyPopulation";
             publicVariable "JTC_enemyBases";
             ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;
         }];
