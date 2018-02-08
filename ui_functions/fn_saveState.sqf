@@ -27,8 +27,8 @@ if (count _saveName == 0) then {
     [_saveName, "date", date] call fn_saveValue;
     [_saveName, "overcast", overcast] call fn_saveValue;
 
-    private _position = getPos theBase;
-    [_saveName, "basePos", [_position select 0, (_position select 1) - 2, _position select 2]] call fn_saveValue;
+    [_saveName, "basePos", JTC_basePosition] call fn_saveValue;
+    [_saveName, "baseDir", JTC_baseDirection] call fn_saveValue;
 
     [_saveName, "recruitCount", JTC_recruitCount] call fn_saveValue;
     [_saveName, "money", JTC_money] call fn_saveValue;

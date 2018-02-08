@@ -37,12 +37,13 @@ fn_loadDateAndWeather = {
 
 fn_loadBasePosition = {
     private _position = [_saveName, "basePos"] call fn_loadValue;
-    [_position] call JTC_fnc_deployBase;
+    private _direction = [_saveName, "baseDir"] call fn_loadValue;
+    [_position, _direction] call JTC_fnc_deployBase;
     {
-        _x setPos _position;
+        _x setPosASL _position;
     } forEach playableUnits;
     {
-        _x setPos _position;
+        _x setPosASL _position;
     } forEach switchableUnits;
 };
 

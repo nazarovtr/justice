@@ -31,7 +31,7 @@ if (!_joinInProgress) then {
                 if (JTC_baseDeployed) then {
                     theBase addAction ["Move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
                 } else {
-                    deployBaseActionId = player addAction ["Deploy base here", "[getPos player] call JTC_fnc_deployBase;",
+                    deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
                      [], 0, false, true, "", "true", 3];
                 };
             };

@@ -1,8 +1,9 @@
 JTC_vehiclesKnownToEnemy = [];
 private _vehicles = _this select 0;
 {
-    private _vehicle = (_x select 0) createVehicle (_x select 1);
+    private _vehicle = (_x select 0) createVehicle (getMarkerPos "safe_spawn");
     _vehicle setDir (_x select 2);
+    _vehicle setPos (_x select 1);
     [_vehicle, _x select 3] call JTC_fnc_setContainerCargo;
     private _damage = _x select 4;
     for "_hitPointNumber" from 0 to (count (_damage select 0)) - 1 do {

@@ -7,6 +7,11 @@ removeVest _newUnit;
 removeHeadgear _newUnit;
 removeBackpack _newUnit;
 removeUniform _newUnit;
+if (!isNil "JTC_baseDeployed") then {
+    if (JTC_baseDeployed) then {
+        _newUnit setPosASL JTC_basePosition;
+    };
+};
 if ((random 1) < 1) then {
     [_oldUnit, ["Recover uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
      "true", 3]] remoteExec ["addAction", 0, _oldUnit];
@@ -15,6 +20,9 @@ _newUnit forceAddUniform  defaultUniform;
 private _playerData = [getPlayerUID player] call JTC_fnc_getPlayerData;
 _playerData set [1, defaultUniform];
 publicVariable "JTC_playerData";
+if ((getPlayerUID player) == JTC_commanderId) then {
+    deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+};
 
 [-2, 8] call JTC_fnc_changeReputation;
 JTC_recruitCount = JTC_recruitCount - 1;
