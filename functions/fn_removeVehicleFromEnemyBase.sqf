@@ -17,8 +17,11 @@ _vehicleTypes deleteAt _numberToRemove;
 if (_cost > 20000 and _cost < 1000000) then {
     [3, -3] call JTC_fnc_changeReputation;
 };
-if (_cost >= 1000000) then {
+if (_cost >= 1000000 and _cost < 10000000) then {
     [10, -6] call JTC_fnc_changeReputation;
+};
+if (_cost >= 10000000) then {
+    [15, -8] call JTC_fnc_changeReputation;
 };
 
 publicVariable "JTC_enemyBases";

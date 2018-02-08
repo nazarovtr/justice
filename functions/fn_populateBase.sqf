@@ -13,26 +13,21 @@ private _groups = [];
 private _vehicles = [];
 private _availableSquads = [];
 if (_status == "ok") then {
-    private _shuffledParkingMarkers = (_base select 5) call JTC_fnc_arrayShuffle;
     {
-        if (count _shuffledParkingMarkers > 0) then {
-            private _parkingMarker = (_shuffledParkingMarkers deleteAt 0);
-            private _vehiclePosition = markerPos _parkingMarker;
-            private _vehicleDirection = markerDir _parkingMarker;
-            if ((_x select 4) and _populationLeft > 4) then {
-                private _vehicleData = [[0,0,1000], _vehicleDirection, _x select 0, JTC_enemySide] call BIS_fnc_spawnVehicle;
-                (_vehicleData select 0) setPos _vehiclePosition;
-                _vehicles pushBack (_vehicleData select 0);
-                _groups pushBack (_vehicleData select 2);
-                _populationLeft = _populationLeft - count units (_vehicleData select 2);
-            } else {
-                private _vehicle = (_x select 0) createVehicle [0,0,1000];
-                _vehicle setDir _vehicleDirection;
-                _vehicle setPos _vehiclePosition;
-                _vehicles pushBack _vehicle;
-            };
+        private _parkingMarker = _x select 5;
+        private _vehiclePosition = markerPos _parkingMarker;
+        private _vehicleDirection = markerDir _parkingMarker;
+        private _vehicle = (_x select 0) createVehicle (getMarkerPos "safe_spawn");
+        _vehicle setDir _vehicleDirection;
+        _vehicle setPos _vehiclePosition;
+        _vehicles pushBack _vehicle;
+        if ((_x select 4) and _populationLeft > 4) then {
+            createVehicleCrew _vehicle;
+            private _group = group ((crew _vehicle) select 0);
+            _group addVehicle _vehicle;
+            _groups pushBack _group;
+            _populationLeft = _populationLeft - count units _group;
         };
-
     } forEach _vehicleTypes;
     for "_i" from 0 to (count JTC_enemySquads) - 1 do {
         _availableSquads pushBack _i;
@@ -59,7 +54,7 @@ if (_status == "ok") then {
 
 //creating waypoints
 {
-    if ((random 1) > 0.5) then {
+    if ((random 1) > 0.4 and !((vehicle leader _x) isKindOf "Air")) then {
         _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
         _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
         _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];

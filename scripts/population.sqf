@@ -1,4 +1,4 @@
-JTC_enemySide = independent;
+JTC_enemySide = east;
 JTC_enemyFaction = "OPF_F";
 JTC_civilianFaction = "CIV_F";
 private _config = configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry";
@@ -22,7 +22,7 @@ JTC_enemyInfantryUnits = [
     ["O_Pathfinder_F"]
 ];
 
-JTC_enemyVehicles = [
+JTC_enemyGroundVehicles = [
     ["O_Quadbike_01_F", 20, 8000, false, false],
     ["O_MRAP_02_F ", 10, 300000, false, false],
     ["O_MRAP_02_hmg_F", 10, 380000, false, true],
@@ -44,6 +44,22 @@ JTC_enemyVehicles = [
     ["O_MBT_02_cannon_F", 8, 6000000, false, true],
     ["O_MBT_02_arty_F", 3, 6000000, false, true],
     ["O_APC_Wheeled_02_rcws_F", 10, 3000000, true, true]
+];
+
+JTC_enemyHelicopters = [
+    ["O_Heli_Light_02_F", 6, 6000000, false, true],
+    ["O_Heli_Light_02_unarmed_F", 8, 5000000, true, false],
+    ["O_Heli_Transport_04_bench_F", 6, 11000000, true, false],
+    ["O_Heli_Attack_02_F", 4, 16000000, false, true]
+];
+
+JTC_enemyUavs = [
+    ["O_UAV_02_F", 6, 8000000, false, false],
+    ["O_UAV_02_CAS_F", 4, 8000000, false, false]
+];
+
+JTC_enemyPlanes = [
+    ["O_Plane_CAS_02_F", 4, 15000000, false, false]
 ];
 
 JTC_enemySmallestSquadSize = 2;
