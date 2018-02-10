@@ -1,4 +1,5 @@
 JTC_enemySide = east;
+JTC_playerSide = west;
 JTC_enemyFaction = "OPF_F";
 JTC_civilianFaction = "CIV_F";
 private _config = configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry";

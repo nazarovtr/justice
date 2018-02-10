@@ -8,9 +8,8 @@ removeHeadgear _newUnit;
 removeBackpack _newUnit;
 removeUniform _newUnit;
 if (!isNil "JTC_baseDeployed") then {
-    if (JTC_baseDeployed) then {
-        _newUnit setPosASL JTC_basePosition;
-    };
+    _newUnit setPosASL JTC_basePosition;
+    _newUnit setDir JTC_baseDirection;
 };
 if ((random 1) < 1) then {
     [_oldUnit, ["Recover uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
@@ -25,12 +24,4 @@ if ((getPlayerUID player) == JTC_commanderId) then {
 };
 
 [-2, 8] call JTC_fnc_changeReputation;
-JTC_recruitCount = JTC_recruitCount - 1;
-publicVariable "JTC_recruitCount";
-if (JTC_recruitCount < 1) then {
-    if (isServer) then {
-        "noRecruits" call BIS_fnc_endMissionServer;
-    } else {
-        ["noRecruits"] remoteExec ["BIS_fnc_endMissionServer", 2];
-    };
-};
+call JTC_fnc_handleRecruitDeath;

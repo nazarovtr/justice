@@ -41,9 +41,11 @@ fn_loadBasePosition = {
     [_position, _direction] call JTC_fnc_deployBase;
     {
         _x setPosASL _position;
+        _x setDir _direction;
     } forEach playableUnits;
     {
         _x setPosASL _position;
+        _x setDir _direction;
     } forEach switchableUnits;
 };
 
@@ -80,7 +82,7 @@ fn_loadGuerillaResources = {
 fn_setCommander = {
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
-    theBase addAction ["Move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
+    theBase addAction ["Move base", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
 };

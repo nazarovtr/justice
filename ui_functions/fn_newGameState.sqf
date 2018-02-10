@@ -25,7 +25,7 @@ publicVariable "JTC_vehiclesKnownToEnemy";
 publicVariable "JTC_enemyBases";
 publicVariable "JTC_cities";
 publicVariable "JTC_playerData";
-theBase addAction ["Move base", "[false] call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
+theBase addAction ["Move base", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
 deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
 private _marker = createMarker ["hq", getMarkerPos JTC_respawnMarker];
 _marker setMarkerType JTC_hqMarkerType;
