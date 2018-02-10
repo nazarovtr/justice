@@ -1,3 +1,5 @@
+private _message = format _this;
 if (JTC_log) then {
-    (format _this) remoteExec ["systemChat"];
+    _message remoteExec ["systemChat"];
 };
+_message remoteExec ["diag_log"];
