@@ -21,6 +21,7 @@ theLamp setPosASL [_lampPosition select 0, _lampPosition select 1, _position sel
 theCrate setPosASL [_cratePosition select 0, _cratePosition select 1, _position select 2];
 private _group = createGroup JTC_playerSide;
 theGuy = _group createUnit ["B_G_Survivor_F", _guyPosition, [], 0, "NONE"];
+theGuy setPosASL [_guyPosition select 0, _guyPosition select 1, _position select 2];
 theGuy setDir (_direction + 210);
 theGuy disableAI "MOVE";
 theGuy allowDamage false;
