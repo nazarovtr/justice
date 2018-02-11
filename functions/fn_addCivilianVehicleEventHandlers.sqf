@@ -7,7 +7,7 @@ _vehicle addEventHandler ["GetIn", {
     if (isPlayer _unit and isNil "_stolen") then {
         ["Civilian vehicle stolen"] call JTC_fnc_log;
         _vehicle setVariable ["_stolen", true, true]; // do not despawn
-        [-5, 2] call JTC_fnc_changeReputation;
+        [-2, 1] call JTC_fnc_changeRating;
     };
 }];
 
@@ -17,6 +17,6 @@ _vehicle addEventHandler ["Killed", {
     private _stolen = _vehicle getVariable "_stolen";
     if (isPlayer _killer and isNil "_stolen") then {
         ["Civilian vehicle destroyed"] call JTC_fnc_log;
-        [-5, 2] call JTC_fnc_changeReputation;
+        [-2, 1] call JTC_fnc_changeRating;
     };
 }];

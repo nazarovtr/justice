@@ -4,7 +4,7 @@ _civilian addEventHandler ["killed", {
     if (!isNil "JTC_cities") then {
         private _unit = _this select 0;
         if (isPlayer (_this select 1)) then {
-            [-10, 5] call JTC_fnc_changeReputation;
+            [-3, 3] call JTC_fnc_changeRating;
         };
         if ((random 1) < 0.3) then {
             [_unit, ["Steal clothes", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",

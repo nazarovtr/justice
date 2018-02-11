@@ -15,13 +15,13 @@ for "_i" from 0 to (count _vehicleTypes) - 1 do {
 };
 _vehicleTypes deleteAt _numberToRemove;
 if (_cost > 20000 and _cost < 1000000) then {
-    [3, -3] call JTC_fnc_changeReputation;
+    [1, -1] call JTC_fnc_changeRating;
 };
 if (_cost >= 1000000 and _cost < 10000000) then {
-    [10, -6] call JTC_fnc_changeReputation;
+    [3, -2] call JTC_fnc_changeRating;
 };
 if (_cost >= 10000000) then {
-    [15, -8] call JTC_fnc_changeReputation;
+    [5, -4] call JTC_fnc_changeRating;
 };
 
 publicVariable "JTC_enemyBases";

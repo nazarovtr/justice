@@ -1,7 +1,9 @@
 JTC_cheats = true;
 JTC_log = true;
-JTC_defaultPlayerReputation = 0;
-JTC_defaultEnemyReputation = 400;
+JTC_defaultPlayerRating = 2;
+JTC_defaultPlayerAntirating = 0;
+JTC_defaultEnemyRating = 71;
+JTC_defaultEnemyAntirating = 12;
 JTC_civilianPopulation = 4000;
 JTC_recruitablePopulation = 600;
 JTC_civilianSpawnPercent = 10;

@@ -9,10 +9,10 @@ private _baseDeployedCondition = {
 JTC_scheduledTasks = [
     ["recruits", 0, 10, {
         ["Rectuit added"] call JTC_fnc_log;
-    }, {JTC_playerReputation > 50}, {true}],
+    }, {JTC_playerRating > 50}, {true}],
     ["small ied", 0, 20, {
         ["small ied added"] call JTC_fnc_log;
-    }, {JTC_playerReputation > 100}, _baseDeployedCondition]
+    }, {JTC_playerRating > 100}, _baseDeployedCondition]
 ];
 publicVariable "JTC_scheduledTasks";
 

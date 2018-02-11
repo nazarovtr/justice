@@ -1,6 +1,6 @@
 private _unit = _this select 0;
 private _killer = _this select 1;
-[-1, -2] call JTC_fnc_changeReputation;
+[-0.5, -1] call JTC_fnc_changeRating;
 [_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
  [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
 if ((random 1) < 0.3) then {

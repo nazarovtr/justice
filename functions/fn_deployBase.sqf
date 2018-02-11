@@ -42,7 +42,7 @@ if (_deployAllowed) then {
         clearItemCargoGlobal theBase;
         clearBackpackCargoGlobal theBase;
         call JTC_fnc_moveBase;
-        [-10, 15] call JTC_fnc_changeReputation;
+        [-8, 10] call JTC_fnc_changeRating;
         call JTC_fnc_handleRecruitDeath;
     }];
     [] spawn {

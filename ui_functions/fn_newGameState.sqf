@@ -2,8 +2,10 @@
 
 JTC_commanderName = name player;
 JTC_commanderId = getPlayerUID player;
-JTC_playerReputation = JTC_defaultPlayerReputation;
-JTC_enemyReputation = JTC_defaultEnemyReputation;
+JTC_playerRating = JTC_defaultPlayerRating;
+JTC_playerAntirating = JTC_defaultPlayerAntirating;
+JTC_enemyRating = JTC_defaultEnemyRating;
+JTC_enemyAntirating = JTC_defaultEnemyAntirating;
 JTC_freeEnemyPopulation = 0;
 JTC_vehiclesKnownToEnemy = [];
 JTC_enemyBases = [];
@@ -15,8 +17,10 @@ JTC_playerData = [];
 } forEach allPlayers;
 publicVariable "JTC_commanderName";
 publicVariable "JTC_commanderId";
-publicVariable "JTC_playerReputation";
-publicVariable "JTC_enemyReputation";
+publicVariable "JTC_playerRating";
+publicVariable "JTC_enemyRating";
+publicVariable "JTC_playerAntirating";
+publicVariable "JTC_enemyAntirating";
 publicVariable "JTC_freeEnemyPopulation";
 publicVariable "JTC_vehiclesKnownToEnemy";
 publicVariable "JTC_enemyBases";

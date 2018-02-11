@@ -4,11 +4,11 @@ waitUntil {
 };
 
 while {true} do {
-    if (JTC_enemyReputation < -500) then {
-        if (JTC_playerReputation > 200) then {
+    if (JTC_enemyAntirating > 50) then {
+        if (JTC_playerRating > 30 and JTC_playerAntirating < 15) then {
             "governmentLostPopularityGuerillaHeroes" call BIS_fnc_endMissionServer;
         } else {
-            if (JTC_playerReputation < -200) then {
+            if (JTC_playerAntirating > 25) then {
                 "governmentLostPopularityGuerillaCriminals" call BIS_fnc_endMissionServer;
             } else {
                 "governmentLostPopularity" call BIS_fnc_endMissionServer;

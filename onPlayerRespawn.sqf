@@ -23,5 +23,5 @@ if ((getPlayerUID player) == JTC_commanderId) then {
     deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
 };
 
-[-2, 8] call JTC_fnc_changeReputation;
+[-2, 3] call JTC_fnc_changeRating;
 call JTC_fnc_handleRecruitDeath;

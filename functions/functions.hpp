@@ -31,7 +31,7 @@ class justice {
         class addCivilianEventHandlers {};
         class addCivilianVehicleEventHandlers {};
         class getClosestCity {};
-        class changeReputation {};
+        class changeRating {};
         class enemyKnowsAboutObject {};
         class log {};
         class arrayShuffle {};
