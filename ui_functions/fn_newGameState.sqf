@@ -7,6 +7,7 @@ JTC_playerAntirating = JTC_defaultPlayerAntirating;
 JTC_enemyRating = JTC_defaultEnemyRating;
 JTC_enemyAntirating = JTC_defaultEnemyAntirating;
 JTC_freeEnemyPopulation = 0;
+JTC_deadRecruitCount = 0;
 JTC_vehiclesKnownToEnemy = [];
 JTC_enemyBases = [];
 [] call JTC_fnc_initializeCities;

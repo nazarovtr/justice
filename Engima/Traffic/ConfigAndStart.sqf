@@ -17,6 +17,7 @@ _parameters = [
 	["DEBUG", JTC_log],
 	["ON_SPAWN_CALLBACK", {
 	    [_this select 0] call JTC_fnc_addCivilianVehicleEventHandlers;
+	    (_this select 0) call JTC_fnc_syncVehicleCustomization;
 	    {
 	        [_x] call JTC_fnc_addCivilianEventHandlers;
 	    } forEach (_this select 1);

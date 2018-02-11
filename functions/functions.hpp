@@ -42,6 +42,9 @@ class justice {
         class defaultEnemyDeathHandler {};
         class getSpawnArea {};
         class handleRecruitDeath {};
-        class tryToAddRecruit {};
+        class tryToAddRecruits {};
+        class tryToAddBonusItem {};
+        class tryToAddBonusVehicle {};
+        class syncVehicleCustomization {};
     };
 };

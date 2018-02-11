@@ -35,6 +35,7 @@ while {_vehicleCount > 0 && _attemptLimit > 0} do {
         private _position = (getPos (_road select 0)) getPos [3, _direction + 90];
         if ((nearestObjects [_position, ["Car"], 50]) isEqualTo[]) then {
             private _vehicle = (JTC_civilianVehicles call JTC_fnc_selectWeightedRandom) createVehicle _position;
+            _vehicle call JTC_fnc_syncVehicleCustomization;
             _vehicle setDir _direction;
             _vehicles pushBack _vehicle;
             _vehicleCount = _vehicleCount - 1;

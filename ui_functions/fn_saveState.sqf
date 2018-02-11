@@ -31,6 +31,7 @@ if (count _saveName == 0) then {
     [_saveName, "baseDir", JTC_baseDirection] call fn_saveValue;
 
     [_saveName, "recruitCount", JTC_recruitCount] call fn_saveValue;
+    [_saveName, "deadRecruitCount", JTC_deadRecruitCount] call fn_saveValue;
     [_saveName, "money", JTC_money] call fn_saveValue;
     [theCrate, theBase, true, 0, 15, 0, true] call JTC_fnc_moveCargo;
     [_saveName, "ammobox", [[theBase] call JTC_fnc_getContainerCargo,

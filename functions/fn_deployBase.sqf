@@ -27,9 +27,9 @@ if (_deployAllowed) then {
     private _guyPosition = _position getPos [1.5, _direction + 30];
     private _lampPosition = _position getPos [1.5, _direction - 90];
     private _cratePosition = _position getPos [1.5, _direction + 90];
-    theBase setPosASL [_basePosition select 0, _basePosition select 1, _position select 2];
-    theLamp setPosASL [_lampPosition select 0, _lampPosition select 1, _position select 2];
-    theCrate setPosASL [_cratePosition select 0, _cratePosition select 1, _position select 2];
+    theBase setPosASL [_basePosition select 0, _basePosition select 1, (_position select 2) + 0.3];
+    theLamp setPosASL [_lampPosition select 0, _lampPosition select 1, (_position select 2) + 0.3];
+    theCrate setPosASL [_cratePosition select 0, _cratePosition select 1, (_position select 2) + 0.3];
     private _group = createGroup JTC_playerSide;
     theGuy = _group createUnit ["B_G_Survivor_F", _guyPosition, [], 0, "NONE"];
     theGuy setPosASL [_guyPosition select 0, _guyPosition select 1, _position select 2];
