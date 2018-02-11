@@ -52,6 +52,7 @@ fn_loadBasePosition = {
 fn_loadPopulation = {
     [_saveName, "enemyPopulation", 150] call fn_loadAndPublishValue;
     [_saveName, "civilianPopulation", 1500] call fn_loadAndPublishValue;
+    [_saveName, "recruitablePopulation", 600] call fn_loadAndPublishValue;
     [_saveName, "civilianSpawnPercent", 10] call fn_loadAndPublishValue;
     [_saveName, "freeEnemyPopulation", 50] call fn_loadAndPublishValue;
     [_saveName, "cities", []] call fn_loadAndPublishValue;
@@ -93,6 +94,19 @@ fn_removeStartingVehicles = {
     } forEach JTC_startingVehicles;
 };
 
+fn_loadSchedulerData = {
+    private _schedulerData = [_saveName, "schedulerData"] call fn_loadValue;
+    {
+        private _data = _x;
+        {
+            if ((_data select 0) == (_x select 0)) then {
+                _x set [1, _data select 1];
+            };
+        } forEach JTC_scheduledTasks;
+    } forEach _schedulerData;
+    publicVariable "JTC_scheduledTasks";
+};
+
 private _saveName = ctrlText 1400;
 
 [_saveName] call JTC_fnc_log;
@@ -109,6 +123,7 @@ if ((count _saveName) == 0) then {
     [] call fn_loadGuerillaResources;
     [] call fn_loadPopulation;
     [] call fn_loadReputation;
+    [] call fn_loadSchedulerData;
     {
         if ((_x find "start") == 0) then {
             _x setMarkerAlpha 0;

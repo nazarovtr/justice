@@ -12,11 +12,16 @@ _civilian addEventHandler ["killed", {
         };
 
         private _city = [position _unit] call JTC_fnc_getClosestCity;
-        private _populationDecrease = round (100 / JTC_civilianSpawnPercent);
+        private _populationDecrease = 1;
         _populationDecrease = _populationDecrease min (_city select 1);
         _city set [1, (_city select 1) - _populationDecrease];
         JTC_civilianPopulation = JTC_civilianPopulation - _populationDecrease;
+        if ((random JTC_civilianPopulation) < JTC_recruitablePopulation) then {
+            JTC_recruitablePopulation = JTC_recruitablePopulation - _populationDecrease;
+        };
+        JTC_civilianPopulation = JTC_civilianPopulation - _populationDecrease;
         publicVariable "JTC_civilianPopulation";
+        publicVariable "JTC_recruitablePopulation";
         publicVariable "JTC_cities";
         ["Unit killed in city %1. Population: %2, Bases: %3", _city select 0, JTC_civilianPopulation,
          JTC_cities] call JTC_fnc_log;

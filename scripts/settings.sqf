@@ -3,6 +3,7 @@ JTC_log = true;
 JTC_defaultPlayerReputation = 0;
 JTC_defaultEnemyReputation = 400;
 JTC_civilianPopulation = 4000;
+JTC_recruitablePopulation = 600;
 JTC_civilianSpawnPercent = 10;
 JTC_enemyPopulation = 600;
 JTC_baseRadius = 100;

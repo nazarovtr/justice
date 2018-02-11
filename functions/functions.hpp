@@ -42,5 +42,6 @@ class justice {
         class defaultEnemyDeathHandler {};
         class getSpawnArea {};
         class handleRecruitDeath {};
+        class tryToAddRecruit {};
     };
 };

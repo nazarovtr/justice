@@ -42,6 +42,7 @@ if (count _saveName == 0) then {
     [_saveName, "enemyReputation", JTC_enemyReputation] call fn_saveValue;
     [_saveName, "enemyPopulation", JTC_enemyPopulation] call fn_saveValue;
     [_saveName, "civilianPopulation", JTC_civilianPopulation] call fn_saveValue;
+    [_saveName, "recruitablePopulation", JTC_recruitablePopulation] call fn_saveValue;
     [_saveName, "civilianSpawnPercent", JTC_civilianSpawnPercent] call fn_saveValue;
     [_saveName, "freeEnemyPopulation", JTC_freeEnemyPopulation] call fn_saveValue;
     {
@@ -50,6 +51,11 @@ if (count _saveName == 0) then {
     } forEach allPlayers;
     publicVariable "JTC_playerData";
     [_saveName, "playerData", JTC_playerData] call fn_saveValue;
+    private _schedulerData = [];
+    {
+        _schedulerData pushBack [_x select 0, _x select 1];
+    } forEach JTC_scheduledTasks;
+    [_saveName, "schedulerData", _schedulerData] call fn_saveValue;
     saveProfileNamespace;
     closeDialog 23001;
     hint "Saved";

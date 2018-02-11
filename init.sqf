@@ -14,6 +14,7 @@ if (isServer) then {
     [] execVM "scripts\spawn.sqf";
     [] execVM "scripts\patrols.sqf";
     [] execVM "scripts\winConditions.sqf";
+    [] execVM "scripts\scheduler.sqf";
 };
 [] execVM "scripts\weather.sqf";
 
