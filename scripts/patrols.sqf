@@ -40,7 +40,6 @@ while {true} do {
     sleep 10;
     ["Patrol loop start"] call JTC_fnc_log;
     private _spawnedPatrolPopulation = 0;
-    // TODO remove from _patrolGroups
     _patrolGroups = _patrolGroups select {
         private _group = _x;
         if (!([position leader _group] call JTC_fnc_isInSpawnArea)) then {
@@ -67,9 +66,14 @@ while {true} do {
             private _anchorCandidate = selectRandom _spawnAreaAnchorPositions;
             private _groupsAtAnchor = [_anchorCandidate] call _countGroupsAtAnchor;
             if (_groupsAtAnchor == 0 or _groupsAtAnchor < _maxGroupsAtAnchor or _anchorAttemptsLeft == 0) then {
-                private _candidatePosition = _anchorCandidate getPos [0.95 * JTC_spawnDistance, random 360];
+                private _candidateDistance = if ((0.95 * JTC_spawnDistance) > 1500) then {
+                    1500 + random (0.95 * JTC_spawnDistance - 1500);
+                } else {
+                    0.95 * JTC_spawnDistance;
+                };
+                private _candidatePosition = _anchorCandidate getPos [_candidateDistance, random 360];
                 ["Patrol candidate position: %1", _candidatePosition] call JTC_fnc_log;
-                if (!([_candidatePosition, 0.75 * JTC_spawnDistance] call JTC_fnc_isInSpawnArea)) then {
+                if (!([_candidatePosition, (0.75 * JTC_spawnDistance) min 1350] call JTC_fnc_isInSpawnArea)) then {
                     if (!surfaceIsWater _candidatePosition) then {
                         private _group = [_candidatePosition, JTC_enemySide, selectRandom _patrolSquads] call BIS_fnc_spawnGroup;
                         ["Spawned patrol %1", _group] call JTC_fnc_log;
