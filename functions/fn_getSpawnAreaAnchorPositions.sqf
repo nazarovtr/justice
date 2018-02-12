@@ -1,7 +1,9 @@
 private _spawnAreaAnchorPositions = [];
 
-if (JTC_baseDeployed) then {
-    _spawnAreaAnchorPositions pushBack (getPos theBase);
+if (!isNil "JTC_baseDeployed") then {
+    if (JTC_baseDeployed) then {
+        _spawnAreaAnchorPositions pushBack (getPos theBase);
+    };
 };
 
 if (isMultiplayer) then {

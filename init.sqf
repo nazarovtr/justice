@@ -5,8 +5,6 @@ if (isServer) then {
     setDate [2035, 5, 12, (paramsArray select 1), 0];
     JTC_defaultBasePos = getPos theBase;
     publicVariable "JTC_defaultBasePos";
-    JTC_baseDeployed = false;
-    publicVariable "JTC_defaultBasePos";
     theBase allowDamage false;
     theCrate allowDamage false;
     theLamp allowDamage false;

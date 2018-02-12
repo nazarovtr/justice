@@ -1,5 +1,6 @@
 #include "uiDefines.hpp"
 #include "dialogs.hpp"
+#include "taw_vd\GUI.h"
 
 onLoadName = "Justice Altis";
 onLoadMission = "Fight for Justice agains the corrupt government";
@@ -30,6 +31,7 @@ class CfgFunctions
 {
     #include "ui_functions\ui_functions.hpp"
     #include "functions\functions.hpp"
+    #include "taw_vd\CfgFunctions.hpp"
 };
 
 class Params
