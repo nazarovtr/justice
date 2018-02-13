@@ -80,10 +80,18 @@ while {true} do {
     if (_newUndercoverMode != "not" and alive player) then {
         scopeName "main";
         {
-            if (player != _x and (_playerPosition distance position _x) < 30) then {
-                _newUndercoverMode = "not";
-                _notUndercoverReasons pushBack "Player is near not undercover player";
-                breakTo "main";
+            if (alive _x) then {
+                if (player != _x and (_playerPosition distance position _x) < 30) then {
+                    _newUndercoverMode = "not";
+                    _notUndercoverReasons pushBack "Player is near not undercover player";
+                    breakTo "main";
+                };
+            } else {
+                if (player != _x and (_playerPosition distance position _x) < 15) then {
+                    _newUndercoverMode = "not";
+                    _notUndercoverReasons pushBack "Player is near not undercover dead player";
+                    breakTo "main";
+                };
             };
         } forEach JTC_notUndercoverPlayers;
     };

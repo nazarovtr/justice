@@ -54,24 +54,29 @@ if (_status == "ok") then {
 
 //creating waypoints
 {
-    if ((random 1) > 0.4 and !((vehicle leader _x) isKindOf "Air")) then {
-        _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
-        _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
-        _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
-        _x addWaypoint [getPos leader _x, 0];
-        [_x, 4] setWaypointType "CYCLE";
-        [_x, 1] setWaypointBehaviour "SAFE";
+    if ((vehicle leader _x) isKindOf "Air") then {
+        _x addWaypoint [getPos (vehicle leader _x), 0];
+        [_x, 1] setWaypointType "GUARD";
     } else {
-        _x addWaypoint [getPos leader _x, 0];
-        [_x, 1] setWaypointType "HOLD";
-        [_x, 1] setWaypointBehaviour "SAFE";
-        {
-            _x spawn {
-                sleep 10;
-                _this action ["SitDown", _this];
-            }
-        } forEach units _x;
-    };
+        if ((random 1) > 0.4) then {
+            _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
+            _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
+            _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
+            _x addWaypoint [getPos leader _x, 0];
+            [_x, 4] setWaypointType "CYCLE";
+            [_x, 1] setWaypointBehaviour "SAFE";
+        } else {
+            _x addWaypoint [getPos leader _x, 0];
+            [_x, 1] setWaypointType "HOLD";
+            [_x, 1] setWaypointBehaviour "SAFE";
+            {
+                _x spawn {
+                    sleep 10;
+                    _this action ["SitDown", _this];
+                }
+            } forEach units _x;
+        };
+    }
 } forEach _groups;
 
 // death handling
