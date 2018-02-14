@@ -7,8 +7,7 @@ _civilian addEventHandler ["killed", {
             [-3, 3] call JTC_fnc_changeRating;
         };
         if ((random 1) < 0.3) then {
-            [_unit, ["Steal clothes", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
-             "true", 3]] remoteExec ["addAction", 0, _unit];
+            [_unit, "Steal clothes"] call JTC_fnc_addStealUniformAction;
         };
 
         private _city = [position _unit] call JTC_fnc_getClosestCity;

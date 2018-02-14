@@ -46,5 +46,6 @@ class justice {
         class tryToAddBonusItem {};
         class tryToAddBonusVehicle {};
         class syncVehicleCustomization {};
+        class addStealUniformAction {};
     };
 };

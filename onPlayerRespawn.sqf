@@ -12,8 +12,7 @@ if (!isNil "JTC_baseDeployed") then {
     _newUnit setDir JTC_baseDirection;
 };
 if ((random 1) < 1) then {
-    [_oldUnit, ["Recover uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
-     "true", 3]] remoteExec ["addAction", 0, _oldUnit];
+    [_oldUnit, "Recover uniform"] call JTC_fnc_addStealUniformAction;
 };
 _newUnit forceAddUniform  defaultUniform;
 private _playerData = [getPlayerUID player] call JTC_fnc_getPlayerData;

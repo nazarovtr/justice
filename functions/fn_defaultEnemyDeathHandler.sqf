@@ -4,8 +4,7 @@ private _killer = _this select 1;
 [_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
  [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
 if ((random 1) < 0.3) then {
-    [_unit, ["Steal uniform", "[_this select 0] call JTC_fnc_stealUniform;", [], 0, false, true, "",
-     "true", 3]] remoteExec ["addAction", 0, _unit];
+    [_unit, "Steal uniform"] call JTC_fnc_addStealUniformAction;
 };
 JTC_enemyPopulation = JTC_enemyPopulation - 1;
 private _killerVehicle = vehicle _killer;
