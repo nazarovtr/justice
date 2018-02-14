@@ -1,6 +1,6 @@
 call compile preprocessFileLineNumbers "scripts\settings.sqf";
+call compile preprocessFileLineNumbers "scripts\population.sqf";
 if (isServer) then {
-    call compile preprocessFileLineNumbers "scripts\population.sqf";
     waitUntil {!isNil "paramsArray";};
     setDate [2040, 5, 12, (paramsArray select 1), 0];
     JTC_defaultBasePos = getPos theBase;

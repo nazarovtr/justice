@@ -1,5 +1,5 @@
-JTC_cheats = true;
-JTC_log = true;
+JTC_cheats = false;
+JTC_log = false;
 JTC_defaultPlayerRating = 2;
 JTC_defaultPlayerAntirating = 0;
 JTC_defaultEnemyRating = 71;

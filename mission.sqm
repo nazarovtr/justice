@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=722;
+		nextID=724;
 	};
 	class MarkerIDProvider
 	{
@@ -37,13 +37,14 @@ addons[]=
 	"A3_Soft_F_Beta_Truck_02",
 	"A3_Soft_F_Gamma_Van_01",
 	"A3_Soft_F_Kart_Kart_01",
-	"A3_Weapons_F_Ammoboxes"
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Modules_F_Intel"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -107,6 +108,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item9
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=279071;
@@ -145,7 +153,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=555;
+		items=557;
 		class Item0
 		{
 			dataType="Group";
@@ -6756,7 +6764,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=108.33658;
+			angle=108.33653;
 			id=569;
 			atlOffset=-3.8093023;
 		};
@@ -6826,7 +6834,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=7.1285977;
+			angle=7.1285949;
 			id=574;
 			atlOffset=-0.85035706;
 		};
@@ -6866,7 +6874,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.53216;
+			angle=113.53211;
 			id=577;
 			atlOffset=-0.019332886;
 		};
@@ -7048,7 +7056,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=101.80682;
+			angle=101.80681;
 			id=592;
 			atlOffset=-3.6775818;
 		};
@@ -7579,7 +7587,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=205.17563;
+			angle=205.17561;
 			id=636;
 		};
 		class Item472
@@ -7632,7 +7640,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=114.09878;
+			angle=114.09873;
 			id=640;
 		};
 		class Item476
@@ -7686,7 +7694,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.41927;
+			angle=113.41924;
 			id=644;
 		};
 		class Item480
@@ -7740,7 +7748,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=220.78668;
+			angle=220.78659;
 			id=648;
 			atlOffset=-3.9935608;
 		};
@@ -7782,7 +7790,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=220.86282;
+			angle=220.86273;
 			id=651;
 			atlOffset=-3.9661646;
 		};
@@ -8205,7 +8213,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.16556;
+			angle=224.16547;
 			id=682;
 			atlOffset=-3.7901268;
 		};
@@ -8312,7 +8320,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=222.44598;
+			angle=222.44589;
 			id=690;
 		};
 		class Item526
@@ -8364,7 +8372,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=223.92854;
+			angle=223.92845;
 			id=694;
 			atlOffset=0.0036849976;
 		};
@@ -8378,7 +8386,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=222.46159;
+			angle=222.4615;
 			id=695;
 			atlOffset=5.7220459e-006;
 		};
@@ -8654,7 +8662,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=55.944462;
+			angle=55.944439;
 			id=716;
 			atlOffset=-0.015329361;
 		};
@@ -8668,7 +8676,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.313049;
+			angle=56.313026;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -8692,6 +8700,226 @@ class Mission
 			name="safe_spawn";
 			type="mil_circle";
 			id=721;
+		};
+		class Item555
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2907.177,0.14645386,17080.18};
+			};
+			id=722;
+			type="ModuleCreateDiaryRecord_F";
+			atlOffset=98.987999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCreateDiaryRecord_F_PresetTitle";
+					expression="_this setVariable ['PresetTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Mission";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCreateDiaryRecord_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Manual";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCreateDiaryRecord_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Your goal is to overthrow the government";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCreateDiaryRecord_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCreateDiaryRecord_F_Subject";
+					expression="_this setVariable ['Subject',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Justice Altis  Alpha";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item556
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3031.2981,64.458862,16589.9};
+			};
+			id=723;
+			type="ModuleCreateDiaryRecord_F";
+			atlOffset=189.104;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCreateDiaryRecord_F_PresetTitle";
+					expression="_this setVariable ['PresetTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Mission";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCreateDiaryRecord_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Manual";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCreateDiaryRecord_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Your goal is to overthrow the government";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCreateDiaryRecord_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCreateDiaryRecord_F_Subject";
+					expression="_this setVariable ['Subject',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Justice Altis  Alpha";
+						};
+					};
+				};
+				nAttributes=5;
+			};
 		};
 	};
 };
