@@ -47,5 +47,6 @@ class justice {
         class tryToAddBonusVehicle {};
         class syncVehicleCustomization {};
         class addStealUniformAction {};
+        class skipTime {};
     };
 };

@@ -15,6 +15,12 @@ theBase addAction ["Move closest vehicle cargo to ammobox", "[] call JTC_fnc_mov
     [], 0, false, true,"", "true", 3];
 theBase addAction ["Move ammobox cargo to closest vehicle",
     "[theBase, 20, 0, true, 0.02] call JTC_fnc_moveCargoToClosestVehicle;", [], 0, false, true, "", "true", 3];
+theLamp addAction ["Rest 4 hours",
+    "4 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
+theLamp addAction ["Rest till the morning",
+    "-1 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
+theLamp addAction ["Rest till the night",
+    "-2 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
 waitUntil {!(isNull (findDisplay 46))};
 (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 21) then {[] call JTCUI_fnc_showUniformDialog;};"];
 if (!_joinInProgress) then {
