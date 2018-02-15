@@ -65,6 +65,31 @@ JTC_enemyPlanes = [
 
 JTC_enemySmallestSquadSize = 2;
 
+JTC_ammoTruckMagazines = [
+    ["30Rnd_65x39_caseless_green", 0.99, 8, 30],
+    ["30Rnd_65x39_caseless_green_mag_Tracer", 0.99, 8, 20],
+    ["150Rnd_762x54_Box", 0.5, 1, 3],
+    ["150Rnd_762x54_Box_Tracer", 0.5, 1, 3],
+    ["10Rnd_762x54_Mag", 0.9, 8, 20],
+    ["10Rnd_93x64_DMR_05_Mag", 0.7, 5, 12],
+    ["150Rnd_93x64_Mag", 0.3, 2, 3],
+    ["5Rnd_127x108_Mag", 0.7, 5, 20],
+    ["5Rnd_127x108_APDS_Mag", 0.6, 5, 20],
+    ["RPG32_F", 0.7, 3, 12],
+    ["RPG32_HE_F", 0.7, 3, 12],
+    ["APERSBoundingMine_Range_Mag", 0.2, 1, 6],
+    ["APERSMine_Range_Mag", 0.2, 1, 6],
+    ["ClaymoreDirectionalMine_Remote_Mag", 0.3, 1, 5],
+    ["DemoCharge_Remote_Mag", 0.3, 1, 3],
+    ["SatchelCharge_Remote_Mag", 0.2, 1, 2],
+    ["SLAMDirectionalMine_Wire_Mag", 0.2, 1, 4],
+    ["MiniGrenade", 0.8, 5, 15],
+    ["HandGrenade", 0.8, 5, 15],
+    ["SmokeShellOrange", 0.2, 1, 4],
+    ["SmokeShellRed", 0.2, 1, 4],
+    ["SmokeShell", 0.2, 1, 4]
+];
+
 JTC_civilianUnits = ["C_man_1", "C_man_polo_1_F", "C_man_polo_2_F", "C_man_polo_3_F", "C_man_polo_4_F", "C_man_polo_5_F",
      "C_man_polo_6_F", "C_man_p_fugitive_F", "C_man_w_worker_F", "C_man_hunter_1_F"];
 

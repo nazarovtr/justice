@@ -48,5 +48,6 @@ class justice {
         class syncVehicleCustomization {};
         class addStealUniformAction {};
         class skipTime {};
+        class loadAmmoTruckWithMagazines {};
     };
 };

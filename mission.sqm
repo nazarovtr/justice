@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=724;
+		nextID=728;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3726.3772,85.116188,17340.836};
-		dir[]={0.81868494,-0.44424528,0.36388651};
-		up[]={0.40595451,0.89590502,0.18043748};
-		aside[]={0.40616629,4.0883606e-008,-0.91380656};
+		pos[]={3741.3994,58.957577,17383.977};
+		dir[]={0.89518696,-0.37215608,0.24530408};
+		up[]={0.35894266,0.92816651,0.098359928};
+		aside[]={0.2642878,-4.0209852e-007,-0.96446377};
 	};
 };
 binarizationWanted=0;
@@ -37,14 +37,13 @@ addons[]=
 	"A3_Soft_F_Beta_Truck_02",
 	"A3_Soft_F_Gamma_Van_01",
 	"A3_Soft_F_Kart_Kart_01",
-	"A3_Weapons_F_Ammoboxes",
-	"A3_Modules_F_Intel"
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -108,13 +107,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 randomSeed=279071;
@@ -153,7 +145,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=557;
+		items=555;
 		class Item0
 		{
 			dataType="Group";
@@ -2368,7 +2360,7 @@ class Mission
 		class Item93
 		{
 			dataType="Marker";
-			position[]={16084.76,0,16984.693};
+			position[]={16116.25,-2.3100586,17002.586};
 			name="base_12";
 			text="Telos base";
 			markerType="ELLIPSE";
@@ -2378,7 +2370,7 @@ class Mission
 			b=180;
 			angle=141.729;
 			id=235;
-			atlOffset=-15.109716;
+			atlOffset=-16.146431;
 		};
 		class Item94
 		{
@@ -6764,7 +6756,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=108.33653;
+			angle=108.33652;
 			id=569;
 			atlOffset=-3.8093023;
 		};
@@ -6834,14 +6826,14 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=7.1285949;
+			angle=7.1285901;
 			id=574;
 			atlOffset=-0.85035706;
 		};
 		class Item422
 		{
 			dataType="Marker";
-			position[]={25262.988,85.323967,21822.914};
+			position[]={25255.375,85.995911,21826.063};
 			name="parking_heli_5";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -6874,7 +6866,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.53211;
+			angle=113.53204;
 			id=577;
 			atlOffset=-0.019332886;
 		};
@@ -7640,7 +7632,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=114.09873;
+			angle=114.09866;
 			id=640;
 		};
 		class Item476
@@ -7694,7 +7686,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.41924;
+			angle=113.41917;
 			id=644;
 		};
 		class Item480
@@ -7748,7 +7740,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=220.78659;
+			angle=220.78653;
 			id=648;
 			atlOffset=-3.9935608;
 		};
@@ -7790,7 +7782,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=220.86273;
+			angle=220.86269;
 			id=651;
 			atlOffset=-3.9661646;
 		};
@@ -8213,7 +8205,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.16547;
+			angle=224.16531;
 			id=682;
 			atlOffset=-3.7901268;
 		};
@@ -8320,7 +8312,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=222.44589;
+			angle=222.4458;
 			id=690;
 		};
 		class Item526
@@ -8372,7 +8364,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=223.92845;
+			angle=223.92838;
 			id=694;
 			atlOffset=0.0036849976;
 		};
@@ -8386,7 +8378,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=222.4615;
+			angle=222.46135;
 			id=695;
 			atlOffset=5.7220459e-006;
 		};
@@ -8662,7 +8654,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=55.944439;
+			angle=55.944401;
 			id=716;
 			atlOffset=-0.015329361;
 		};
@@ -8676,7 +8668,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.313026;
+			angle=56.312988;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -8700,226 +8692,6 @@ class Mission
 			name="safe_spawn";
 			type="mil_circle";
 			id=721;
-		};
-		class Item555
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={2907.177,0.14645386,17080.18};
-			};
-			id=722;
-			type="ModuleCreateDiaryRecord_F";
-			atlOffset=98.987999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCreateDiaryRecord_F_PresetTitle";
-					expression="_this setVariable ['PresetTitle',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Mission";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCreateDiaryRecord_F_Title";
-					expression="_this setVariable ['Title',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Manual";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCreateDiaryRecord_F_Description";
-					expression="_this setVariable ['Description',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Your goal is to overthrow the government";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCreateDiaryRecord_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=3;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleCreateDiaryRecord_F_Subject";
-					expression="_this setVariable ['Subject',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Justice Altis  Alpha";
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item556
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3031.2981,64.458862,16589.9};
-			};
-			id=723;
-			type="ModuleCreateDiaryRecord_F";
-			atlOffset=189.104;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCreateDiaryRecord_F_PresetTitle";
-					expression="_this setVariable ['PresetTitle',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Mission";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCreateDiaryRecord_F_Title";
-					expression="_this setVariable ['Title',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Manual";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCreateDiaryRecord_F_Description";
-					expression="_this setVariable ['Description',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Your goal is to overthrow the government";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCreateDiaryRecord_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=3;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleCreateDiaryRecord_F_Subject";
-					expression="_this setVariable ['Subject',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Justice Altis  Alpha";
-						};
-					};
-				};
-				nAttributes=5;
-			};
 		};
 	};
 };
