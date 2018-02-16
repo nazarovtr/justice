@@ -98,14 +98,16 @@ while {true} do {
 
     if (_newUndercoverMode != "not" and alive player and _playerInCleanCivilianVehicle and !isNil("JTC_enemyBases")) then {
         scopeName "main";
-        if (count (_playerVehicle nearRoads 20) == 0) then {
-            {
-                if ("ok" == (_x select 3) and (_playerPosition distance2D markerPos (_x select 0)) < 700) then {
-                    _newUndercoverMode = "not";
-                    _notUndercoverReasons pushBack "Player is driving offroad near an enemy base";
-                    breakTo "main";
-                };
-            } forEach JTC_enemyBases;
+        if (!(_playerVehicle isKindOf "Air")) then {
+            if (count (_playerVehicle nearRoads 20) == 0) then {
+                {
+                    if ("ok" == (_x select 3) and (_playerPosition distance2D markerPos (_x select 0)) < 700) then {
+                        _newUndercoverMode = "not";
+                        _notUndercoverReasons pushBack "Player is driving offroad near an enemy base";
+                        breakTo "main";
+                    };
+                } forEach JTC_enemyBases;
+            };
         };
     };
 

@@ -11,7 +11,7 @@
         _uiMarker setMarkerType "o_plane";
         _uiMarker setMarkerText (markerText _x);
     };
-    if ((_x find "city") == 0 or (_x find "parking") == 0 or (_x find "safe_spawn") == 0) then {
+    if ((_x find "city") == 0 or (_x find "parking") == 0 or (_x find "civ") == 0 or (_x find "safe_spawn") == 0) then {
         _x setMarkerAlpha 0;
     };
 } forEach allMapMarkers;

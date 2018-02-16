@@ -10,7 +10,7 @@ _civilian addEventHandler ["killed", {
             [_unit, "Steal clothes"] call JTC_fnc_addStealUniformAction;
         };
 
-        private _city = [position _unit] call JTC_fnc_getClosestCity;
+        private _city = [position _unit] call JTC_fnc_getClosestPopulatedCity;
         private _populationDecrease = 1;
         _populationDecrease = _populationDecrease min (_city select 1);
         _city set [1, (_city select 1) - _populationDecrease];

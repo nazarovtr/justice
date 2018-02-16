@@ -1,5 +1,7 @@
 private _cities = [];
 private _totalCityArea = 0;
+private _civilianInfrastructure = [];
+private _civilianParking = [];
 {
     if ((_x find "city") == 0) then {
         private _markerSize =  getMarkerSize _x;
@@ -11,6 +13,15 @@ private _totalCityArea = 0;
         _cities pushBack [_x, _area];
         _totalCityArea = _totalCityArea + _area;
     };
+    if ((_x find "civilian_5") == 0) then {
+        _civilianInfrastructure pushBack [_x, 5, []];
+    };
+    if ((_x find "civilian_10") == 0) then {
+        _civilianInfrastructure pushBack [_x, 10, []];
+    };
+    if ((_x find "civ_parking") == 0) then {
+        _civilianParking pushBack _x;
+    };
 } forEach allMapMarkers;
 ["city areas: %1", _cities] call JTC_fnc_log;
 {
@@ -20,3 +31,13 @@ private _totalCityArea = 0;
 } forEach _cities;
 ["city populations: %1", _cities] call JTC_fnc_log;
 JTC_cities = _cities;
+{
+    private _infra = _x;
+    {
+        if ((markerPos _x) inArea (_infra select 0)) then {
+            (_infra select 2) pushBack _x;
+        };
+    } forEach _civilianParking;
+} forEach _civilianInfrastructure;
+["civilian infrastructure: %1", _civilianInfrastructure] call JTC_fnc_log;
+JTC_civilianInfrastructure = _civilianInfrastructure;

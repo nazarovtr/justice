@@ -10,9 +10,10 @@ class justice {
         class setContainerCargo {};
         class populateBase {};
         class populateCity {};
+        class populateCivilianInfrastructure {};
         class isInSpawnArea {};
         class initializeBases {};
-        class initializeCities {};
+        class initializeCivilians {};
         class getVehiclesAtBase {};
         class getPlayersAtBaseBaseInventory {};
         class createVehiclesAtBase {};
@@ -30,7 +31,7 @@ class justice {
         class kill {};
         class addCivilianEventHandlers {};
         class addCivilianVehicleEventHandlers {};
-        class getClosestCity {};
+        class getClosestPopulatedCity {};
         class changeRating {};
         class enemyKnowsAboutObject {};
         class log {};

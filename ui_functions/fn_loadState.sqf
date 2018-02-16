@@ -56,6 +56,7 @@ fn_loadPopulation = {
     [_saveName, "civilianSpawnPercent", 10] call fn_loadAndPublishValue;
     [_saveName, "freeEnemyPopulation", 50] call fn_loadAndPublishValue;
     [_saveName, "cities", []] call fn_loadAndPublishValue;
+    [_saveName, "civilianInfrastructure", []] call fn_loadAndPublishValue;
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
 };
 

@@ -99,6 +99,8 @@ JTC_civilianVehicles = [["C_Hatchback_01_F", 10], ["C_Offroad_01_F", 6], ["C_Off
   ["C_Truck_02_box_F", 1], ["C_Truck_02_fuel_F", 1], ["C_Van_01_fuel_F", 1], ["C_Kart_01_F", 0.5]];
 JTC_civilianRepairVehicles = ["C_Offroad_01_repair_F", "C_Truck_02_box_F"];
 JTC_civilianFuelVehicles = ["C_Truck_02_fuel_F", "C_Van_01_fuel_F"];
+JTC_civilianHelicopters = ["C_Heli_Light_01_civil_F"];
+JTC_civilianPlanes = ["C_Plane_Civil_01_F", "C_Plane_Civil_01_racing_F"];
 
 JTC_civilianUniforms = ["U_C_Poloshirt_blue", "U_C_Poloshirt_burgundy", "U_C_Poloshirt_stripped",
 "U_C_Poloshirt_tricolour", "U_C_Poloshirt_salmon", "U_C_Poloshirt_redwhite", "U_C_Commoner1_1",

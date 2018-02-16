@@ -3,10 +3,10 @@ private _direction = _this select 1;
 private _deployAllowed = true;
 scopeName "main";
 {
-    if ((_x find "base") == 0 or (_x find "airbase") == 0 or (_x find "city") == 0) then {
+    if ((_x find "base") == 0 or (_x find "airbase") == 0 or (_x find "city") == 0 or (_x find "civilian") == 0) then {
         if (_position distance2D getMarkerPos _x < 400) then {
             _deployAllowed = false;
-            hint "Base should be placed in at least 400 meters from a city or an enemy base";
+            hint "Base should be placed in at least 400 meters from a city, an enemy base or a civilian infrastucture object";
             breakTo "main";
         };
     };
