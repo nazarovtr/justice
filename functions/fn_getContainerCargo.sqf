@@ -9,6 +9,9 @@ private _weaponHolderCargo = [];
 if (_container isKindOf "Man") then {
     _itemNames = (assignedItems _container) - JTC_ignoredAssignedItems;
     _itemNames = _itemNames + items _container;
+    _itemNames = _itemNames select {
+        (!(_x isKindOf ["Weapon", configFile >> "CfgWeapons"])) and (!(_x isKindOf ["Pistol", configFile >> "CfgWeapons"]))
+    };
     if (headgear _container != "") then {
         _itemNames pushBack (headgear _container);
     };
@@ -32,7 +35,7 @@ if (_container isKindOf "Man") then {
     } else {
         {
             private _weaponName = _x select 0;
-            if (_itemNames find _weaponName < 0) then {
+            if (_itemNames find _weaponName < 0) then { //not to push binoculars twice
                 _weaponNames pushBack _weaponName;
             };
             {
@@ -87,6 +90,7 @@ if (_container isKindOf "Man") then {
 private _cargo = [];
 private _cargoItemNumber = 1;
 {
+    ["w: %1, b: %2", _x, [_x] call BIS_fnc_baseWeapon] call JTC_fnc_log;
     _cargo pushBack [[_x] call BIS_fnc_baseWeapon, _cargoItemNumber, "w"];
     _cargoItemNumber = _cargoItemNumber + 1;
 } forEach _weaponNames;
@@ -105,4 +109,5 @@ private _cargoItemNumber = 1;
 if (!(_weaponHolderCargo isEqualTo [])) then {
     _cargo = [_cargo, _weaponHolderCargo] call JTC_fnc_combineCargoArrays;
 };
+["cargo:%1", _cargo] call JTC_fnc_log;
 _cargo;
