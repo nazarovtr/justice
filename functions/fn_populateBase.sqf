@@ -61,7 +61,7 @@ if (_status == "ok") then {
         _x addWaypoint [getPos (vehicle leader _x), 0];
         [_x, 1] setWaypointType "GUARD";
     } else {
-        if ((random 1) > 0.4) then {
+        if ((random 1) > 0.4 and ((vehicle leader _x) == (leader _x))) then {
             _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
             _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
             _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];

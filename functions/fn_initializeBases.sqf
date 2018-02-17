@@ -99,6 +99,15 @@ private _actualBasePopulation = 0;
         _x pushBack _baseVehicles;
     };
 } forEach _enemyBases;
-["populations: %1", _enemyBases] call JTC_fnc_log;
+private _logBases = [];
+private _totalEnemies = 0;
+private _totalVehicles = 0;
+{
+    _logBases pushBack [_x select 0, _x select 1, count (_x select 4)];
+    _totalEnemies = _totalEnemies + (_x select 1);
+    _totalVehicles = _totalVehicles + count (_x select 4);
+} forEach _enemyBases;
+["bases: %1, %2", count _logBases, _logBases] call JTC_fnc_log;
+["total enemies: %1, total enemy vehicles: %2", _totalEnemies, _totalVehicles] call JTC_fnc_log;
 JTC_enemyBases = _enemyBases;
 JTC_freeEnemyPopulation = JTC_enemyPopulation - _actualBasePopulation;

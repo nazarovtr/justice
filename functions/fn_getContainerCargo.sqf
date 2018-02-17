@@ -90,7 +90,6 @@ if (_container isKindOf "Man") then {
 private _cargo = [];
 private _cargoItemNumber = 1;
 {
-    ["w: %1, b: %2", _x, [_x] call BIS_fnc_baseWeapon] call JTC_fnc_log;
     _cargo pushBack [[_x] call BIS_fnc_baseWeapon, _cargoItemNumber, "w"];
     _cargoItemNumber = _cargoItemNumber + 1;
 } forEach _weaponNames;
@@ -109,5 +108,4 @@ private _cargoItemNumber = 1;
 if (!(_weaponHolderCargo isEqualTo [])) then {
     _cargo = [_cargo, _weaponHolderCargo] call JTC_fnc_combineCargoArrays;
 };
-["cargo:%1", _cargo] call JTC_fnc_log;
 _cargo;
