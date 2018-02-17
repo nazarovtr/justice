@@ -40,20 +40,27 @@ Mission balance is likely not very good.
 When all the intended features are there and the most crude solutions
 are fixed I'll move the mission to Beta stage.
 
+## Any issues?
+Report on github https://github.com/nazarovtr/justice/issues
+
+Attach your client and server rpt logs if possible.
+
+The project project is open source and I'd appreciate some help with it.
+
 ## Manual
 
 ### Setup
 Single player and vanilla saves are not supported.
 You may play alone in a multiplayer game but you'll have much better experience in coop.
 You'll need different roles and there is no AI on your side in Justice.
-Dedicated server, even on one of the player's machines can significantly increase performance.
+Dedicated server, even on one of the player's machines can significantly increase performance by more effective resource utilization.
 But you'll need at least 16 GiB of memory and at least quad core hight frequency CPU.
 
 There are 3 mission parameters which can be changed in multiplayer lobby.
-One forbids non-hosts and non-admins to become commanders. By default anyone can be a commander.
-Another one sets mission starting time.
+- One forbids non-hosts and non-admins to become commanders. By default anyone can be a commander.
+- Another one sets mission starting time.
 Default early morning is recommended because players do not have any night-time gear at the start.
-A third one allows to set spawn distance - distance at which cities and enemy bases will become populated.
+- A third one allows to set spawn distance - distance at which cities and enemy bases will become populated.
 Default 1800 meters is a good tradeoff between gameplay and performance.
 On high-end servers the value should be increased.
 
@@ -66,8 +73,14 @@ Other players may do nothing or press "I am not a commander" button.
 Any player can save the progress in his local profile using "persistent save" action on the main crate of guerrilla base.
 This save then may be used to continue from that point on another server.
 
+Vehicles inside base circle are saved.
+Items inside vehicles are saved too.
+
+Items equipped by players at the moment of the save and who are at the base are saved inside the main crate.
+If a player is on the base but in a vehicle his items are saved in that vehicle.
+
 ### Base deployment
-Commander will have a menu action to deploy a base. The base consists of 4 items.
+Commander has a menu action to deploy a base. The base consists of 4 items.
 - A man who is there just as a temporary solution for base detection purposes,
 - A main gray crate which is the equipment container. It also have several base management menu actions. Most notably "Move base" action.
 - An auxilary green crate. It is intended to be used when the main crate will be full. You load items into it and then use an action on it to transfer everything to the main storage. Unfortunately there is no way to increase size of the container through mission scripting.
@@ -79,6 +92,8 @@ Having a base in some concealed place or maybe even in a building is a good idea
 Random patrols may detect it and destroy.
 In case of base loss all the loot in it will be lost.
 But the commander will be able to deploy a new base.
+
+You may skip time on the base through action attached to the lamp.
 
 ### UI
 There is a top state bar on each player's screen. It contains the most important information.
@@ -123,6 +138,11 @@ The first is to wipe out most of enemy bases.
 The second is to raise enemy anti-rating to 50%.
 
 There are several endings which depend on player rating, enemy rating and losses on both sides.
+
+### Additional features
+- You may collect loot from enemy bodies into a vehicle by using a menu action on the body.
+- By clicking on the map you can set "point of interest" circles inside of which nothing will be despawned.
+- You can load loot from a vehicle to the main crate through main crate menu action.
 
 ## Mod support
 The mission was tested and works with ACE 3, TFAR, Arma Enhanced Movement, Advanced Towing, bCombat, ASR AI and VCOM.
