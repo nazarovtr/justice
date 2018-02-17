@@ -38,7 +38,6 @@ private _countGroupsAtAnchor = {
 
 while {true} do {
     sleep 10;
-    ["Patrol loop start"] call JTC_fnc_log;
     private _spawnedPatrolPopulation = 0;
     _patrolGroups = _patrolGroups select {
         private _group = _x;
@@ -56,12 +55,12 @@ while {true} do {
     };
     private _spawnArea = call JTC_fnc_getSpawnArea;
     private _patrolPopulation = JTC_freeEnemyPopulation * _spawnArea / JTC_mapLandArea;
-    ["Patrol population: %1", _patrolPopulation] call JTC_fnc_log;
     if (_patrolPopulation - _spawnedPatrolPopulation >= 1) then {
         private _spawnAreaAnchorPositions = call JTC_fnc_getSpawnAreaAnchorPositions;
         private _spawned = false;
         private _anchorAttemptsLeft = 3;
         private _maxGroupsAtAnchor = 0;
+        ["Patrol population: %1", _patrolPopulation] call JTC_fnc_log;
         while {!_spawned} do {
             private _anchorCandidate = selectRandom _spawnAreaAnchorPositions;
             private _groupsAtAnchor = [_anchorCandidate] call _countGroupsAtAnchor;

@@ -23,7 +23,6 @@ private _maxY = 0;
 
 private _areaWidth = _maxX - _minX;
 private _areaHeight = _maxY - _minY;
-["SpawnArea: w %1 h %2 minx %3 miny %4 maxx %5 maxy %6", _areaWidth, _areaHeight, _minX, _minY, _maxX, _maxY] call JTC_fnc_log;
 private _pointCountInsideSpawnArea = 0;
 for "_i" from 0 to 3 do {
     private _currentX = _minX + _areaWidth / 8 + _i * _areaWidth / 4;

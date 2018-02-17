@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5406.3716,108.98047,17911.871};
-		dir[]={-0.20861082,-0.8366881,0.50640404};
-		up[]={-0.31868911,0.54767674,0.77361959};
-		aside[]={0.92462343,1.2936653e-008,0.38089386};
+		pos[]={3744.4026,42.887367,17337.463};
+		dir[]={0.88257676,-0.18030073,0.43423399};
+		up[]={0.161781,0.98360884,0.079597354};
+		aside[]={0.44146773,-2.5946065e-008,-0.89728099};
 	};
 };
 binarizationWanted=0;
@@ -6812,7 +6812,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=7.1285868;
+			angle=7.1285853;
 			id=574;
 			atlOffset=-0.85035706;
 		};
@@ -6852,7 +6852,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.53199;
+			angle=113.53198;
 			id=577;
 			atlOffset=-0.019332886;
 		};
@@ -7618,7 +7618,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=114.09861;
+			angle=114.09858;
 			id=640;
 		};
 		class Item475
@@ -7672,7 +7672,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.41911;
+			angle=113.41909;
 			id=644;
 		};
 		class Item479
@@ -8191,7 +8191,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=224.16521;
+			angle=224.16519;
 			id=682;
 			atlOffset=-3.7901268;
 		};
@@ -8640,7 +8640,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=55.944374;
+			angle=55.944363;
 			id=716;
 			atlOffset=-0.015329361;
 		};
@@ -8654,7 +8654,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.312962;
+			angle=56.31295;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -8745,7 +8745,7 @@ class Mission
 			colorName="ColorCIV";
 			a=100;
 			b=210;
-			angle=55.473969;
+			angle=55.473957;
 			id=732;
 			atlOffset=-321.18863;
 		};
@@ -8774,7 +8774,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=225.26505;
+			angle=225.26503;
 			id=734;
 		};
 		class Item561
@@ -9896,7 +9896,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=70;
-			angle=0.86772901;
+			angle=0.86772883;
 			id=829;
 			atlOffset=-1.4516563;
 		};
@@ -10004,7 +10004,7 @@ class Mission
 			colorName="ColorCIV";
 			a=100;
 			b=100;
-			angle=359.82193;
+			angle=359.8219;
 			id=839;
 		};
 		class Item651
@@ -10139,7 +10139,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=53.998222;
+			angle=53.998211;
 			id=852;
 			atlOffset=0.062805176;
 		};
@@ -10314,7 +10314,7 @@ class Mission
 			colorName="ColorYellow";
 			a=10;
 			b=10;
-			angle=91.599434;
+			angle=91.599426;
 			id=865;
 		};
 		class Item674
@@ -10474,7 +10474,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=220.59962;
+			angle=220.59958;
 			id=877;
 			atlOffset=-0.034658432;
 		};
@@ -10543,7 +10543,7 @@ class Mission
 			colorName="ColorYellow";
 			a=10;
 			b=10;
-			angle=123.32761;
+			angle=123.3276;
 			id=882;
 		};
 		class Item691
@@ -10596,7 +10596,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=222.87614;
+			angle=222.8761;
 			id=886;
 			atlOffset=0.0066766739;
 		};
@@ -10678,7 +10678,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03828;
+			angle=224.03824;
 			id=892;
 		};
 		class Item701
@@ -10691,7 +10691,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03827;
+			angle=224.03822;
 			id=893;
 		};
 		class Item702
@@ -10704,7 +10704,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03825;
+			angle=224.03821;
 			id=894;
 		};
 		class Item703
@@ -10717,7 +10717,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03825;
+			angle=224.03821;
 			id=895;
 		};
 		class Item704
@@ -10730,7 +10730,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03824;
+			angle=224.03819;
 			id=896;
 		};
 		class Item705
@@ -10743,7 +10743,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03822;
+			angle=224.03818;
 			id=897;
 		};
 		class Item706
@@ -10756,7 +10756,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=898;
 		};
 		class Item707
@@ -10769,7 +10769,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=899;
 		};
 		class Item708
@@ -10782,7 +10782,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=900;
 		};
 		class Item709
@@ -10795,7 +10795,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=901;
 		};
 		class Item710
@@ -10808,7 +10808,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=902;
 		};
 		class Item711
@@ -10821,7 +10821,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=903;
 		};
 		class Item712
@@ -10834,7 +10834,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=224.03821;
+			angle=224.03818;
 			id=904;
 		};
 		class Item713
@@ -11059,7 +11059,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=222.38829;
+			angle=222.38824;
 			id=921;
 			atlOffset=0.0039978027;
 		};
@@ -11115,7 +11115,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=220.32919;
+			angle=220.32915;
 			id=925;
 			atlOffset=0.024662018;
 		};
@@ -11238,7 +11238,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=227.19508;
+			angle=227.19504;
 			id=934;
 		};
 		class Item743
@@ -11332,6 +11332,7 @@ class Mission
 			b=7;
 			angle=44.597702;
 			id=941;
+			atlOffset=1.5258789e-005;
 		};
 		class Item750
 		{
@@ -11371,6 +11372,7 @@ class Mission
 			b=7;
 			angle=140.32874;
 			id=944;
+			atlOffset=7.6293945e-006;
 		};
 		class Item753
 		{
@@ -11502,6 +11504,7 @@ class Mission
 			b=7;
 			angle=83.29673;
 			id=956;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item763
 		{
@@ -11828,7 +11831,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=219.1169;
+			angle=219.11685;
 			id=983;
 		};
 		class Item788
@@ -11961,7 +11964,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=54.280853;
+			angle=54.280842;
 			id=993;
 		};
 		class Item798
@@ -11974,7 +11977,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=54.280849;
+			angle=54.280838;
 			id=994;
 		};
 		class Item799
@@ -12041,7 +12044,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=112.5485;
+			angle=112.54847;
 			id=999;
 			atlOffset=0.0039978027;
 		};
@@ -12083,7 +12086,7 @@ class Mission
 			b=7;
 			angle=111.61633;
 			id=1002;
-			atlOffset=0.012672424;
+			atlOffset=0.012664795;
 		};
 		class Item807
 		{
@@ -12231,7 +12234,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=206.56496;
+			angle=206.56494;
 			id=1014;
 			atlOffset=-0.036657333;
 		};
@@ -12417,7 +12420,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=273.94717;
+			angle=273.94708;
 			id=1028;
 			atlOffset=0.0033340454;
 		};
@@ -12431,7 +12434,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=273.94714;
+			angle=273.94708;
 			id=1029;
 			atlOffset=0.0033340454;
 		};
@@ -12459,7 +12462,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=178.20932;
+			angle=178.2093;
 			id=1031;
 		};
 		class Item835
@@ -12472,7 +12475,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=168.82983;
+			angle=168.82979;
 			id=1032;
 			atlOffset=-0.00068664551;
 		};
