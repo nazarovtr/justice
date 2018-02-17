@@ -24,16 +24,18 @@ if (_deployAllowed) then {
     _marker setMarkerType JTC_hqMarkerType;
     _marker setMarkerText "HQ";
     private _basePosition = _position getPos [1.5, _direction - 30];
-    private _guyPosition = _position getPos [1.5, _direction + 30];
-    private _lampPosition = _position getPos [1.5, _direction - 90];
-    private _cratePosition = _position getPos [1.5, _direction + 90];
+    private _guyPosition = _position getPos [1.1, _direction + 10];
+    private _lampPosition = _position getPos [2.0, _direction - 55];
+    private _cratePosition = _position getPos [2.0, _direction + 55];
     theBase setPosASL [_basePosition select 0, _basePosition select 1, (_position select 2) + 0.3];
-    theLamp setPosASL [_lampPosition select 0, _lampPosition select 1, (_position select 2) + 0.3];
+    theBase setDir (_direction + 180);
+    theLamp setPosASL [_lampPosition select 0, _lampPosition select 1, (_position select 2) + 0.2];
     theCrate setPosASL [_cratePosition select 0, _cratePosition select 1, (_position select 2) + 0.3];
+    theCrate setDir (_direction + 180);
     private _group = createGroup JTC_playerSide;
     theGuy = _group createUnit ["B_G_Survivor_F", _guyPosition, [], 0, "NONE"];
     theGuy setPosASL [_guyPosition select 0, _guyPosition select 1, _position select 2];
-    theGuy setDir (_direction + 210);
+    theGuy setDir (_direction + 190);
     theGuy disableAI "MOVE";
     theGuy allowDamage false;
     theGuy addEventHandler ["Killed", {
