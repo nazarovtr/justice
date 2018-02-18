@@ -43,7 +43,7 @@ are fixed I'll move the mission to Beta stage.
 ## Any issues?
 Report on github https://github.com/nazarovtr/justice/issues
 
-Attach your client and server rpt logs if possible.
+Attach your client and server rpt logs if possible. List the mods you are using.
 
 The project project is open source and I'd appreciate some help with it.
 

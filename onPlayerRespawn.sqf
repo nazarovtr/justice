@@ -19,7 +19,13 @@ private _playerData = [getPlayerUID player] call JTC_fnc_getPlayerData;
 _playerData set [1, defaultUniform];
 publicVariable "JTC_playerData";
 if ((getPlayerUID player) == JTC_commanderId) then {
-    deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+    if (isNil "JTC_baseDeployed") then {
+        deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+    } else {
+        if (!JTC_baseDeployed) then {
+            deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+        }
+    };
 };
 
 [-2, 3] call JTC_fnc_changeRating;

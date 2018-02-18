@@ -39,6 +39,9 @@ if (!_joinInProgress) then {
                     deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
                      [], 0, false, true, "", "true", 3];
                 };
+            } else {
+                deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
+                                     [], 0, false, true, "", "true", 3];
             };
         };
     };
