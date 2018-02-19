@@ -27,5 +27,5 @@ private _skip = true;
     };
 } forEach allPlayers;
 if (_skip) then {
-    skipTime _skipAmount;
+    _skipAmount remoteExec ["skipTime", 2];
 };
