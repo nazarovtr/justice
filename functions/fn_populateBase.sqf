@@ -18,7 +18,7 @@ if (_status == "ok") then {
         private _vehiclePosition = markerPos _parkingMarker;
         private _vehicleDirection = markerDir _parkingMarker;
         private _vehicle = (_x select 0) createVehicle (getMarkerPos "safe_spawn");
-        if ((getAmmoCargo _vehicle) > 0) then {
+        if ((typeOf _vehicle) find "Ammo" > 0 or (typeOf _vehicle) find "ammo" > 0) then {
             _vehicle call JTC_fnc_loadAmmoTruckWithMagazines;
         };
         _vehicle setDir _vehicleDirection;
