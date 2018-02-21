@@ -56,10 +56,10 @@ if (_status == "ok") then {
 };
 
 //creating waypoints
+private _attackHelicopterCrews = [];
 {
     if ((vehicle leader _x) isKindOf "Air") then {
-        _x addWaypoint [getPos (vehicle leader _x), 0];
-        [_x, 1] setWaypointType "GUARD";
+        _attackHelicopterCrews pushBack _x;
     } else {
         if ((random 1) > 0.4 and ((vehicle leader _x) == (leader _x))) then {
             _x addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
@@ -82,6 +82,9 @@ if (_status == "ok") then {
     }
 } forEach _groups;
 
+_base pushBack _attackHelicopterCrews;
+publicVariable "JTC_enemyBases";
+
 // death handling
 {
     {
@@ -99,6 +102,37 @@ if (_status == "ok") then {
             publicVariable "JTC_enemyBases";
             ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;
         }];
+        _x addEventHandler ["Hit", {
+            private _unit = _this select 0;
+            private _hitter = _this select 0;
+            private _baseNumber = _unit getVariable "_baseNumber";
+            private _base = JTC_enemyBases select _baseNumber;
+            if ((count _base) > 5) then {
+                private _attackHelicopterCrews = _base select 5;
+                {
+                    _x addWaypoint [position _hitter, 100];
+                    [_x, 1] setWaypointType "SAD";
+                    _x setCombatMode "RED";
+                } forEach _attackHelicopterCrews;
+                _base resize 5;
+                publicVariable "JTC_enemyBases";
+            };
+        }];
+        _x addEventHandler ["FiredMan", {
+            private _unit = _this select 0;
+            private _baseNumber = _unit getVariable "_baseNumber";
+            private _base = JTC_enemyBases select _baseNumber;
+            if ((count _base) > 5) then {
+                private _attackHelicopterCrews = _base select 5;
+                {
+                    _x addWaypoint [(position _unit) getPos [300, getDir _unit], 100];
+                    [_x, 1] setWaypointType "SAD";
+                    _x setCombatMode "RED";
+                } forEach _attackHelicopterCrews;
+                _base resize 5;
+                publicVariable "JTC_enemyBases";
+            };
+        }];
     } forEach units _x;
 } forEach _groups;
 // vehicle event handling
@@ -113,6 +147,22 @@ if (_status == "ok") then {
             private _baseNumber = _vehicle getVariable "_baseNumber";
             private _base = JTC_enemyBases select _baseNumber;
             [_vehicle, _base] call JTC_fnc_removeVehicleFromEnemyBase;
+        };
+    }];
+    _x addEventHandler ["Hit", {
+        private _unit = _this select 0;
+        private _hitter = _this select 0;
+        private _baseNumber = _unit getVariable "_baseNumber";
+        private _base = JTC_enemyBases select _baseNumber;
+        if ((count _base) > 5) then {
+            private _attackHelicopterCrews = _base select 5;
+            {
+                _x addWaypoint [position _hitter, 100];
+                [_x, 1] setWaypointType "SAD";
+                _x setCombatMode "RED";
+            } forEach _attackHelicopterCrews;
+            _base resize 5;
+            publicVariable "JTC_enemyBases";
         };
     }];
 } forEach _vehicles;
@@ -139,7 +189,7 @@ if (_status == "ok") then {
                     ["Enemy vehicle stolen"] call JTC_fnc_log;
                     [_x, _base] call JTC_fnc_removeVehicleFromEnemyBase;
                 };
-            }
+            };
         } forEach _vehicles;
     };
 };
@@ -174,4 +224,7 @@ if (_status == "ok") then {
     _vehicles resize 0;
     ["Despawned %1", _markerName] call JTC_fnc_log;
     JTC_spawnedBases set [_baseNumber, false];
+    private _base = JTC_enemyBases select _baseNumber;
+    _base resize 5;
+    publicVariable "JTC_enemyBases";
 };
