@@ -32,23 +32,22 @@ if (_container isKindOf "Man") then {
                  [_nearestWeaponsHolders select 1] call JTC_fnc_getContainerCargo] call JTC_fnc_combineCargoArrays;
             };
         };
-    } else {
-        {
-            private _weaponName = _x select 0;
-            if (_itemNames find _weaponName < 0) then { //not to push binoculars twice
-                _weaponNames pushBack _weaponName;
-            };
-            {
-                if (count _x > 0) then {
-                    if (typeName _x == "ARRAY") then {
-                        _magazinesWithAmmo pushBack _x;
-                    } else {
-                        _itemNames pushBack _x;
-                    }
-                };
-            } forEach (_x select [1, (count _x) -1]);
-        } forEach weaponsItems _container;
     };
+    {
+        private _weaponName = _x select 0;
+        if (_itemNames find _weaponName < 0) then { //not to push binoculars twice
+            _weaponNames pushBack _weaponName;
+        };
+        {
+            if (count _x > 0) then {
+                if (typeName _x == "ARRAY") then {
+                    _magazinesWithAmmo pushBack _x;
+                } else {
+                    _itemNames pushBack _x;
+                }
+            };
+        } forEach (_x select [1, (count _x) -1]);
+    } forEach weaponsItems _container;
 } else {
     _weaponNames = weaponCargo _container;
     _magazinesWithAmmo = magazinesAmmoCargo _container;

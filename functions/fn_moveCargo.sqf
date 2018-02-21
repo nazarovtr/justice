@@ -36,14 +36,22 @@ private _cargoBuffer = [_source] call JTC_fnc_getContainerCargo;
 if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     (_targetCargoCapacity - ([_target] call JTC_fnc_getCargoMass))) then {
     if (_source isKindOf "Man") then {
-        removeAllWeapons _source;
-        removeHeadgear _source;
-        removeVest _source;
-        removeBackpack _source;
+        {
+            _source removeWeaponGlobal (_x select 0);
+        } forEach weaponsItems _source;
+        {
+            _source removeMagazineGlobal _x;
+        } forEach magazines _source;
+        {
+            _source removeItem _x;
+        } forEach items _source;
         {
             _source unassignItem _x;
             _source removeItem _x;
         } forEach ((assignedItems _source) - JTC_ignoredAssignedItems);
+        removeHeadgear _source;
+        removeVest _source;
+        removeBackpackGlobal _source;
         private _nearestWeaponsHolders = nearestObjects [_source, ["WeaponHolderSimulated", "GroundWeaponHolder"], 3];
         if (count _nearestWeaponsHolders > 0) then {
             deleteVehicle (_nearestWeaponsHolders select 0);
