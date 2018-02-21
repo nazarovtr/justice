@@ -55,6 +55,20 @@ if (_status == "ok") then {
     };
 };
 
+// ACE item adding
+if (JTC_ace) then {
+    {
+        {
+            if (JTC_enemyLongRangeUnits find (typeOf _x) >= 0) then {
+                _x addItemToVest "ACE_RangeCard";
+                if (random 1 > 0.2) then {
+                    _x addItemToVest "ACE_Kestrel4500";
+                }
+            };
+        } forEach units _x;
+    } forEach _groups;
+};
+
 //creating waypoints
 private _attackHelicopterCrews = [];
 {

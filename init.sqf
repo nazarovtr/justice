@@ -1,4 +1,5 @@
 call compile preprocessFileLineNumbers "scripts\settings.sqf";
+call compile preprocessFileLineNumbers "scripts\aceInit.sqf";
 call compile preprocessFileLineNumbers "scripts\population.sqf";
 if (isServer) then {
     waitUntil {!isNil "paramsArray";};

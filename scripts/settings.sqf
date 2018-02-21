@@ -1,5 +1,6 @@
 JTC_cheats = false;
 JTC_log = false;
+JTC_ace = "ACE_RangeCard" isKindOf ["ACE_ItemCore", configFile >> "CfgWeapons"];
 JTC_defaultPlayerRating = 2;
 JTC_defaultPlayerAntirating = 0;
 JTC_defaultEnemyRating = 71;

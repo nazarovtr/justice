@@ -23,6 +23,15 @@ JTC_enemyInfantryUnits = [
     ["O_Pathfinder_F"]
 ];
 
+JTC_enemyLongRangeUnits = [
+    "O_Sharpshooter_F",
+    "O_Pathfinder_F",
+    "O_soldier_M_F",
+    "O_recon_M_F",
+    "O_spotter_F",
+    "O_sniper_F"
+];
+
 JTC_enemyGroundVehicles = [
     ["O_Quadbike_01_F", 20, 8000, false, false],
     ["O_MRAP_02_F ", 10, 300000, false, false],
