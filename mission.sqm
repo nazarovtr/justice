@@ -1013,7 +1013,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""srifle_DMR_06_camo_khs_F""],[1]],[[""20Rnd_762x51_Mag""],[1]],[[""Rangefinder"",""FirstAidKit""],[1,2]],[[],[]]],false]";
+							value="[[[[""srifle_DMR_06_camo_khs_F""],[1]],[[""20Rnd_762x51_Mag""],[2]],[[""Rangefinder"",""FirstAidKit""],[1,2]],[[],[]]],false]";
 						};
 					};
 				};
@@ -8640,7 +8640,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=55.94434;
+			angle=55.944336;
 			id=716;
 			atlOffset=-0.015329361;
 		};
@@ -8654,7 +8654,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.312927;
+			angle=56.312923;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -9896,7 +9896,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=70;
-			angle=0.86772847;
+			angle=0.86772841;
 			id=829;
 			atlOffset=-1.4516563;
 		};
@@ -10474,7 +10474,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=220.59949;
+			angle=220.59947;
 			id=877;
 			atlOffset=-0.034658432;
 		};
@@ -11059,7 +11059,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=222.38815;
+			angle=222.38814;
 			id=921;
 			atlOffset=0.0039978027;
 		};
