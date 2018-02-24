@@ -1,4 +1,4 @@
-# Justice Altis Alpha 0.1.0
+# Justice Altis Alpha 0.2.0
 
 ## Inspiration
 The basic idea of guerrilla units fighting regular army
