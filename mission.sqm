@@ -122,50 +122,6 @@ class ScenarioData
 		maxPlayers=30;
 	};
 };
-class CustomAttributes
-{
-	class Category0
-	{
-		name="Multiplayer";
-		class Attribute0
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="None";
-							};
-						};
-					};
-				};
-			};
-		};
-		nAttributes=1;
-	};
-};
 class Mission
 {
 	class Intel
@@ -7661,7 +7617,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=114.09849;
+			angle=114.09848;
 			id=640;
 		};
 		class Item475
@@ -8683,7 +8639,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=55.944313;
+			angle=55.944309;
 			id=716;
 			atlOffset=-0.015329361;
 		};
@@ -8697,7 +8653,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.312901;
+			angle=56.312897;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -9939,7 +9895,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=70;
-			angle=0.86772805;
+			angle=0.86772799;
 			id=829;
 			atlOffset=-1.4516563;
 		};
@@ -11102,7 +11058,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=222.38805;
+			angle=222.38803;
 			id=921;
 			atlOffset=0.0039978027;
 		};
@@ -12087,7 +12043,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=112.54838;
+			angle=112.54837;
 			id=999;
 			atlOffset=0.0039978027;
 		};
@@ -13973,7 +13929,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3949.8518,11.736597,17307.314};
-						angles[]={-0,4.0155754,6.2820935};
+						angles[]={0,4.0155754,6.2820935};
 					};
 					side="West";
 					flags=6;
