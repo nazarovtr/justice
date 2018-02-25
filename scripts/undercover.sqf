@@ -20,7 +20,7 @@ while {true} do {
         if (_playerLooksCivilian) then {
             _newUndercoverMode = "civilian";
         } else {
-            _notUndercoverReasons pushBack "Player does not look civilian on foot";
+            _notUndercoverReasons pushBack "STR_JTC_undDoesNotLookCivilian";
 //            TODO Implement undercover enemy #71
 //            if (_uniform in JTC_enemyUniforms) then {
 //                _newUndercoverMode = "enemy";
@@ -32,17 +32,17 @@ while {true} do {
             if (_playerLooksCivilian or (_vehicleRole select 0 != "cargo") or (1 == count _vehicleRole)) then {
                 _newUndercoverMode = "civilian";
             } else {
-                _notUndercoverReasons pushBack "Player is visible in vehicle and does not look civilian";
+                _notUndercoverReasons pushBack "STR_JTC_undVisibleInVehicle";
             };
         } else {
-            _notUndercoverReasons pushBack "Player not in clean civilian vehicle";
+            _notUndercoverReasons pushBack "STR_JTC_undVehicleNotClean";
         };
     };
     if (JTC_undercoverMode == "not" and _newUndercoverMode != "not") then {
         private _enemyKnowsAboutPlayer = player call JTC_fnc_enemyKnowsAboutObject;
         if (_enemyKnowsAboutPlayer select 0 > 0.05 and _enemyKnowsAboutPlayer select 1  < 300) then {
             _newUndercoverMode = "not";
-            _notUndercoverReasons pushBack "Enemy knows about player";
+            _notUndercoverReasons pushBack "STR_JTC_undEnemyKnows";
         };
     };
 
@@ -50,7 +50,7 @@ while {true} do {
         {
             if (_playerPosition inArea (_x select 0)) then {
                 _newUndercoverMode = "not";
-                _notUndercoverReasons pushBack "Player on enemy base";
+                _notUndercoverReasons pushBack "STR_JTC_undEnemyBase";
             };
         } forEach JTC_enemyBases;
     };
@@ -60,7 +60,7 @@ while {true} do {
         {
             if ((_playerPosition distance position _x) < 20) then {
                 _newUndercoverMode = "not";
-                _notUndercoverReasons pushBack "Player puts an explosive";
+                _notUndercoverReasons pushBack "";
                 breakTo "main";
             }
         } forEach getAllOwnedMines player;

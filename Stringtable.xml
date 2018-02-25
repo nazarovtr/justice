@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="Justice">
+    <Package name="Justice">
+        <Container name="Common">
+            <Key ID="STR_JTC_yes">
+                <Original>yes</Original>
+                <English>yes</English>
+                <Russian>да</Russian>
+            </Key>
+            <Key ID="STR_JTC_no">
+                <Original>no</Original>
+                <English>no</English>
+                <Russian>нет</Russian>
+            </Key>
+            <Key ID="STR_JTC_unknoun">
+                <Original>unknown</Original>
+                <English>unknown</English>
+                <Russian>н/д</Russian>
+            </Key>
+            <Key ID="STR_JTC_timurNazarov">
+                <Original>Timur Nazarov</Original>
+                <English>Timur Nazarov</English>
+                <Russian>Тимур Назаров</Russian>
+            </Key>
+            <Key ID="STR_JTC_description">
+                <Original>Fight for Justice agains the corrupt government</Original>
+                <English>Fight for Justice agains the corrupt government</English>
+                <Russian>Борьба за справедливость против коррумпированного правительства</Russian>
+            </Key>
+        </Container>
+        <Container name="Params">
+            <Key ID="STR_JTC_adminCommander">
+                <Original>Only server admin or hosting player can be a commander</Original>
+                <English>Only server admin or hosting player can be a commander</English>
+                <Russian>Только хост или админ может быть командиром</Russian>
+            </Key>
+            <Key ID="STR_JTC_startHour">
+                <Original>Mission start hour</Original>
+                <English>Mission start hour</English>
+                <Russian>Час старта миссии</Russian>
+            </Key>
+            <Key ID="STR_JTC_spawnDistance">
+                <Original>Spawn distance</Original>
+                <English>Spawn distance</English>
+                <Russian>Дистанция спауна</Russian>
+            </Key>
+        </Container>
+        <Container name="Endings">
+            <Key ID="STR_JTC_missionAccomplished">
+                <Original>Mission Accomplished!</Original>
+                <English>Mission Accomplished!</English>
+                <Russian>Миссия выполнена</Russian>
+            </Key>
+            <Key ID="STR_JTC_missionFailed">
+                <Original>Mission Failed!</Original>
+                <English>Mission Failed!</English>
+                <Russian>Миссия провалена!</Russian>
+            </Key>
+            <Key ID="STR_JTC_missionNotInitialized">
+                <Original>Mission not initialized!</Original>
+                <English>Mission not initialized!</English>
+                <Russian>Миссия не инициализирована!</Russian>
+            </Key>
+            <Key ID="STR_JTC_armyDestroyed">
+                <Original>Army destroyed. Gurillas - criminals.</Original>
+                <English>Army destroyed. Gurillas - criminals.</English>
+                <Russian>Армия уничтожена. Повстанцы - преступники.</Russian>
+            </Key>
+            <Key ID="STR_JTC_armyDestroyedDesc">
+                <Original>You have reached your goal of overthrowing the government, but at a very high price. Almost every family of our homeland have lost their loved ones who were conscripted. And the economy is in ruins. Hopefully the new government will be able to handle all the challenges. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.</Original>
+                <English>You have reached your goal of overthrowing the government, but at a very high price. Almost every family of our homeland have lost their loved ones who were conscripted. And the economy is in ruins. Hopefully the new government will be able to handle all the challenges. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.</English>
+                <Russian>Вы достигли цели свержения власти, но очень высокой ценой. Почти каждая семья потеряла своих любимых, призванных в армию. Экономика в руинах. Остаётся надеятся, что новое правительство справится со всеми вызовами. Движение повстанцев признано экстремистским. Часть из них скорее всего будет осуждена за военные преступления.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFled">
+                <Original>Government fled.</Original>
+                <English>Government fled.</English>
+                <Russian>Правительство бежало.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFledDesc">
+                <Original>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. There are different evaluations ov guerilla movement.</Original>
+                <English>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. There are different evaluations ov guerilla movement.</English>
+                <Russian>Ваши действия открыли народу глаза на несправедливость режима. Начались массовые восстания и правительство вынуждено было бежать. Экономические и гуманитарные потери не очень высоки и у нового правительства высоки шансы на полное восстановление страны. Мнения о повстанцах очень противоречивы.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFledHeroes">
+                <Original>Government fled. Guerillas - heroes.</Original>
+                <English>Government fled. Guerillas - heroes.</English>
+                <Russian>Правительство бежало. Повстанцы - герои.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFledHeroesDesc">
+                <Original>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement is treated as heroes. Some of them are going to be elected into new parliament.</Original>
+                <English>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement is treated as heroes. Some of them are going to be elected into new parliament.</English>
+                <Russian>Ваши действия открыли народу глаза на несправедливость режима. Начались массовые восстания и правительство вынуждено было бежать. Экономические и гуманитарные потери не очень высоки и у нового правительства высоки шансы на полное восстановление страны. Повстанцы считаются героями. Часть из них наверняка будет исбрана в новый парламент.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFledCriminals">
+                <Original>Government fled. Guerillas - criminals.</Original>
+                <English>Government fled. Guerillas - criminals.</English>
+                <Russian>Правительство бежало. Повстанцы - преступники.</Russian>
+            </Key>
+            <Key ID="STR_JTC_governmentFledCriminalsDesc">
+                <Original>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.</Original>
+                <English>Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.</English>
+                <Russian>Ваши действия открыли народу глаза на несправедливость режима. Начались массовые восстания и правительство вынуждено было бежать. Экономические и гуманитарные потери не очень высоки и у нового правительства высоки шансы на полное восстановление страны. Повстанцы обвиняются в применении экстремистских методов. Часть из них скорее всего будет осуждена за военные преступления.</Russian>
+            </Key>
+            <Key ID="STR_JTC_guerrillasEliminated">
+                <Original>All guerilla forces have been eliminated.</Original>
+                <English>All guerilla forces have been eliminated.</English>
+                <Russian>Повстанческое движение полностью уничтожено.</Russian>
+            </Key>
+            <Key ID="STR_JTC_guerrillasEliminatedDesc">
+                <Original>Current government have been holding power for 23 more years with severe economical and historical consequences for the people.</Original>
+                <English>Current government have been holding power for 23 more years with severe economical and historical consequences for the people.</English>
+                <Russian>Текущий режим остался у власти ещё на 23 года с ужасными экономическими и историческими последствиями для народа.</Russian>
+            </Key>
+            <Key ID="STR_JTC_noCommander">
+                <Original>The commander have failed to initialize the mission.</Original>
+                <English>The commander have failed to initialize the mission.</English>
+                <Russian>Командир не смог инициализировать миссию.</Russian>
+            </Key>
+            <Key ID="STR_JTC_noCommanderDesc">
+                <Original>At least one player have to load a saved game or start a new game. This player will become a commander.</Original>
+                <English>At least one player have to load a saved game or start a new game. This player will become a commander.</English>
+                <Russian>Один из огроков должен либо загрузить игру либо начать новую. Этот игрок станет командиром.</Russian>
+            </Key>
+        </Container>
+        <Container name="Dialogs">
+            <Key ID="STR_JTC_savedGames">
+                <Original>Saved games</Original>
+                <English>Saved games</English>
+                <Russian>Сохранения</Russian>
+            </Key>
+            <Key ID="STR_JTC_save">
+                <Original>Save</Original>
+                <English>Save</English>
+                <Russian>Сохранить</Russian>
+            </Key>
+            <Key ID="STR_JTC_load">
+                <Original>Load</Original>
+                <English>Load</English>
+                <Russian>Загрузить</Russian>
+            </Key>
+            <Key ID="STR_JTC_newGame">
+                <Original>New Game</Original>
+                <English>New Game</English>
+                <Russian>Новая игра</Russian>
+            </Key>
+            <Key ID="STR_JTC_cancel">
+                <Original>Cancel</Original>
+                <English>Cancel</English>
+                <Russian>Отмена</Russian>
+            </Key>
+            <Key ID="STR_JTC_notACommander">
+                <Original>I am not a commander</Original>
+                <English>I am not a commander</English>
+                <Russian>Я не командир</Russian>
+            </Key>
+            <Key ID="STR_JTC_removeSave">
+                <Original>Remove saved game</Original>
+                <English>Remove saved game</English>
+                <Russian>Удалить сохранение</Russian>
+            </Key>
+            <Key ID="STR_JTC_selectedSave">
+                <Original>Selected save</Original>
+                <English>Selected save</English>
+                <Russian>Выбранное сохранение</Russian>
+            </Key>
+            <Key ID="STR_JTC_uniforms">
+                <Original>Uniforms in backpack and vehicle</Original>
+                <English>Uniforms in backpack and vehicle</English>
+                <Russian>Униформы в рюкзаке и транспорте</Russian>
+            </Key>
+            <Key ID="STR_JTC_change">
+                <Original>Change</Original>
+                <English>Change</English>
+                <Russian>Переодеться</Russian>
+            </Key>
+            <Key ID="STR_JTC_stateLine">
+                <Original>Commander: %1, recruits: %2, money: %3, rtg: %4, a-rtg: %5, enemy rtg: %6, enemy a-rtg: %7, undercover: %8</Original>
+                <English>Commander: %1, recruits: %2, money: %3, rtg: %4, a-rtg: %5, enemy rtg: %6, enemy a-rtg: %7, undercover: %8</English>
+                <Russian>Командир: %1, повстанцы: %2, деньги: %3, ртг: %4, анти-ртг: %5, гтр врага: %6, анти-ртг врага: %7, под прикрытием: %8</Russian>
+            </Key>
+            <Key ID="STR_JTC_undercoverNot">
+                <Original>not</Original>
+                <English>not</English>
+                <Russian>нет</Russian>
+            </Key>
+            <Key ID="STR_JTC_undercoverCivilian">
+                <Original>civilian</Original>
+                <English>civilian</English>
+                <Russian>гражданский</Russian>
+            </Key>
+            <Key ID="STR_JTC_undercoverEnemy">
+                <Original>soldier</Original>
+                <English>soldier</English>
+                <Russian>солдат</Russian>
+            </Key>
+        </Container>
+        <Container name="Undercover">
+            <Key ID="STR_JTC_undDoesNotLookCivilian">
+                <Original>Player does not look civilian on foot</Original>
+                <English>Player does not look civilian on foot</English>
+                <Russian>Пеший игрок не выглядит гражданским</Russian>
+            </Key>
+            <Key ID="STR_JTC_undVisibleInVehicle">
+                <Original>Player is visible in vehicle and does not look civilian</Original>
+                <English>Player is visible in vehicle and does not look civilian</English>
+                <Russian>Игрок виден снаружи и не выглядит гражданским</Russian>
+            </Key>
+            <Key ID="STR_JTC_undVehicleNotClean">
+                <Original>Player not in clean civilian vehicle</Original>
+                <English>Player not in clean civilian vehicle</English>
+                <Russian>Игрок не в гражданском неизвестном врагу транспорте</Russian>
+            </Key>
+            <Key ID="STR_JTC_undEnemyKnows">
+                <Original>Enemy knows about player</Original>
+                <English>Enemy knows about player</English>
+                <Russian>Враг знает, где игрок</Russian>
+            </Key>
+            <Key ID="STR_JTC_undEnemyBase">
+                <Original>Player on enemy base</Original>
+                <English>Player on enemy base</English>
+                <Russian>Игрок на вражеской базе</Russian>
+            </Key>
+            <Key ID="STR_JTC_undEnemyBase">
+                <Original>Player puts an explosive</Original>
+                <English>Player puts an explosive</English>
+                <Russian>Игрок устанавливает взрывчатку</Russian>
+            </Key>
+        </Container>
+    </Package>
+</Project>

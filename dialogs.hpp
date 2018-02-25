@@ -27,7 +27,7 @@ class JTC_SaveDialog
         class JTC_SaveListLabel: RscText
         {
         	idc = 1000;
-        	text = "Saved games"; //--- ToDo: Localize;
+        	text = $STR_JTC_savedGames;
         	x = 0.324687 * safezoneW + safezoneX;
         	y = 0.313 * safezoneH + safezoneY;
         	w = 0.111562 * safezoneW;
@@ -36,7 +36,7 @@ class JTC_SaveDialog
         class JTC_SaveSelected: RscEdit
         {
         	idc = 1400;
-        	text = ""; //--- ToDo: Localize;
+        	text = "";
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.347 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -45,7 +45,7 @@ class JTC_SaveDialog
         class JTC_SaveButton: RscButton
         {
         	idc = 1600;
-        	text = "Save"; //--- ToDo: Localize;
+        	text = $STR_JTC_save;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.415 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -55,7 +55,7 @@ class JTC_SaveDialog
         class JTC_LoadButton: RscButton
         {
         	idc = 1601;
-        	text = "Load"; //--- ToDo: Localize;
+        	text = $STR_JTC_load;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.483 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -65,7 +65,7 @@ class JTC_SaveDialog
         class JTC_NewButton: RscButton
         {
         	idc = 1602;
-        	text = "New Game"; //--- ToDo: Localize;
+        	text = $STR_JTC_newGame;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.551 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -75,7 +75,7 @@ class JTC_SaveDialog
         class JTC_SaveCancelButton: RscButton
         {
         	idc = 1603;
-        	text = "Cancel"; //--- ToDo: Localize;
+        	text = $STR_JTC_cancel;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.619 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -85,7 +85,7 @@ class JTC_SaveDialog
         class JTC_SaveNotACommanderButton: RscButton
         {
         	idc = 1604;
-        	text = "I am not a commander"; //--- ToDo: Localize;
+        	text = $STR_JTC_notACommander;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.687 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -95,7 +95,7 @@ class JTC_SaveDialog
         class JTC_RemoveSaveButton: RscButton
         {
         	idc = 1605;
-        	text = "Remove saved game"; //--- ToDo: Localize;
+        	text = $STR_JTC_removeSave;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.745 * safezoneH + safezoneY;
         	w = 0.175312 * safezoneW;
@@ -105,7 +105,7 @@ class JTC_SaveDialog
         class JTC_SelectedSaveLabel: RscText
         {
         	idc = 1001;
-        	text = "Selected save"; //--- ToDo: Localize;
+        	text = $STR_JTC_selectedSave;
         	x = 0.484062 * safezoneW + safezoneX;
         	y = 0.313 * safezoneH + safezoneY;
         	w = 0.111562 * safezoneW;
@@ -147,16 +147,16 @@ class JTC_UniformDialog
         class JTC_UniformDialogLabel: RscText
         {
             idc = 1002;
-            text = "Uniforms in backpack and vehicle"; //--- ToDo: Localize;
+            text = $STR_JTC_uniforms;
             x = 11 * GUI_GRID_W + GUI_GRID_X;
             y = 7 * GUI_GRID_H + GUI_GRID_Y;
-            w = 12 * GUI_GRID_W;
+            w = 14 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
         class JTC_UniformDialogChangeButton: RscButton
         {
             idc = 1606;
-            text = "Change"; //--- ToDo: Localize;
+            text = $STR_JTC_change;
             x = 11 * GUI_GRID_W + GUI_GRID_X;
             y = 15 * GUI_GRID_H + GUI_GRID_Y;
             w = 18 * GUI_GRID_W;
@@ -166,7 +166,7 @@ class JTC_UniformDialog
         class JTC_UniformDialogCancelButton: RscButton
         {
             idc = 1607;
-            text = "Cancel"; //--- ToDo: Localize;
+            text = $STR_JTC_cancel;
             x = 11 * GUI_GRID_W + GUI_GRID_X;
             y = 17 * GUI_GRID_H + GUI_GRID_Y;
             w = 18 * GUI_GRID_W;

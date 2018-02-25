@@ -3,13 +3,13 @@
 #include "taw_vd\GUI.h"
 
 onLoadName = "Justice Altis";
-onLoadMission = "Fight for Justice agains the corrupt government";
+onLoadMission = $STR_JTC_description;
 briefingName = "Justice Altis";
 loadScreen = "images\Justice.paa";
 displayName = "Justice Altis";
 overviewText = "A persistent cooperative mission. The goal is to overthrow the corrupt governmtent.";
 overviewPicture = "images\Justice.paa";
-author = "Timur Nazarov";
+author = $STR_JTC_timurNazarov;
 respawn = "BASE";
 respawnDelay = 5;
 respawnOnStart = -1;
@@ -38,21 +38,21 @@ class Params
 {
 	class AdminCommander
 	{
-		title = "Only server admin or hosting player can be a commander";
-		texts[] = {"yes","no"};
+		title = $STR_JTC_adminCommander;
+		texts[] = {$STR_JTC_yes,$STR_JTC_no};
 		values[] = {1,0};
 		default = 0;
 	};
 	class StartingTime
 	{
-		title = "Mission start hour";
+		title = $STR_JTC_startHour;
 		texts[] = {"00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
 		default = 6;
 	};
 	class SpawnDistance
 	{
-		title = "Spawn distance";
+		title = $STR_JTC_spawnDistance;
 		texts[] = {"1000","1200","1400","1600","1800","2000","2500","3000","3500","4000","5000","6000","7000"};
 		values[] = {1000,1200,1400,1600,1800,2000,2500,3000,3500,4000,5000,6000,7000};
 		default = 1800;
@@ -63,43 +63,43 @@ class CfgDebriefing
 {
     class basesDestroyed
     {
-        title = "Mission Accomplished!";
-        subtitle = "Army destroyed. Gurillas - criminals";
-        description = "You have reached your goal of overthrowing the government, but at a very high price. Almost every family of our homeland have lost their loved ones who were conscripted. And the economy is in ruins. Hopefully the new government will be able to handle all the challenges. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.";
+        title = $STR_JTC_missionAccomplished;
+        subtitle = $STR_JTC_armyDestroyed;
+        description = $STR_JTC_armyDestroyedDesc;
     };
 
     class governmentLostPopularity
     {
-        title = "Mission Accomplished!";
-        subtitle = "Government fled.";
-        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. There are different evaluations ov guerilla movement.";
+        title = $STR_JTC_missionAccomplished;
+        subtitle = $STR_JTC_governmentFled;
+        description = $STR_JTC_governmentFledDesc;
     };
 
     class governmentLostPopularityGuerillaHeroes
     {
-        title = "Mission Accomplished!";
-        subtitle = "Government fled. Guerillas - heroes.";
-        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement is treated as heroes. Some of them are going to be elected into new parliament.";
+        title = $STR_JTC_missionAccomplished;
+        subtitle = $STR_JTC_governmentFledHeroes;
+        description = $STR_JTC_governmentFledHeroesDesc;
     };
 
     class governmentLostPopularityGuerillaCriminals
     {
-        title = "Mission Accomplished!";
-        subtitle = "Government fled. Guerillas - criminals.";
-        description = "Your actions have opened people's eyes on governmental injustice. Mass rioting had started and the currupt government had fled. Economical and humanitarian losses are not that severe and the state is likely to be rebuilt by the new government. Guerilla movement has been accuesed in practicing extremist methods. Some of them are likely to be convicted for war crimes.";
+        title = $STR_JTC_missionAccomplished;
+        subtitle = $STR_JTC_governmentFledCriminals;
+        description = $STR_JTC_governmentFledCriminalsDesc;
     };
 
     class noRecruits
     {
-        title = "Mission Failed!";
-        subtitle = "All guerilla forces have been eliminated.";
-        description = "";
+        title = $STR_JTC_missionFailed;
+        subtitle = $STR_JTC_guerrillasEliminated;
+        description = $STR_JTC_guerrillasEliminatedDesc;
     };
 
     class noCommander
     {
-        title = "Mission not initialized!";
-        subtitle = "The commander have failed to initialize the mission.";
-        description = "At least one player have to load a saved game or start a new game. This player will become a commander.";
+        title = $STR_JTC_missionNotInitialized;
+        subtitle = $STR_JTC_noCommander;
+        description = $STR_JTC_noCommanderDesc;
     };
 };
