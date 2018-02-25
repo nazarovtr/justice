@@ -106,6 +106,10 @@ Rating is a percentage of population which supports you and anti-rating is a per
 
 Raising your rating gives you more recruits and other bonuses like different items and even vehicles appearing on your base.
 
+You gain rating by capturing bases and destroying or stealing enemy vehicles.
+You lose some amount of rating for just killing people, because the soldiers are citizens too and they have families.
+So the cleanest approach is to destroy enemy vehicles with the least possible loss of life.
+
 Every time a player dies recruit count is decreased.
 If it is decreased to zero, the mission will be failed.
 
