@@ -16,13 +16,13 @@ private _skip = true;
     private _player = _x;
     if (!((position _player) inArea "hq_radius")) then {
         _skip = false;
-        hint "Not all players are on the base";
+        hint localize "STR_JTC_somebodyAway";
         breakTo "main";
     };
     private _enemyKnowsAboutPlayer = _player call JTC_fnc_enemyKnowsAboutObject;
     if (_enemyKnowsAboutPlayer select 0 > 0.05 and _enemyKnowsAboutPlayer select 1  < 300) then {
         _skip = false;
-        hint "There is an enemy who knows about player position";
+        hint localize "STR_JTC_somebodyKnows";
         breakTo "main";
     };
 } forEach allPlayers;

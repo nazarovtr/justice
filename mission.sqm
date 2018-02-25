@@ -29,27 +29,22 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Structures_F_Households_Slum",
 	"A3_Soft_F_Offroad_01",
-	"ace_goggles",
 	"A3_Weapons_F_Items",
-	"ace_medical",
 	"A3_Soft_F_Quadbike_01",
 	"A3_Structures_F_EPB_Civ_Camping",
 	"A3_Ui_F",
-	"ace_explosives",
 	"A3_Soft_F_Gamma_Hatchback_01",
 	"A3_Soft_F_Beta_Truck_02",
-	"ace_realisticnames",
 	"A3_Soft_F_Gamma_Van_01",
 	"A3_Soft_F_Kart_Kart_01",
 	"A3_Weapons_F_Ammoboxes",
-	"ace_chemlights",
 	"A3_Soft_F_Gamma_SUV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -80,66 +75,38 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="ace_goggles";
-			name="ACE3 - Goggles";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item5
-		{
-			className="ace_medical";
-			name="ACE3 - Medical";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item6
-		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item5
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
-		{
-			className="ace_explosives";
-			name="ACE3 - Explosives";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item9
+		class Item6
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item7
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item8
 		{
 			className="A3_Soft_F_Kart";
 			name="Arma 3 Karts - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
-		};
-		class Item12
-		{
-			className="ace_chemlights";
-			name="ace_chemlights";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -7650,7 +7617,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=114.0;
+			angle=113.99997;
 			id=640;
 		};
 		class Item475
@@ -8686,7 +8653,7 @@ class Mission
 			colorName="ColorRed";
 			a=3;
 			b=7;
-			angle=56.0;
+			angle=55.999992;
 			id=717;
 			atlOffset=-0.096643448;
 		};
@@ -9928,7 +9895,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=70;
-			angle=1.0;
+			angle=0.9999997;
 			id=829;
 			atlOffset=-1.4516563;
 		};
@@ -12076,7 +12043,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=112.0;
+			angle=111.99997;
 			id=999;
 			atlOffset=0.0039978027;
 		};

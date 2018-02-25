@@ -21,9 +21,9 @@ if (!(_vehicles isEqualTo [])) then {
     if (!_onlyHeavyVehicles || (([_vehicle] call JTC_fnc_getCargoCapacity) >= 3000 && (getMass _vehicle) > 2000)) then {
         [_container, _vehicle, false, _timePerItem, _maxDistance, _cargoLimitMode] call JTC_fnc_moveCargo;
     } else {
-        hint "You need a bigger vehicle";
+        hint localize "STR_JTC_cargoNeedBigger";
     };
 } else {
-    hint format ["No vehicles in %1 meters", _maxDistance];
+    hint format [localize "STR_JTC_cargoNoVehicle", _maxDistance];
 }
 

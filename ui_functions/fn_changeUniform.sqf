@@ -9,12 +9,12 @@ if ((lbCurSel 1501) >= 0) then {
     if (loadUniform player > 0) then {
         if (vehicle player != player) then {
             [uniformContainer player, vehicle player, true, 0.1, 15, 0, true] call JTC_fnc_moveCargo;
-            hint "Loaded uniform items into vehicle";
+            hint localize "STR_JTC_uniformCargoToVehicle";
         } else {
             private _weaponHolder = "GroundWeaponHolder" createVehicle getPos player;
             _weaponHolder setPos (getPos player);
             [uniformContainer player, _weaponHolder, true, 0.1, 15, 0, true] call JTC_fnc_moveCargo;
-            hint "Dropped uniform items to the ground";
+            hint localize "STR_JTC_uniformCargoToGround";
         }
     };
     private _oldUniform = uniform player;
@@ -29,7 +29,7 @@ if ((lbCurSel 1501) >= 0) then {
     };
     _container addItemCargoGlobal [_oldUniform, 1];
     closeDialog 23003;
-    hint "Uniform changed";
+    hint localize "STR_JTC_uniformChanged";
 } else {
-    hint "Select a uniform";
+    hint localize "STR_JTC_selectUniform";
 }

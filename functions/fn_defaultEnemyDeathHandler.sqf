@@ -1,10 +1,10 @@
 private _unit = _this select 0;
 private _killer = _this select 1;
 [-0.3, -0.5] call JTC_fnc_changeRating;
-[_unit, ["Load loot into closest vehicle", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
+[_unit, [localize "STR_JTC_loadLoot", "[_this select 0, 10, 1] call JTC_fnc_moveCargoToClosestVehicle;",
  [], 0, false, true, "", "true", 3]] remoteExec ["addAction", 0, _unit];
 if ((random 1) < 0.3) then {
-    [_unit, "Steal uniform"] call JTC_fnc_addStealUniformAction;
+    [_unit, localize "STR_JTC_stealUniform"] call JTC_fnc_addStealUniformAction;
 };
 JTC_enemyPopulation = JTC_enemyPopulation - 1;
 private _killerVehicle = vehicle _killer;

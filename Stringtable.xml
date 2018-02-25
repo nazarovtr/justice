@@ -163,6 +163,21 @@
                 <English>Selected save</English>
                 <Russian>Выбранное сохранение</Russian>
             </Key>
+            <Key ID="STR_JTC_selectASave">
+                <Original>Select a save</Original>
+                <English>Select a save</English>
+                <Russian>Выберите сохранение</Russian>
+            </Key>
+            <Key ID="STR_JTC_fillSaveName">
+                <Original>Fill save name</Original>
+                <English>Fill save name</English>
+                <Russian>Заполните имя сохранения</Russian>
+            </Key>
+            <Key ID="STR_JTC_saved">
+                <Original>Saved</Original>
+                <English>Saved</English>
+                <Russian>Сохранено</Russian>
+            </Key>
             <Key ID="STR_JTC_uniforms">
                 <Original>Uniforms in backpack and vehicle</Original>
                 <English>Uniforms in backpack and vehicle</English>
@@ -172,6 +187,26 @@
                 <Original>Change</Original>
                 <English>Change</English>
                 <Russian>Переодеться</Russian>
+            </Key>
+            <Key ID="STR_JTC_uniformCargoToVehicle">
+                <Original>Loaded uniform items into vehicle</Original>
+                <English>Loaded uniform items into vehicle</English>
+                <Russian>Снаряжение из униформы перегружено в транспорт</Russian>
+            </Key>
+            <Key ID="STR_JTC_uniformCargoToGround">
+                <Original>Dropped uniform items to the ground</Original>
+                <English>Dropped uniform items to the ground</English>
+                <Russian>Снаряжение из униформы выгружено на землю</Russian>
+            </Key>
+            <Key ID="STR_JTC_uniformChanged">
+                <Original>Uniform changed</Original>
+                <English>Uniform changed</English>
+                <Russian>Униформа переодета</Russian>
+            </Key>
+            <Key ID="STR_JTC_selectUniform">
+                <Original>Select a uniform</Original>
+                <English>Select a uniform</English>
+                <Russian>Выберите униформу</Russian>
             </Key>
             <Key ID="STR_JTC_stateLine">
                 <Original>Commander: %1, recruits: %2, money: %3, rtg: %4, a-rtg: %5, enemy rtg: %6, enemy a-rtg: %7, undercover: %8</Original>
@@ -220,10 +255,179 @@
                 <English>Player on enemy base</English>
                 <Russian>Игрок на вражеской базе</Russian>
             </Key>
-            <Key ID="STR_JTC_undEnemyBase">
+            <Key ID="STR_JTC_undExplosive">
                 <Original>Player puts an explosive</Original>
                 <English>Player puts an explosive</English>
                 <Russian>Игрок устанавливает взрывчатку</Russian>
+            </Key>
+            <Key ID="STR_JTC_undCorpse">
+                <Original>Player is near enemy corpse</Original>
+                <English>Player is near enemy corpse</English>
+                <Russian>Игрок рядом с трупом врага</Russian>
+            </Key>
+            <Key ID="STR_JTC_undNearNotUnd">
+                <Original>Player is near not undercover player</Original>
+                <English>Player is near not undercover player</English>
+                <Russian>Игрок рядом с игроком не под прикрытием</Russian>
+            </Key>
+            <Key ID="STR_JTC_undNearDeadNotUnd">
+                <Original>Player is near not undercover dead player</Original>
+                <English>Player is near not undercover dead player</English>
+                <Russian>Игрок рядом с мёртвым игроком не под прикрытием</Russian>
+            </Key>
+            <Key ID="STR_JTC_undOffroad">
+                <Original>Player is driving offroad near an enemy base</Original>
+                <English>Player is driving offroad near an enemy base</English>
+                <Russian>Игрок едет вне дорог недалеко от вражеской базы</Russian>
+            </Key>
+        </Container>
+        <Container name="Cargo">
+            <Key ID="STR_JTC_cargoTooFar">
+                <Original>Too far for cargo transfer</Original>
+                <English>Too far for cargo transfer</English>
+                <Russian>Слишком далеко для загрузки</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoFull">
+                <Original>Tranferred %1 out of %2. Maximum load reached.</Original>
+                <English>Tranferred %1 out of %2. Maximum load reached.</English>
+                <Russian>Загружено %1 из %2. Больше места нет.</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoProgress">
+                <Original>Tranferred %1 out of %2</Original>
+                <English>Tranferred %1 out of %2</English>
+                <Russian>Загружено %1 из %2</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoFinish">
+                <Original>All cargo transferred</Original>
+                <English>All cargo transferred</English>
+                <Russian>Всё загружено</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoNoFit">
+                <Original>Cargo does not fit</Original>
+                <English>Cargo does not fit</English>
+                <Russian>Весь груз не поместится</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoNeedBigger">
+                <Original>You need a bigger vehicle</Original>
+                <English>You need a bigger vehicle</English>
+                <Russian>Нужен транспорт побольше</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoNoVehicle">
+                <Original>No vehicles in %1 meters</Original>
+                <English>No vehicles in %1 meters</English>
+                <Russian>Нет транспорта в %1 метрах</Russian>
+            </Key>
+            <Key ID="STR_JTC_cargoEmptyAmmobox">
+                <Original>Ammobox have to be empty</Original>
+                <English>Ammobox have to be empty</English>
+                <Russian>Хранилище базы должно быть пустым</Russian>
+            </Key>
+        </Container>
+        <Container name="Actions">
+            <Key ID="STR_JTC_base400M">
+                <Original>Base should be placed in at least 400 meters from a city, an enemy base or a civilian infrastucture object</Original>
+                <English>Base should be placed in at least 400 meters from a city, an enemy base or a civilian infrastucture object</English>
+                <Russian>Базу стоит располагать не ближе 400 метров от города, вражеской базы или объекта гражданской инфраструктуры</Russian>
+            </Key>
+            <Key ID="STR_JTC_somebodyAway">
+                <Original>Not all players are on the base</Original>
+                <English>Not all players are on the base</English>
+                <Russian>Не все игроки на базе</Russian>
+            </Key>
+            <Key ID="STR_JTC_somebodyKnows">
+                <Original>There is an enemy who knows about player position</Original>
+                <English>There is an enemy who knows about player position</English>
+                <Russian>Враг знает, где игроки</Russian>
+            </Key>
+            <Key ID="STR_JTC_noBackpackSpace">
+                <Original>Not enough space in your backpack</Original>
+                <English>Not enough space in your backpack</English>
+                <Russian>Не хватает места в рюкзаке</Russian>
+            </Key>
+            <Key ID="STR_JTC_noBackpack">
+                <Original>You need a backpack</Original>
+                <English>You need a backpack</English>
+                <Russian>Нужен рюкзак</Russian>
+            </Key>
+            <Key ID="STR_JTC_saveProgress">
+                <Original>Save progress</Original>
+                <English>Save progress</English>
+                <Russian>Сохранить прогресс</Russian>
+            </Key>
+            <Key ID="STR_JTC_moveToAmmobox">
+                <Original>Move cargo to ammobox</Original>
+                <English>Move cargo to ammobox</English>
+                <Russian>Перегрузить в хранилище</Russian>
+            </Key>
+            <Key ID="STR_JTC_moveVehicleToAmmobox">
+                <Original>Move closest vehicle cargo to ammobox</Original>
+                <English>Move closest vehicle cargo to ammobox</English>
+                <Russian>Перегрузить из ближайшего транспорта в хранилище</Russian>
+            </Key>
+            <Key ID="STR_JTC_moveToVehicle">
+                <Original>Move ammobox cargo to closest vehicle</Original>
+                <English>Move ammobox cargo to closest vehicle</English>
+                <Russian>Перегрузить из хранилища в ближайший транспорт</Russian>
+            </Key>
+            <Key ID="STR_JTC_rest4Hours">
+                <Original>Rest 4 hours</Original>
+                <English>Rest 4 hours</English>
+                <Russian>Отдохнуть 4 часа</Russian>
+            </Key>
+            <Key ID="STR_JTC_restMorning">
+                <Original>Rest till the morning</Original>
+                <English>Rest till the morning</English>
+                <Russian>Отдохнуть до утра</Russian>
+            </Key>
+            <Key ID="STR_JTC_restNight">
+                <Original>Rest till the night</Original>
+                <English>Rest till the night</English>
+                <Russian>Отдохнуть до ночи</Russian>
+            </Key>
+            <Key ID="STR_JTC_moveBase">
+                <Original>Move base</Original>
+                <English>Move base</English>
+                <Russian>Передвинуть базу</Russian>
+            </Key>
+            <Key ID="STR_JTC_deployBase">
+                <Original>Deploy base here</Original>
+                <English>Deploy base here</English>
+                <Russian>Развернуть базу</Russian>
+            </Key>
+            <Key ID="STR_JTC_checkRepair">
+                <Original>Check repair cargo</Original>
+                <English>Check repair cargo</English>
+                <Russian>Проверить запас запчастей</Russian>
+            </Key>
+            <Key ID="STR_JTC_checkAmmo">
+                <Original>Check ammo cargo</Original>
+                <English>Check ammo cargo</English>
+                <Russian>Проверить запас боеприпасов</Russian>
+            </Key>
+            <Key ID="STR_JTC_loadLoot">
+                <Original>Load loot into closest vehicle</Original>
+                <English>Load loot into closest vehicle</English>
+                <Russian>Загрузить снаряжение в ближайший транспорт</Russian>
+            </Key>
+            <Key ID="STR_JTC_viewDistanceSettings">
+                <Original>View Distance Settings</Original>
+                <English>View Distance Settings</English>
+                <Russian>Настройка дальности прорисовки</Russian>
+            </Key>
+            <Key ID="STR_JTC_stealUniform">
+                <Original>Steal uniform</Original>
+                <English>Steal uniform</English>
+                <Russian>Украть униформу</Russian>
+            </Key>
+            <Key ID="STR_JTC_recoverUniform">
+                <Original>Recover uniform</Original>
+                <English>Recover uniform</English>
+                <Russian>Забрать униформу</Russian>
+            </Key>
+            <Key ID="STR_JTC_stealClothes">
+                <Original>Steal clothes</Original>
+                <English>Steal clothes</English>
+                <Russian>Украть одежду</Russian>
             </Key>
         </Container>
     </Package>

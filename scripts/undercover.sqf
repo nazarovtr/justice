@@ -60,7 +60,7 @@ while {true} do {
         {
             if ((_playerPosition distance position _x) < 20) then {
                 _newUndercoverMode = "not";
-                _notUndercoverReasons pushBack "";
+                _notUndercoverReasons pushBack "STR_JTC_undExplosive";
                 breakTo "main";
             }
         } forEach getAllOwnedMines player;
@@ -71,7 +71,7 @@ while {true} do {
         {
             if (faction _x == JTC_enemyFaction and !alive _x) then {
                 _newUndercoverMode = "not";
-                _notUndercoverReasons pushBack "Player is near enemy corpse";
+                _notUndercoverReasons pushBack "STR_JTC_undCorpse";
                 breakTo "main";
             };
         } forEach (_playerPosition nearObjects ["man", 15]);
@@ -83,13 +83,13 @@ while {true} do {
             if (alive _x) then {
                 if (player != _x and (_playerPosition distance position _x) < 30) then {
                     _newUndercoverMode = "not";
-                    _notUndercoverReasons pushBack "Player is near not undercover player";
+                    _notUndercoverReasons pushBack "STR_JTC_undNearNotUnd";
                     breakTo "main";
                 };
             } else {
                 if (player != _x and (_playerPosition distance position _x) < 15) then {
                     _newUndercoverMode = "not";
-                    _notUndercoverReasons pushBack "Player is near not undercover dead player";
+                    _notUndercoverReasons pushBack "STR_JTC_undNearDeadNotUnd";
                     breakTo "main";
                 };
             };
@@ -103,7 +103,7 @@ while {true} do {
                 {
                     if ("ok" == (_x select 3) and (_playerPosition distance2D markerPos (_x select 0)) < 700) then {
                         _newUndercoverMode = "not";
-                        _notUndercoverReasons pushBack "Player is driving offroad near an enemy base";
+                        _notUndercoverReasons pushBack "STR_JTC_undOffroad";
                         breakTo "main";
                     };
                 } forEach JTC_enemyBases;
@@ -121,7 +121,7 @@ while {true} do {
     };
 
     if (_newUndercoverMode == "not") then {
-        if ((count _notUndercoverReasons) == 1 and (_notUndercoverReasons select 0) == "Player is near not undercover player") then {
+        if ((count _notUndercoverReasons) == 1 and (_notUndercoverReasons select 0) == "STR_JTC_undNearNotUnd") then {
             JTC_notUndercoverPlayers = JTC_notUndercoverPlayers - [player];
         } else {
             JTC_notUndercoverPlayers pushBackUnique player;
@@ -131,7 +131,7 @@ while {true} do {
     };
     publicVariable "JTC_notUndercoverPlayers";
     if (_newUndercoverMode == "not" and JTC_undercoverMode != "not") then {
-        hint (_notUndercoverReasons select 0);
+        hint localize (_notUndercoverReasons select 0);
     };
     JTC_undercoverMode = _newUndercoverMode;
 

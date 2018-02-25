@@ -6,7 +6,7 @@ scopeName "main";
     if ((_x find "base") == 0 or (_x find "airbase") == 0 or (_x find "city") == 0 or (_x find "civilian") == 0) then {
         if (_position distance2D getMarkerPos _x < 400) then {
             _deployAllowed = false;
-            hint "Base should be placed in at least 400 meters from a city, an enemy base or a civilian infrastucture object";
+            hint localize "STR_JTC_base400M";
             breakTo "main";
         };
     };

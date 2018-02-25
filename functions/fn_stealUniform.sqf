@@ -10,8 +10,8 @@ if (_backpack != "") then {
         [uniformContainer _body, _putBackContainer, true, 0.1, 15, 0, true] call JTC_fnc_moveCargo;
         removeUniform _body;
     } else {
-        hint "Not enough space in your backpack";
+        hint localize "STR_JTC_noBackpackSpace";
     };
 } else {
-    hint "You need a backpack";
+    hint localize "STR_JTC_noBackpack";
 };

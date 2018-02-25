@@ -7,7 +7,7 @@ _civilian addEventHandler ["killed", {
             [-3, 3] call JTC_fnc_changeRating;
         };
         if ((random 1) < 0.3) then {
-            [_unit, "Steal clothes"] call JTC_fnc_addStealUniformAction;
+            [_unit, localize "STR_JTC_stealClothes"] call JTC_fnc_addStealUniformAction;
         };
 
         private _city = [position _unit] call JTC_fnc_getClosestPopulatedCity;

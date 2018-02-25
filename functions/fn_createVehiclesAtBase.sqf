@@ -13,17 +13,17 @@ private _vehicles = _this select 0;
     _vehicle setFuel (_x select 5);
     if (finite (_x select 6)) then {
         _vehicle setFuelCargo (_x select 6);
-        _vehicle addAction ["Check fuel cargo", "hint format [""%1"", getFuelCargo(_this select 0)]",
+        _vehicle addAction [localize "STR_JTC_checkFuel", "hint format [""%1"", getFuelCargo(_this select 0)]",
          [], 0, false, true, "", "true", 3];
     };
     if (finite  (_x select 7)) then {
         _vehicle setRepairCargo (_x select 7);
-        _vehicle addAction ["Check repair cargo", "hint format [""%1"", getRepairCargo(_this select 0)]",
+        _vehicle addAction [localize "STR_JTC_checkRepair", "hint format [""%1"", getRepairCargo(_this select 0)]",
          [], 0, false, true, "", "true", 3];
     };
     if (finite (_x select 8)) then {
         _vehicle setRepairCargo (_x select 8);
-        _vehicle addAction ["Check ammo cargo", "hint format [""%1"", getAmmoCargo(_this select 0)]",
+        _vehicle addAction [localize "STR_JTC_checkAmmo", "hint format [""%1"", getAmmoCargo(_this select 0)]",
          [], 0, false, true, "", "true", 3];
     };
     if (_x select 9) then {

@@ -21,7 +21,7 @@ fn_saveSaveNames = {
 private _saveName = ctrlText 1400;
 
 if (count _saveName == 0) then {
-    hint "Fill save name";
+    hint localize "STR_JTC_fillSaveName";
 } else {
     [] call fn_saveSaveNames;
     [_saveName, "date", date] call fn_saveValue;
@@ -62,5 +62,5 @@ if (count _saveName == 0) then {
     [_saveName, "schedulerData", _schedulerData] call fn_saveValue;
     saveProfileNamespace;
     closeDialog 23001;
-    hint "Saved";
+    hint localize "STR_JTC_saved";
 };

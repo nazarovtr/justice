@@ -71,7 +71,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     while {!(_cargoBuffer isEqualTo [])} do {
         if ((_source distance _target) > _maxDistance) then {
             if (!_silent) then {
-                "Too far for cargo transfer" call fn_hint;
+                (localize "STR_JTC_cargoTooFar") call fn_hint;
             };
             breakTo "main";
         };
@@ -79,7 +79,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
         if (_cargoLimitMode == 1 && ([_target] call JTC_fnc_getCargoMass) +
             ([_cargoUnit select 0] call JTC_fnc_getItemMass) > _targetCargoCapacity) then {
             if (!_silent) then {
-                (format ["Tranferred %1 out of %2. Maximum load reached.",
+                (format [localize "STR_JTC_cargoFull",
                  _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint;
             };
             breakTo "main";
@@ -94,7 +94,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
         if (!_instant) then {
             if ((_cargoUnit select 1) % 10 == 0) then {
                 if (!_silent) then {
-                    (format ["Tranferred %1 out of %2", _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint
+                    (format [localize "STR_JTC_cargoProgress", _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint
                 };
             };
             sleep _timePerItem;
@@ -102,7 +102,7 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     };
     if (_cargoBuffer isEqualTo []) then {
         if (!_silent) then {
-            "All cargo transferred" call fn_hint;
+            (localize "STR_JTC_cargoFinish") call fn_hint;
         };
     } else {
         private _putBackContainer = _source;
@@ -121,6 +121,6 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
     };
 } else {
     if (!_silent) then {
-        "Cargo does not fit" call fn_hint;
+        (localize "STR_JTC_cargoNoFit") call fn_hint;
     };
 };

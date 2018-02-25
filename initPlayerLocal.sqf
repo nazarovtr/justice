@@ -7,19 +7,19 @@ if (JTC_cheats) then {
     player addAction ["Kill", "[] call JTC_fnc_kill;"];
 };
 defaultUniform = uniform player;
-theBase addAction ["Persistent save", "[false] call JTCUI_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
+theBase addAction [localize "STR_JTC_saveProgress", "[false] call JTCUI_fnc_showSaveDialog;", [], 0, false, true, "", "true", 3];
 player onMapSingleClick "[_pos] call JTCUI_fnc_togglePointOfInterest";
-theCrate addAction ["Move cargo to ammobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
+theCrate addAction [localize "STR_JTC_moveToAmmobox", "[theCrate, theBase] call JTC_fnc_moveCargo;", [], 0, false, true,
     "", "true", 3];
-theBase addAction ["Move closest vehicle cargo to ammobox", "[] call JTC_fnc_moveClosestVehicleCargoToAmmobox;",
+theBase addAction [localize "STR_JTC_moveVehicleToAmmobox", "[] call JTC_fnc_moveClosestVehicleCargoToAmmobox;",
     [], 0, false, true,"", "true", 3];
-theBase addAction ["Move ammobox cargo to closest vehicle",
+theBase addAction [localize "STR_JTC_moveToVehicle",
     "[theBase, 20, 0, true, 0.02] call JTC_fnc_moveCargoToClosestVehicle;", [], 0, false, true, "", "true", 3];
-theLamp addAction ["Rest 4 hours",
+theLamp addAction [localize "STR_JTC_rest4Hours",
     "4 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
-theLamp addAction ["Rest till the morning",
+theLamp addAction [localize "STR_JTC_restMorning",
     "-1 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
-theLamp addAction ["Rest till the night",
+theLamp addAction [localize "STR_JTC_restNight",
     "-2 call JTC_fnc_skipTime;", [], 0, false, true, "", "true", 3];
 waitUntil {!(isNull (findDisplay 46))};
 (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 21) then {[] call JTCUI_fnc_showUniformDialog;};"];
@@ -34,13 +34,13 @@ if (!_joinInProgress) then {
         if ((getPlayerUID player) == JTC_commanderId) then {
             if (!isNil "JTC_baseDeployed") then {
                 if (JTC_baseDeployed) then {
-                    theBase addAction ["Move base", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
+                    theBase addAction [localize "STR_JTC_moveBase", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
                 } else {
-                    deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
+                    deployBaseActionId = player addAction [localize "STR_JTC_deployBase", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
                      [], 0, false, true, "", "true", 3];
                 };
             } else {
-                deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
+                deployBaseActionId = player addAction [localize "STR_JTC_deployBase", "[getPosASL player, getDir player] call JTC_fnc_deployBase;",
                                      [], 0, false, true, "", "true", 3];
             };
         };

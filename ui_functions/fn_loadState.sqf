@@ -87,7 +87,7 @@ fn_loadGuerillaResources = {
 fn_setCommander = {
     JTC_commanderName = name player;
     JTC_commanderId = getPlayerUID player;
-    theBase addAction ["Move base", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
+    theBase addAction [localize "STR_JTC_moveBase", "call JTC_fnc_moveBase;", [], 0, false, true, "", "true", 3];
     publicVariable "JTC_commanderName";
     publicVariable "JTC_commanderId";
 };
@@ -116,7 +116,7 @@ private _saveName = ctrlText 1400;
 [_saveName] call JTC_fnc_log;
 
 if ((count _saveName) == 0) then {
-    hint "Select a Save";
+    hint localize "STR_JTC_selectASave";
 } else {
     [] call fn_setCommander;
     [] call fn_removeStartingVehicles;

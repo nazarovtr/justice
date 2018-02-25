@@ -12,7 +12,7 @@ if (!isNil "JTC_baseDeployed") then {
     _newUnit setDir JTC_baseDirection;
 };
 if ((random 1) < 1) then {
-    [_oldUnit, "Recover uniform"] call JTC_fnc_addStealUniformAction;
+    [_oldUnit, localize "STR_JTC_recoverUniform"] call JTC_fnc_addStealUniformAction;
 };
 _newUnit forceAddUniform  defaultUniform;
 private _playerData = [getPlayerUID player] call JTC_fnc_getPlayerData;
@@ -20,10 +20,10 @@ _playerData set [1, defaultUniform];
 publicVariable "JTC_playerData";
 if ((getPlayerUID player) == JTC_commanderId) then {
     if (isNil "JTC_baseDeployed") then {
-        deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+        deployBaseActionId = player addAction [localize "STR_JTC_deployBase", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
     } else {
         if (!JTC_baseDeployed) then {
-            deployBaseActionId = player addAction ["Deploy base here", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
+            deployBaseActionId = player addAction [localize "STR_JTC_deployBase", "[getPosASL player, getDir player] call JTC_fnc_deployBase;", [], 0, false, true, "", "true", 3];
         }
     };
 };
