@@ -58,6 +58,13 @@ fn_loadPopulation = {
     [_saveName, "cities", []] call fn_loadAndPublishValue;
     [_saveName, "civilianInfrastructure", []] call fn_loadAndPublishValue;
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
+    {
+        if ((_x select 3) == "abandoned") then {
+            private _baseMarker = _x select 0;
+            private _marker = createMarker ["cross_" + _baseMarker, getMarkerPos _baseMarker];
+            _marker setMarkerType "hd_objective";
+        };
+    } forEach JTC_enemyBases;
 };
 
 fn_loadReputation = {

@@ -1,4 +1,4 @@
-# Justice Altis Alpha 0.3.0
+# Justice Altis Alpha 0.3.1
 Russian version below / Русская версия ниже.
 ## Inspiration
 The basic idea of guerrilla units fighting regular army and some basic mechanics are inspired by barbolani's Antistasi. But I intend to make the mission more hardcore.
@@ -100,7 +100,7 @@ There are several endings which depend on player rating, enemy rating and losses
 The mission was tested and works with ACE 3, TFAR, Arma Enhanced Movement, Advanced Towing, bCombat, ASR AI and VCOM.
 
 ## Recommended mod setup
-Arma E-nhanced Movement, Advanced Towing.
+Arma Enhanced Movement, Advanced Towing.
 
 ACE and/or some AI mod if you want.
 

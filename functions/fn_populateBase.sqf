@@ -112,6 +112,9 @@ publicVariable "JTC_enemyBases";
             if (_base select 3 == "ok" and (1.0 * (_base select 1) / (_base select 2)) < 0.3) then {
                 _base set [3, "abandoned"];
                 [(_base select 2) / 2, -(_base select 2) / 2] call JTC_fnc_changeRating;
+                private _baseMarker = _base select 0;
+                private _marker = createMarker ["cross_" + _baseMarker, getMarkerPos _baseMarker];
+                _marker setMarkerType "hd_objective";
             };
             publicVariable "JTC_enemyBases";
             ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;
