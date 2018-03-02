@@ -50,5 +50,7 @@ class justice {
         class addStealUniformAction {};
         class skipTime {};
         class loadAmmoTruckWithMagazines {};
+        class escalate {};
+        class isEscalated {};
     };
 };

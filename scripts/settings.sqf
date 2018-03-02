@@ -24,5 +24,6 @@ if (!isNil("startingQuad1")) then {
 };
 JTC_respawnMarker = "respawn_west";
 JTC_hqMarkerType = "b_hq";
+JTC_escalation = [];
 tawvd_disablenone = true;
 tawvd_maxRange = 12000;

@@ -115,6 +115,8 @@ publicVariable "JTC_enemyBases";
                 private _baseMarker = _base select 0;
                 private _marker = createMarker ["cross_" + _baseMarker, getMarkerPos _baseMarker];
                 _marker setMarkerType "hd_objective";
+                ["patrols"] call JTC_fnc_escalate;
+                ["counterattacks"] call JTC_fnc_escalate;
             };
             publicVariable "JTC_enemyBases";
             ["Unit killed on base number %1. Population: %2, Bases: %3", _baseNumber, JTC_enemyPopulation, JTC_enemyBases] call JTC_fnc_log;
@@ -193,7 +195,7 @@ publicVariable "JTC_enemyBases";
         private _base = _this select 1;
         {
             private _stolen = _x getVariable "_stolen";
-            if (isNil "_stolen" and ((position _x) distance2D markerPos (_base select 0)) > 300 and (alive _x)) then {
+            if (isNil "_stolen" and (((position _x) distance2D markerPos (_base select 0)) > 300) and (alive _x)) then {
                 private _crew = crew _x;
                 private _enemyCrew = false;
                 {

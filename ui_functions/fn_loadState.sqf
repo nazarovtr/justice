@@ -60,6 +60,8 @@ fn_loadPopulation = {
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
     {
         if ((_x select 3) == "abandoned") then {
+            ["patrols"] call JTC_fnc_escalate;
+            ["counterattacks"] call JTC_fnc_escalate;
             private _baseMarker = _x select 0;
             private _marker = createMarker ["cross_" + _baseMarker, getMarkerPos _baseMarker];
             _marker setMarkerType "hd_objective";
@@ -89,6 +91,10 @@ fn_loadGuerillaResources = {
     [_saveName, "deadRecruitCount", 0] call fn_loadAndPublishValue;
     [_saveName, "money", 97000] call fn_loadAndPublishValue;
     [_saveName, "playerData", []] call fn_loadAndPublishValue;
+};
+
+fn_loadEscalation = {
+    [_saveName, "escalation", []] call fn_loadAndPublishValue;
 };
 
 fn_setCommander = {
@@ -127,6 +133,7 @@ if ((count _saveName) == 0) then {
 } else {
     [] call fn_setCommander;
     [] call fn_removeStartingVehicles;
+    [] call fn_loadEscalation;
     [] call fn_loadDateAndWeather;
     [] call fn_loadBasePosition;
     [] call fn_loadAmmobox;
