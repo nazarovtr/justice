@@ -14,6 +14,6 @@ if (count _this >= 2) then {
 if (_condition) then {
     if ((JTC_escalation pushBackUnique _stage) >= 0) then {
         publicVariable "JTC_escalation";
-        ["excalated to: %1", _stage] call JTC_fnc_log;
+        ["escalated to: %1", _stage] call JTC_fnc_log;
     };
 };

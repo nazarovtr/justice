@@ -51,6 +51,7 @@ class justice {
         class skipTime {};
         class loadAmmoTruckWithMagazines {};
         class escalate {};
+        class deescalate {};
         class isEscalated {};
     };
 };
