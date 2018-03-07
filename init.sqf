@@ -10,7 +10,8 @@ if (isServer) then {
     theCrate allowDamage false;
     theLamp allowDamage false;
     [] execVM "scripts\initTimeout.sqf";
-    [] execVM "scripts\spawn.sqf";
+    [] execVM "scripts\civilianSpawn.sqf";
+    [] execVM "scripts\enemyController.sqf";
     [] execVM "scripts\patrols.sqf";
     [] execVM "scripts\winConditions.sqf";
     [] execVM "scripts\scheduler.sqf";
