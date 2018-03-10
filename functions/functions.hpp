@@ -53,5 +53,9 @@ class justice {
         class escalate {};
         class deescalate {};
         class isEscalated {};
+        class addBaseNumberFields {};
+        class alarmBase {};
+        class addEnemyVehicleDescructionHandler {};
+        class addEnemyDeathHandler {};
     };
 };

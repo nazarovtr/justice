@@ -11,7 +11,11 @@
         _uiMarker setMarkerType "o_plane";
         _uiMarker setMarkerText (markerText _x);
     };
-    if ((_x find "city") == 0 or (_x find "parking") == 0 or (_x find "civ") == 0 or (_x find "safe_spawn") == 0) then {
+    if ((_x find "city") == 0 || (_x find "parking") == 0 || (_x find "civ") == 0 || (_x find "safe_spawn") == 0) then {
         _x setMarkerAlpha 0;
+    };
+    if ((_x find "parking_heli") == 0 || (_x find "civ_parking_heli") == 0) then {
+        private _helipad = "Land_HelipadEmpty_F" createVehicle getMarkerPos _x;
+        _helipad setDir markerDir _x;
     };
 } forEach allMapMarkers;
