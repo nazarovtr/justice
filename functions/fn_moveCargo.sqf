@@ -96,8 +96,8 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
                 if (!_silent) then {
                     (format [localize "STR_JTC_cargoProgress", _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint
                 };
+                sleep (10 * _timePerItem);
             };
-            sleep _timePerItem;
         };
     };
     if (_cargoBuffer isEqualTo []) then {
