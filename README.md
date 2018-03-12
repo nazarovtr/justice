@@ -1,4 +1,4 @@
-# Justice Altis Alpha 0.3.1
+# Justice Altis Alpha 0.4.0
 Russian version below / Русская версия ниже.
 ## Inspiration
 The basic idea of guerrilla units fighting regular army and some basic mechanics are inspired by barbolani's Antistasi. But I intend to make the mission more hardcore.
@@ -17,7 +17,7 @@ A small opposition group from Agios Konstantinos with some former AAF military e
 ## Why alpha?
 Current state in my opinion is a "minimal viable product". You can play it, you can win and you can loose. The basic gameplay outline is close enough to what is planned for the final version.
 
-But the testing has been provided only by me and a couple of my friends. Some very important features like counterattacks are not there. Some mechanics are implemented on the most basic level. Mission balance is likely not very good.
+But the testing has been provided only by me and a couple of my friends. Some very important features are not there. Some mechanics are implemented on the most basic level. Mission balance is likely not very good.
 
 When all the intended features are there and the most crude solutions are fixed I'll move the mission to Beta stage.
 
@@ -123,7 +123,7 @@ Actually Justice is a very good starting point to get acquainted with ACE, TFAR 
 ## Почему альфа?
 Текущее состояние, на мой взгляд, это "минимальный жизнеспособный продукт". Миссия работает, можно победить, можно проиграть. Геймплей уже относительно близок к тому, что запланировано в финальной версии.
 
-Но миссия тестировалась только мной и парой моих друзей. Многие принципиально важные элементы вроде контратак не реализованы. Некоторые механики реализованы на базовом уровне. Вероятно, баланс не в лучшем состоянии.
+Но миссия тестировалась только мной и парой моих друзей. Многие принципиально важные элементы не реализованы. Некоторые механики реализованы на базовом уровне. Вероятно, баланс не в лучшем состоянии.
 
 Когда все запланированные элементы будут реализованы, я переведу миссию в состояние беты.
 
