@@ -72,6 +72,8 @@ JTC_enemyPlanes = [
     ["O_Plane_CAS_02_F", 4, 15000000, false, false]
 ];
 
+JTC_enemyArtillery = ["O_MBT_02_arty_F"];
+
 JTC_enemySmallestSquadSize = 2;
 
 JTC_ammoTruckMagazines = [
