@@ -12,6 +12,10 @@ JTC_alarmedBases = [];
 JTC_spawnedBases = [];
 JTC_supportedBases = [];
 
+private _getEntityName = {
+     if (!isNull (_this select 2)) then { typeOf (_this select 2); } else { _this select 1; };
+};
+
 private _spawnBases = {
     for "_baseNumber" from 0 to (count JTC_enemyBases) - 1 do {
         if ((JTC_spawnedBases find _baseNumber) < 0) then {
@@ -90,6 +94,7 @@ private _spawnSupportOfOneType = {
     {
         _x set [4, JTC_goal_support];
         _x set [5, _alarmedBaseNumber];
+        ["spawned %1 at base %2 to support base %3", _x call _getEntityName, _x select 0, _alarmedBaseNumber] call JTC_fnc_log;
     } forEach _spawned;
 };
 
@@ -194,6 +199,8 @@ while {true} do {
                         } forEach _playersKnownToEnemy;
                     };
                 } else {
+                    ["%1 supporting base %2 returns to base %3", _enemyEntity call _getEntityName,
+                        _enemyEntity select 5, _baseNumber] call JTC_fnc_log;
                     _enemyEntity set [4, JTC_goal_rtb];
                     _enemyEntity set [5, _baseNumber];
                     _goal = JTC_goal_rtb;
