@@ -11,6 +11,7 @@ JTC_spawnedEnemies = [];
 JTC_alarmedBases = [];
 JTC_spawnedBases = [];
 JTC_supportedBases = [];
+JTC_abandonInProgressBases = [];
 
 private _getEntityName = {
      if (!isNull (_this select 2)) then { typeOf (_this select 2); } else { _this select 1; };
@@ -26,6 +27,52 @@ private _spawnBases = {
             };
         };
     };
+};
+
+private _abandonBases = {
+    {
+        private _baseNumber = _x;
+        private _base = JTC_enemyBases select _baseNumber;
+        private _usableEmptyVehicles = [];
+        private _groupsWithoutVehicles = [];
+        private _groupsWithVehicles = [];
+        {
+            if ((_x select 0) == _baseNumber) then {
+                if (isNull (_x select 1)) then {
+                    _usableEmptyVehicles pushBack _x;
+                } else {
+                    if (isNull (_x select 2)) then {
+                        _groupsWithoutVehicles pushBack _x;
+                    } else {
+                        _groupsWithVehicles pushBack _x;
+                    }
+                }
+            };
+        } forEach JTC_spawnedEnemies;
+        {
+            private _group = _x;
+            {
+                _group addVehicle _x;
+            } forEach _usableEmptyVehicles;
+        } forEach _groupsWithoutVehicles;
+        private _evecuationBaseNumber = _base call JTC_fnc_selectEvacuationBase;
+        private _evecuationBase = JTC_enemyBases select _evecuationBaseNumber;
+        _evacuationBase set [1, (_evacuationBase select 1) + (_base select 1)];
+        _base set [1, 0];
+        private _groups = _groupsWithVehicles + _groupsWithoutVehicles;
+        {
+            _x set [0, _evecuationBaseNumber];
+            _x set [4, JTC_goal_rtb];
+            _x set [5, _evecuationBaseNumber];
+            private _waypoint = _x addWaypoint [getMarkerPos _parkingMarker, 0];
+            _waypoint setWaypointType "MOVE";
+            _waypoint setWaypointSpeed "FULL";
+            _x setCurrentWaypoint _waypoint;
+            _x setCombatMode "YELLOW";
+        } forEach _groups;
+        _groups call JTC_fnc_addBaseNumberFields;
+        JTC_abandonInProgressBases deleteAt (JTC_abandonInProgressBases find _baseNumber);
+    } forEach JTC_abandonInProgressBases;
 };
 
 private _spawnSupportOfOneType = {
@@ -273,6 +320,7 @@ while {true} do {
             JTC_spawnedEnemies deleteAt _enemyNumber;
         };
     };
+    call _abandonBases;
     sleep 5;
     if (JTC_log) then {
         {

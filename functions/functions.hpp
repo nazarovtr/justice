@@ -57,5 +57,6 @@ class justice {
         class alarmBase {};
         class addEnemyVehicleDescructionHandler {};
         class addEnemyDeathHandler {};
+        class selectEvacuationBase {};
     };
 };

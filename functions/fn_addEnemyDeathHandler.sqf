@@ -9,6 +9,7 @@ if (!isNull _group) then {
             _base set [1, (_base select 1) - 1];
             if (_base select 3 == "ok" and (1.0 * (_base select 1) / (_base select 2)) < 0.3) then {
                 _base set [3, "abandoned"];
+                JTC_abandonInProgressBases pushBackUnique _baseNumber;
                 JTC_alarmedBases deleteAt (JTC_alarmedBases find _baseNumber);
                 JTC_supportedBases deleteAt (JTC_supportedBases find _baseNumber);
                 [(_base select 2) / 2, -(_base select 2) / 2] call JTC_fnc_changeRating;
