@@ -4,7 +4,7 @@ if (!isNull _group) then {
         _x addEventHandler ["killed", {
             private _unit = _this select 0;
             _this call JTC_fnc_defaultEnemyDeathHandler;
-            private _baseNumber = _unit getVariable "_baseNumber";
+            private _baseNumber = (_unit getVariable "_data") select 0;
             private _base = JTC_enemyBases select _baseNumber;
             _base set [1, (_base select 1) - 1];
             if (_base select 3 == "ok" and (1.0 * (_base select 1) / (_base select 2)) < 0.3) then {

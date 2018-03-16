@@ -50,27 +50,28 @@ private _abandonBases = {
             };
         } forEach JTC_spawnedEnemies;
         {
-            private _group = _x;
+            private _group = _x select 1;
             {
-                _group addVehicle _x;
+                _group addVehicle (_x select 2);
             } forEach _usableEmptyVehicles;
         } forEach _groupsWithoutVehicles;
-        private _evecuationBaseNumber = _base call JTC_fnc_selectEvacuationBase;
-        private _evecuationBase = JTC_enemyBases select _evecuationBaseNumber;
+        private _evacuationBaseNumber = _base call JTC_fnc_selectEvacuationBase;
+        private _evacuationBase = JTC_enemyBases select _evacuationBaseNumber;
         _evacuationBase set [1, (_evacuationBase select 1) + (_base select 1)];
         _base set [1, 0];
         private _groups = _groupsWithVehicles + _groupsWithoutVehicles;
         {
-            _x set [0, _evecuationBaseNumber];
+            private _group = _x select 1;
+            _x set [0, _evacuationBaseNumber];
             _x set [4, JTC_goal_rtb];
-            _x set [5, _evecuationBaseNumber];
-            private _waypoint = _x addWaypoint [getMarkerPos _parkingMarker, 0];
+            _x set [5, _evacuationBaseNumber];
+            private _waypoint = _group addWaypoint [getMarkerPos (_evacuationBase select 0), 50];
             _waypoint setWaypointType "MOVE";
             _waypoint setWaypointSpeed "FULL";
-            _x setCurrentWaypoint _waypoint;
-            _x setCombatMode "YELLOW";
+            _group setCurrentWaypoint _waypoint;
+            _group setCombatMode "YELLOW";
         } forEach _groups;
-        _groups call JTC_fnc_addBaseNumberFields;
+        _groups call JTC_fnc_setEntityDataVariables;
         JTC_abandonInProgressBases deleteAt (JTC_abandonInProgressBases find _baseNumber);
     } forEach JTC_abandonInProgressBases;
 };
@@ -137,7 +138,7 @@ private _spawnSupportOfOneType = {
         _vehicleDataArray deleteAt _closestParkingNumber;
         _parkings deleteAt _closestParkingNumber;
     };
-    _spawned call JTC_fnc_addBaseNumberFields;
+    _spawned call JTC_fnc_setEntityDataVariables;
     {
         _x set [4, JTC_goal_support];
         _x set [5, _alarmedBaseNumber];
@@ -304,6 +305,12 @@ while {true} do {
                 JTC_supportedBases deleteAt (JTC_supportedBases find _baseNumber);
                 if (!isNull _group) then {
                     {
+                        private _vehicle = vehicle _x;
+                        private _spawnedEntityData = _vehicle getVariable "_data";
+                        if (!isNil "_spawnedEntityData") then {
+                            _spawnedEntityData set [2, objNull];
+                        };
+                        deleteVehicle vehicle _x;
                         deleteVehicle _x;
                     } forEach units _group;
                     deleteGroup _group;

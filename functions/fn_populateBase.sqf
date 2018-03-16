@@ -73,7 +73,7 @@ if (_status == "ok") then {
         };
     };
 };
-_spawnedEnemies call JTC_fnc_addBaseNumberFields;
+_spawnedEnemies call JTC_fnc_setEntityDataVariables;
 
 // ACE item adding
 if (JTC_ace) then {

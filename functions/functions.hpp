@@ -53,7 +53,7 @@ class justice {
         class escalate {};
         class deescalate {};
         class isEscalated {};
-        class addBaseNumberFields {};
+        class setEntityDataVariables {};
         class alarmBase {};
         class addEnemyVehicleDescructionHandler {};
         class addEnemyDeathHandler {};
