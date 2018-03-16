@@ -59,6 +59,7 @@ private _abandonBases = {
         private _evacuationBase = JTC_enemyBases select _evacuationBaseNumber;
         _evacuationBase set [1, (_evacuationBase select 1) + (_base select 1)];
         _base set [1, 0];
+        publicVariable "JTC_enemyBases";
         private _groups = _groupsWithVehicles + _groupsWithoutVehicles;
         {
             private _group = _x select 1;
