@@ -76,13 +76,15 @@ if (_cargoLimitMode != 2 || ([_cargoBuffer] call JTC_fnc_getCargoMass) <
             breakTo "main";
         };
         private _cargoUnit = _cargoBuffer select 0;
-        if (_cargoLimitMode == 1 && ([_target] call JTC_fnc_getCargoMass) +
-            ([_cargoUnit select 0] call JTC_fnc_getItemMass) > _targetCargoCapacity) then {
-            if (!_silent) then {
-                (format [localize "STR_JTC_cargoFull",
-                 _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint;
+        if (_cargoLimitMode == 1) then {
+            if (([_target] call JTC_fnc_getCargoMass) +
+                            ([_cargoUnit select 0] call JTC_fnc_getItemMass) > _targetCargoCapacity) then {
+                if (!_silent) then {
+                    (format [localize "STR_JTC_cargoFull",
+                     _cargoUnitCount - (count _cargoBuffer), _cargoUnitCount]) call fn_hint;
+                };
+                breakTo "main";
             };
-            breakTo "main";
         };
         switch (_cargoUnit select 2) do {
             case "w": { _target addWeaponCargoGlobal [_cargoUnit select 0, 1];};

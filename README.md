@@ -1,4 +1,4 @@
-# Justice Altis Alpha 0.5.0
+# Justice Altis Alpha 0.5.1
 Russian version below / Русская версия ниже.
 ## Inspiration
 The basic idea of guerrilla units fighting regular army and some basic mechanics are inspired by barbolani's Antistasi. But I intend to make the mission more hardcore.
