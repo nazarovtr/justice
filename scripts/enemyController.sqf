@@ -17,6 +17,13 @@ private _getEntityName = {
      if (!isNull (_this select 2)) then { typeOf (_this select 2); } else { _this select 1; };
 };
 
+private _waitForAssignedVehicle = {
+    private _group = _this select 1;
+    private _vehicle = _this select 2;
+    private _startTime = time;
+    waitUntil {!isNull (assignedVehicle (leader _group)) || (time > _startTime + 5)};
+};
+
 private _spawnBases = {
     for "_baseNumber" from 0 to (count JTC_enemyBases) - 1 do {
         if ((JTC_spawnedBases find _baseNumber) < 0) then {
@@ -141,6 +148,7 @@ private _spawnSupportOfOneType = {
     };
     _spawned call JTC_fnc_setEntityDataVariables;
     {
+        (_x select 1) addVehicle (_x select 2);
         _x set [4, JTC_goal_support];
         _x set [5, _alarmedBaseNumber];
         ["spawned %1 at base %2 to support base %3", _x call _getEntityName, _x select 0, _alarmedBaseNumber] call JTC_fnc_log;
@@ -180,6 +188,7 @@ while {true} do {
         private _group = _enemyEntity select 1;
         private _vehicle = _enemyEntity select 2;
         private _entityActive = false;
+        private _alarmed = (JTC_alarmedBases find _baseNumber) >= 0;
         if (!isNull _vehicle) then {
             if (alive _vehicle) then {
                 _entityActive = true;
@@ -211,9 +220,13 @@ while {true} do {
             } else {
                 position _vehicle;
             };
+            if (_alarmed) then {
+                _group addVehicle _vehicle;
+            };
             //support waypoints
             if (_goal == JTC_goal_support && !(isNull _group)) then {
-                if (_groupIsInVehicle && (JTC_alarmedBases find _target) >= 0) then {
+                _enemyEntity call _waitForAssignedVehicle;
+                if (!isNull (assignedVehicle (leader _group)) && (JTC_alarmedBases find _target) >= 0) then {
                     _supportActive = true;
                     if ((JTC_enemyArtillery find (typeOf _vehicle)) >= 0) then {
                         private _potentialArtilleryTargets = _playersKnownToEnemy select { ((_x select 1) select 1)  < 50;};

@@ -35,7 +35,14 @@ if (_status == "ok") then {
             if ((_x select 4) and _populationLeft > 4) then {
                 createVehicleCrew _vehicle;
                 private _group = group ((crew _vehicle) select 0);
-                _group addVehicle _vehicle;
+                if ((random 1) > 0.4) then {
+                    _group leaveVehicle _vehicle;
+                    {
+                        moveOut _x;
+                    } forEach units _group;
+                } else {
+                    _group addVehicle _vehicle;
+                };
                 _populationLeft = _populationLeft - count units _group;
                 private _spawnedEntity = [_baseNumber, _group, _vehicle, _parkingMarker, JTC_goal_guard, _baseNumber];
                 JTC_spawnedEnemies pushBack _spawnedEntity;
@@ -94,9 +101,10 @@ if (JTC_ace) then {
 //creating waypoints
 {
     private _group = _x select 1;
+    private _vehicle = _x select 2;
     if (!isNull _group) then {
-        if (!((vehicle leader _group) isKindOf "Air")) then {
-            if ((random 1) > 0.4 and ((vehicle leader _group) == (leader _group))) then {
+        if (isNull _vehicle) then {
+            if ((random 1) > 0.4) then {
                 private _firstWaypoint = _group addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
                 _group addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
                 _group addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
@@ -113,6 +121,11 @@ if (JTC_ace) then {
                         _this action ["SitDown", _this];
                     }
                 } forEach units _group;
+            };
+        } else {
+            if (_vehicle != vehicle leader _group) then {
+                private _waypoint = _group addWaypoint [_markerName call BIS_fnc_randomPosTrigger, 0];
+                _waypoint setWaypointBehaviour "SAFE";
             };
         };
     };

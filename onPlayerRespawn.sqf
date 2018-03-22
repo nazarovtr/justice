@@ -11,7 +11,7 @@ if (!isNil "JTC_baseDeployed") then {
     _newUnit setPosASL JTC_basePosition;
     _newUnit setDir JTC_baseDirection;
 };
-if ((random 1) < 1) then {
+if ((random 1) > 0.4) then {
     [_oldUnit, localize "STR_JTC_recoverUniform"] call JTC_fnc_addStealUniformAction;
 };
 _newUnit forceAddUniform  defaultUniform;
