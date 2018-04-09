@@ -158,6 +158,7 @@ private _spawnSupportOfOneType = {
 private _spawnSupport = {
     {
         [_x, {(_this select 0) isKindOf "Air" && (_this select 4)}, 2] call _spawnSupportOfOneType;
+        [_x, {((JTC_enemyArtillery find (_this select 0)) < 0) && !((_this select 0) isKindOf "Air") && (_this select 4)}, 3] call _spawnSupportOfOneType;
         [_x, {((JTC_enemyArtillery find (_this select 0)) >= 0) && (_this select 4)}, 1] call _spawnSupportOfOneType;
         JTC_supportedBases pushBackUnique _x;
     } forEach (JTC_alarmedBases select {(JTC_supportedBases find _x) < 0;});
@@ -248,7 +249,8 @@ while {true} do {
                         };
                     } else {
                         if ((count waypoints _group) <= currentWaypoint _group) then {
-                            private _waypoint = _group addWaypoint [getMarkerPos ((JTC_enemyBases select _target) select 0), 500];
+                            private _waypointRadius = if (_vehicle isKindOf "Air") then {500;} else {100;};
+                            private _waypoint = _group addWaypoint [getMarkerPos ((JTC_enemyBases select _target) select 0), _waypointRadius];
                             _waypoint setWaypointType "SAD";
                             _group setCombatMode "RED";
                             ["SAD waypoint created"] call JTC_fnc_log;

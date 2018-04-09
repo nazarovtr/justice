@@ -14,7 +14,7 @@ _parameters = [
 	["VEHICLES_COUNT", 10],
 	["MIN_SKILL", 0.4],
 	["MAX_SKILL", 0.6],
-	["DEBUG", JTC_log],
+	["DEBUG", false],
 	["ON_SPAWN_CALLBACK", {
 	    [_this select 0] call JTC_fnc_addCivilianVehicleEventHandlers;
 	    (_this select 0) call JTC_fnc_syncVehicleCustomization;

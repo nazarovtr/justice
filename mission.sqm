@@ -7617,7 +7617,7 @@ class Mission
 			colorName="ColorBlue";
 			a=10;
 			b=10;
-			angle=113.99997;
+			angle=113.99995;
 			id=640;
 		};
 		class Item475
@@ -9895,7 +9895,7 @@ class Mission
 			colorName="ColorCIV";
 			a=150;
 			b=70;
-			angle=0.9999997;
+			angle=0.99999964;
 			id=829;
 			atlOffset=-1.4516563;
 		};
@@ -12043,7 +12043,7 @@ class Mission
 			colorName="ColorOrange";
 			a=3;
 			b=7;
-			angle=111.99997;
+			angle=111.99995;
 			id=999;
 			atlOffset=0.0039978027;
 		};
