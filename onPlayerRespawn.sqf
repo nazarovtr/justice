@@ -28,5 +28,5 @@ if ((getPlayerUID player) == JTC_commanderId) then {
     };
 };
 
-[-2, 3] call JTC_fnc_changeRating;
+[-0.1, 2] call JTC_fnc_changeRating;
 call JTC_fnc_handleRecruitDeath;
