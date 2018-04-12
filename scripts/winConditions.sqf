@@ -1,6 +1,6 @@
 waitUntil {
     sleep 1;
-    !isNil("JTC_enemyBases");
+    !isNil("JTC_missionStarted");
 };
 
 while {true} do {

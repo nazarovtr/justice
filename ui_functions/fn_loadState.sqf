@@ -60,8 +60,6 @@ fn_loadPopulation = {
     [_saveName, "enemyBases", []] call fn_loadAndPublishValue;
     {
         if ((_x select 3) == "abandoned") then {
-            ["patrols"] call JTC_fnc_escalate;
-            ["counterattacks"] call JTC_fnc_escalate;
             private _baseMarker = _x select 0;
             private _marker = createMarker ["cross_" + _baseMarker, getMarkerPos _baseMarker];
             _marker setMarkerType "hd_objective";
@@ -95,6 +93,10 @@ fn_loadGuerillaResources = {
 
 fn_loadEscalation = {
     [_saveName, "escalation", []] call fn_loadAndPublishValue;
+};
+
+fn_loadCompatibility = {
+    [_saveName, "compatibility", []] call fn_loadAndPublishValue;
 };
 
 fn_setCommander = {
@@ -142,10 +144,14 @@ if ((count _saveName) == 0) then {
     [] call fn_loadPopulation;
     [] call fn_loadReputation;
     [] call fn_loadSchedulerData;
+    [] call fn_loadCompatibility;
     {
         if ((_x find "start") == 0) then {
             _x setMarkerAlpha 0;
         };
     } forEach allMapMarkers;
+    call JTC_fnc_fixCompatibility;
+    JTC_missionStarted = true;
+    publicVariable "JTC_missionStarted";
     closeDialog 23001;
 };

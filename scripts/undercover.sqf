@@ -2,6 +2,10 @@ JTC_undercoverMode = "civilian"; // not, civilian, enemy
 JTC_vehiclesKnownToEnemy = [];
 JTC_notUndercoverPlayers = [];
 player setCaptive true;
+waitUntil {
+    sleep 1;
+    !isNil("JTC_missionStarted");
+};
 while {true} do {
     sleep 5;
     private _newUndercoverMode = "not";

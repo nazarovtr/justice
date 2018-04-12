@@ -49,6 +49,8 @@ if (count _saveName == 0) then {
     [_saveName, "recruitablePopulation", JTC_recruitablePopulation] call fn_saveValue;
     [_saveName, "civilianSpawnPercent", JTC_civilianSpawnPercent] call fn_saveValue;
     [_saveName, "freeEnemyPopulation", JTC_freeEnemyPopulation] call fn_saveValue;
+    [_saveName, "escalation", JTC_escalation] call fn_saveValue;
+    [_saveName, "compatibility", JTC_compatibility] call fn_saveValue;
     {
         private _playerData = [getPlayerUID _x] call JTC_fnc_getPlayerData;
         _playerData set [1, uniform _x];

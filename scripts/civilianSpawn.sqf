@@ -1,6 +1,6 @@
 waitUntil {
     sleep 1;
-    !isNil("JTC_cities");
+    !isNil("JTC_missionStarted");
 };
 
 JTC_spawnedCities = [];

@@ -9,7 +9,7 @@ private _debugMarkers = [];
 
 waitUntil {
     sleep 1;
-    !isNil("JTC_freeEnemyPopulation");
+    !isNil("JTC_missionStarted");
 };
 
 private _getWaypointPosition = {

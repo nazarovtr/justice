@@ -1,6 +1,6 @@
 waitUntil {
     sleep 1;
-    !isNil("JTC_enemyBases");
+    !isNil("JTC_missionStarted");
 };
 JTC_goal_parked = "parked";
 JTC_goal_guard = "guard";

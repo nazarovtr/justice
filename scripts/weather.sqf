@@ -30,7 +30,7 @@ if (isServer) then {
         [] spawn {
             while { true } do {
                 JTC_overcast = overcast;
-                publicvariable "JTC_overcast";
+                publicVariable "JTC_overcast";
                 sleep 20;
             };
         };
