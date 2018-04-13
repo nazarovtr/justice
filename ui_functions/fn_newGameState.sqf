@@ -33,7 +33,7 @@ deployBaseActionId = player addAction [localize "STR_JTC_deployBase", "[getPosAS
 private _marker = createMarker ["hq", getMarkerPos JTC_respawnMarker];
 _marker setMarkerType JTC_hqMarkerType;
 _marker setMarkerText "Home";
-JTC_compatibility = [JTC_comp_patrolsAndCounterattacks, JTC_comp_smallerRepLoss];
+JTC_compatibility = [JTC_comp_patrolsAndCounterattacks, JTC_comp_smallerRepLoss, JTC_comp_tanksDlc];
 JTC_missionStarted = true;
 publicVariable "JTC_missionStarted";
 closeDialog 23001;

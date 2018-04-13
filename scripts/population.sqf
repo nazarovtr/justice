@@ -20,7 +20,8 @@ JTC_enemySquads = [
 JTC_enemyInfantryUnits = [
     ["O_Sharpshooter_F"],
     ["O_recon_JTAC_F"],
-    ["O_Pathfinder_F"]
+    ["O_Pathfinder_F"],
+    ["O_Soldier_HAT_F"]
 ];
 
 JTC_enemyLongRangeUnits = [
@@ -51,7 +52,9 @@ JTC_enemyGroundVehicles = [
     ["O_Truck_03_fuel_F", 5, 120000, false, false],
     ["O_APC_Tracked_02_cannon_F", 5, 5000000, false, true],
     ["O_APC_Tracked_02_AA_F", 6, 5000000, false, true],
-    ["O_MBT_02_cannon_F", 8, 6000000, false, true],
+    ["O_MBT_02_cannon_F", 3, 6000000, false, true],
+    ["O_MBT_04_cannon_F", 3, 8000000, false, true],
+    ["O_MBT_04_command_F", 2, 9000000, false, true],
     ["O_MBT_02_arty_F", 3, 6000000, false, true],
     ["O_APC_Wheeled_02_rcws_F", 10, 3000000, true, true]
 ];
@@ -88,6 +91,8 @@ JTC_ammoTruckMagazines = [
     ["5Rnd_127x108_APDS_Mag", 0.6, 5, 20],
     ["RPG32_F", 0.7, 3, 12],
     ["RPG32_HE_F", 0.7, 3, 12],
+    ["Vorona_HEAT", 0.3, 1, 6],
+    ["Vorona_HE", 0.3, 1, 6],
     ["APERSBoundingMine_Range_Mag", 0.2, 1, 6],
     ["APERSMine_Range_Mag", 0.2, 1, 6],
     ["ClaymoreDirectionalMine_Remote_Mag", 0.3, 1, 5],
